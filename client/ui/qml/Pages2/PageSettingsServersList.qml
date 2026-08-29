@@ -71,7 +71,7 @@ PageType {
                     text: name
 
                     leftImageSource: ServersUiController.serverHasOutdatedAwgContainer(serverId) ? "qrc:/images/controls/alert-circle.svg" : ""
-                    leftImageColor: AmneziaStyle.color.goldenApricot
+                    leftImageColor: ВадькаVPNStyle.color.goldenApricot
                     isSmallLeftImage: true
                     isLeftImageHoverEnabled: false
 

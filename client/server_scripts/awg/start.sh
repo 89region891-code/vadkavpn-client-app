@@ -1,15 +1,15 @@
 #!/bin/bash
 
-# This scripts copied from Amnezia client to Docker container to /opt/amnezia and launched every time container starts
+# This scripts copied from ВадькаVPN client to Docker container to /opt/ВадькаVPN and launched every time container starts
 
 echo "Container startup"
 #ifconfig eth0:0 $SERVER_IP_ADDRESS netmask 255.255.255.255 up
 
 # kill daemons in case of restart
-awg-quick down /opt/amnezia/awg/awg0.conf
+awg-quick down /opt/ВадькаVPN/awg/awg0.conf
 
 # start daemons if configured
-if [ -f /opt/amnezia/awg/awg0.conf ]; then (awg-quick up /opt/amnezia/awg/awg0.conf); fi
+if [ -f /opt/ВадькаVPN/awg/awg0.conf ]; then (awg-quick up /opt/ВадькаVPN/awg/awg0.conf); fi
 
 # Allow traffic on the TUN interface.
 iptables -A INPUT -i awg0 -j ACCEPT

@@ -7,9 +7,9 @@
 #include <QDebug>
 #include <QQmlEngine>
 
-namespace amnezia {
+namespace ВадькаVPN {
 
-using namespace amnezia::ProtocolEnumNS;
+using namespace ВадькаVPN::ProtocolEnumNS;
 
 void declareQmlProtocolEnum() {
     qmlRegisterUncreatableMetaObject(
@@ -37,6 +37,6 @@ void declareQmlProtocolEnum() {
         );
 }
 
-} // namespace amnezia
+} // namespace ВадькаVPN
 
 #endif // QML_REGISTER_PROTOCOLS_H

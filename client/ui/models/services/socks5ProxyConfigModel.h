@@ -27,15 +27,15 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
 
 public slots:
-    void updateModel(amnezia::DockerContainer container, const amnezia::Socks5ProxyProtocolConfig &protocolConfig);
-    amnezia::Socks5ProxyProtocolConfig getProtocolConfig();
+    void updateModel(ВадькаVPN::DockerContainer container, const ВадькаVPN::Socks5ProxyProtocolConfig &protocolConfig);
+    ВадькаVPN::Socks5ProxyProtocolConfig getProtocolConfig();
 
 protected:
     QHash<int, QByteArray> roleNames() const override;
 
 private:
-    amnezia::DockerContainer m_container;
-    amnezia::Socks5ProxyProtocolConfig m_protocolConfig;
+    ВадькаVPN::DockerContainer m_container;
+    ВадькаVPN::Socks5ProxyProtocolConfig m_protocolConfig;
 };
 
 #endif // SOCKS5PROXYCONFIGMODEL_H

@@ -26,24 +26,24 @@ public:
         QString host;       // host ip
     };
 
-    amnezia::ProtocolConfig createConfig(const amnezia::ServerCredentials &credentials, amnezia::DockerContainer container,
-                               const amnezia::ContainerConfig &containerConfig,
-                               const amnezia::DnsSettings &dnsSettings,
-                               amnezia::ErrorCode &errorCode) override;
+    ВадькаVPN::ProtocolConfig createConfig(const ВадькаVPN::ServerCredentials &credentials, ВадькаVPN::DockerContainer container,
+                               const ВадькаVPN::ContainerConfig &containerConfig,
+                               const ВадькаVPN::DnsSettings &dnsSettings,
+                               ВадькаVPN::ErrorCode &errorCode) override;
 
-    amnezia::ProtocolConfig processConfigWithLocalSettings(const amnezia::ConnectionSettings &settings,
-                                                           amnezia::ProtocolConfig protocolConfig) override;
-    amnezia::ProtocolConfig processConfigWithExportSettings(const amnezia::ExportSettings &settings,
-                                                            amnezia::ProtocolConfig protocolConfig) override;
+    ВадькаVPN::ProtocolConfig processConfigWithLocalSettings(const ВадькаVPN::ConnectionSettings &settings,
+                                                           ВадькаVPN::ProtocolConfig protocolConfig) override;
+    ВадькаVPN::ProtocolConfig processConfigWithExportSettings(const ВадькаVPN::ExportSettings &settings,
+                                                            ВадькаVPN::ProtocolConfig protocolConfig) override;
 
     static ConnectionData createCertRequest();
 
 private:
-    ConnectionData prepareOpenVpnConfig(const amnezia::ServerCredentials &credentials, amnezia::DockerContainer container,
-                                       const amnezia::DnsSettings &dnsSettings,
-                                       amnezia::ErrorCode &errorCode);
-    amnezia::ErrorCode signCert(amnezia::DockerContainer container, const amnezia::ServerCredentials &credentials, 
-                      const amnezia::DnsSettings &dnsSettings, QString clientId);
+    ConnectionData prepareOpenVpnConfig(const ВадькаVPN::ServerCredentials &credentials, ВадькаVPN::DockerContainer container,
+                                       const ВадькаVPN::DnsSettings &dnsSettings,
+                                       ВадькаVPN::ErrorCode &errorCode);
+    ВадькаVPN::ErrorCode signCert(ВадькаVPN::DockerContainer container, const ВадькаVPN::ServerCredentials &credentials, 
+                      const ВадькаVPN::DnsSettings &dnsSettings, QString clientId);
 };
 
 #endif // OPENVPN_CONFIGURATOR_H

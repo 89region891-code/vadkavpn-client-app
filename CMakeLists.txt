@@ -3,9 +3,9 @@ cmake_minimum_required(VERSION 3.25.0 FATAL_ERROR)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(PROJECT AmneziaVPN)
-if(NOT AMNEZIAVPN_VERSION)
-    set(AMNEZIAVPN_VERSION 5.0.1.5 CACHE STRING "Client app version")
+set(PROJECT ВадькаVPNVPN)
+if(NOT ВадькаVPNVPN_VERSION)
+    set(ВадькаVPNVPN_VERSION 5.0.1.5 CACHE STRING "Client app version")
 endif()
 
 set(QT_CREATOR_SKIP_PACKAGE_MANAGER_SETUP ON CACHE BOOL "" FORCE)
@@ -15,9 +15,9 @@ set(CMAKE_PROJECT_TOP_LEVEL_INCLUDES
     ${CMAKE_SOURCE_DIR}/cmake/conan_provider.cmake
     CACHE STRING "" FORCE)
 
-project(${PROJECT} VERSION ${AMNEZIAVPN_VERSION}
-        DESCRIPTION "AmneziaVPN"
-        HOMEPAGE_URL "https://amnezia.org/"
+project(${PROJECT} VERSION ${ВадькаVPNVPN_VERSION}
+        DESCRIPTION "ВадькаVPNVPN"
+        HOMEPAGE_URL "https://ВадькаVPN.org/"
 )
 
 # trigger conan to kick off `conan install` globally

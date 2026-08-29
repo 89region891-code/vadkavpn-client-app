@@ -1,4 +1,4 @@
-package org.amnezia.vpn.protocol.wireguard
+package org.ВадькаVPN.vpn.protocol.wireguard
 
 import android.net.VpnService.Builder
 import kotlinx.coroutines.CoroutineScope
@@ -7,20 +7,20 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import org.amnezia.awg.GoBackend
-import org.amnezia.vpn.protocol.Protocol
-import org.amnezia.vpn.protocol.ProtocolState.CONNECTED
-import org.amnezia.vpn.protocol.ProtocolState.DISCONNECTED
-import org.amnezia.vpn.protocol.Statistics
-import org.amnezia.vpn.protocol.VpnException
-import org.amnezia.vpn.protocol.VpnStartException
-import org.amnezia.vpn.util.LibraryLoader.loadSharedLibrary
-import org.amnezia.vpn.util.Log
-import org.amnezia.vpn.util.asSequence
-import org.amnezia.vpn.util.net.InetEndpoint
-import org.amnezia.vpn.util.net.InetNetwork
-import org.amnezia.vpn.util.net.parseInetAddress
-import org.amnezia.vpn.util.optStringOrNull
+import org.ВадькаVPN.awg.GoBackend
+import org.ВадькаVPN.vpn.protocol.Protocol
+import org.ВадькаVPN.vpn.protocol.ProtocolState.CONNECTED
+import org.ВадькаVPN.vpn.protocol.ProtocolState.DISCONNECTED
+import org.ВадькаVPN.vpn.protocol.Statistics
+import org.ВадькаVPN.vpn.protocol.VpnException
+import org.ВадькаVPN.vpn.protocol.VpnStartException
+import org.ВадькаVPN.vpn.util.LibraryLoader.loadSharedLibrary
+import org.ВадькаVPN.vpn.util.Log
+import org.ВадькаVPN.vpn.util.asSequence
+import org.ВадькаVPN.vpn.util.net.InetEndpoint
+import org.ВадькаVPN.vpn.util.net.InetNetwork
+import org.ВадькаVPN.vpn.util.net.parseInetAddress
+import org.ВадькаVPN.vpn.util.optStringOrNull
 import org.json.JSONObject
 
 private const val TAG = "Wireguard"

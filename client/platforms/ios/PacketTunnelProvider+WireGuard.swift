@@ -184,7 +184,7 @@ extension PacketTunnelProvider {
     }
 
     func stopWireguard(with reason: NEProviderStopReason, completionHandler: @escaping () -> Void) {
-        wg_log(.info, message: "Stopping tunnel: reason: \(reason.amneziaDescription)")
+        wg_log(.info, message: "Stopping tunnel: reason: \(reason.ВадькаVPNDescription)")
 
         wgAdapter?.stop { error in
             ErrorNotifier.removeLastErrorFile()

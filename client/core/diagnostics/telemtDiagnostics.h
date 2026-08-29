@@ -5,7 +5,7 @@
 
 #include <QString>
 
-namespace amnezia
+namespace ВадькаVPN
 {
     struct TelemtDiagnostics : ContainerDiagnostics
     {
@@ -15,6 +15,6 @@ namespace amnezia
         QString statsEndpoint;
     };
 
-} // namespace amnezia
+} // namespace ВадькаVPN
 
 #endif // TELEMTDIAGNOSTICS_H

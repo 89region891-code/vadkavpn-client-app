@@ -1,5 +1,5 @@
-#ifndef AMNEZIA_APPLICATION_H
-#define AMNEZIA_APPLICATION_H
+#ifndef ВадькаVPN_APPLICATION_H
+#define ВадькаVPN_APPLICATION_H
 
 #include <QCommandLineParser>
 #include <QNetworkAccessManager>
@@ -20,20 +20,20 @@
 #include "ui/models/containerProps.h"
 #include "ui/models/protocolProps.h"
 
-#define amnApp (static_cast<AmneziaApplication *>(QCoreApplication::instance()))
+#define amnApp (static_cast<ВадькаVPNApplication *>(QCoreApplication::instance()))
 
 #if defined(Q_OS_ANDROID) || defined(Q_OS_IOS)
-  #define AMNEZIA_BASE_CLASS QGuiApplication
+  #define ВадькаVPN_BASE_CLASS QGuiApplication
 #else
-  #define AMNEZIA_BASE_CLASS QApplication
+  #define ВадькаVPN_BASE_CLASS QApplication
 #endif
 
-class AmneziaApplication : public AMNEZIA_BASE_CLASS
+class ВадькаVPNApplication : public ВадькаVPN_BASE_CLASS
 {
     Q_OBJECT
 public:
-    AmneziaApplication(int &argc, char *argv[]);
-    virtual ~AmneziaApplication();
+    ВадькаVPNApplication(int &argc, char *argv[]);
+    virtual ~ВадькаVPNApplication();
 
     void init();
     void registerTypes();
@@ -77,4 +77,4 @@ protected:
     bool eventFilter(QObject *watched, QEvent *event) override;
 };
 
-#endif // AMNEZIA_APPLICATION_H
+#endif // ВадькаVPN_APPLICATION_H

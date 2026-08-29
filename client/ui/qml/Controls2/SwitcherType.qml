@@ -10,30 +10,30 @@ Switch {
     id: root
 
     property alias descriptionText: description.text
-    property string descriptionTextColor: AmneziaStyle.color.mutedGray
-    property string descriptionTextDisabledColor: AmneziaStyle.color.charcoalGray
+    property string descriptionTextColor: ВадькаVPNStyle.color.mutedGray
+    property string descriptionTextDisabledColor: ВадькаVPNStyle.color.charcoalGray
 
-    property string textColor: AmneziaStyle.color.paleGray
-    property string textDisabledColor: AmneziaStyle.color.mutedGray
+    property string textColor: ВадькаVPNStyle.color.paleGray
+    property string textDisabledColor: ВадькаVPNStyle.color.mutedGray
 
-    property string checkedIndicatorColor: AmneziaStyle.color.richBrown
-    property string defaultIndicatorColor: AmneziaStyle.color.transparent
-    property string checkedDisabledIndicatorColor: AmneziaStyle.color.deepBrown
+    property string checkedIndicatorColor: ВадькаVPNStyle.color.richBrown
+    property string defaultIndicatorColor: ВадькаVPNStyle.color.transparent
+    property string checkedDisabledIndicatorColor: ВадькаVPNStyle.color.deepBrown
 
-    property string borderFocusedColor: AmneziaStyle.color.paleGray
+    property string borderFocusedColor: ВадькаVPNStyle.color.paleGray
     property int borderFocusedWidth: 1
 
-    property string checkedIndicatorBorderColor: AmneziaStyle.color.richBrown
-    property string defaultIndicatorBorderColor: AmneziaStyle.color.charcoalGray
-    property string checkedDisabledIndicatorBorderColor: AmneziaStyle.color.deepBrown
+    property string checkedIndicatorBorderColor: ВадькаVPNStyle.color.richBrown
+    property string defaultIndicatorBorderColor: ВадькаVPNStyle.color.charcoalGray
+    property string checkedDisabledIndicatorBorderColor: ВадькаVPNStyle.color.deepBrown
 
-    property string checkedInnerCircleColor: AmneziaStyle.color.goldenApricot
-    property string defaultInnerCircleColor: AmneziaStyle.color.paleGray
-    property string checkedDisabledInnerCircleColor: AmneziaStyle.color.mutedBrown
-    property string defaultDisabledInnerCircleColor: AmneziaStyle.color.charcoalGray
+    property string checkedInnerCircleColor: ВадькаVPNStyle.color.goldenApricot
+    property string defaultInnerCircleColor: ВадькаVPNStyle.color.paleGray
+    property string checkedDisabledInnerCircleColor: ВадькаVPNStyle.color.mutedBrown
+    property string defaultDisabledInnerCircleColor: ВадькаVPNStyle.color.charcoalGray
 
-    property string hoveredIndicatorBackgroundColor: AmneziaStyle.color.translucentWhite
-    property string defaultIndicatorBackgroundColor: AmneziaStyle.color.transparent
+    property string hoveredIndicatorBackgroundColor: ВадькаVPNStyle.color.translucentWhite
+    property string defaultIndicatorBackgroundColor: ВадькаVPNStyle.color.transparent
 
     property bool isFocusable: true
 

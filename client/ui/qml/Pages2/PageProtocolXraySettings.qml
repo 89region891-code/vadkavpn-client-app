@@ -77,7 +77,7 @@ PageType {
                 Layout.topMargin: 8
                 visible: !listView.enabled
                 wrapMode: Text.WordWrap
-                color: AmneziaStyle.color.paleGray
+                color: ВадькаVPNStyle.color.paleGray
                 font.pixelSize: 14
                 text: qsTr("You have read-only access to this server. XRay settings cannot be edited.")
             }
@@ -92,7 +92,7 @@ PageType {
                     Layout.fillWidth: true
                     headerText: qsTr("XRay VLESS settings")
                     descriptionLinkText: qsTr("More about settings")
-                    descriptionLinkUrl: "https://docs.amnezia.org"
+                    descriptionLinkUrl: "https://docs.ВадькаVPN.org"
                 }
 
                 ImageButtonType {
@@ -100,7 +100,7 @@ PageType {
                     implicitWidth: 40
                     implicitHeight: 40
                     image: "qrc:/images/controls/more-vertical.svg"
-                    imageColor: AmneziaStyle.color.paleGray
+                    imageColor: ВадькаVPNStyle.color.paleGray
                     onClicked: PageController.goToPage(PageEnum.PageProtocolXraySnapshots)
                 }
             }
@@ -248,7 +248,7 @@ PageType {
             LabelWithButtonType {
                 Layout.fillWidth: true
                 text: qsTr("Reset settings")
-                textColor: AmneziaStyle.color.vibrantRed
+                textColor: ВадькаVPNStyle.color.vibrantRed
                 visible: listView.enabled
                 clickedFunction: function() {
                     var yesButtonFunction = function() {

@@ -12,8 +12,8 @@ Item {
     property string headerText
     property string subtitleText // optional line under header (e.g. default value hint)
     property string hintText // optional (i) info tooltip next to the header (e.g. range / max / default)
-    property string headerTextDisabledColor: AmneziaStyle.color.charcoalGray
-    property string headerTextColor: AmneziaStyle.color.mutedGray
+    property string headerTextDisabledColor: ВадькаVPNStyle.color.charcoalGray
+    property string headerTextColor: ВадькаVPNStyle.color.mutedGray
 
     property alias errorText: errorField.text
     property bool checkEmptyText: false
@@ -25,17 +25,17 @@ Item {
 
     property alias textField: textField
     property alias placeholderText: textField.placeholderText
-    property string textFieldTextColor: AmneziaStyle.color.paleGray
-    property string textFieldTextDisabledColor: AmneziaStyle.color.mutedGray
+    property string textFieldTextColor: ВадькаVPNStyle.color.paleGray
+    property string textFieldTextDisabledColor: ВадькаVPNStyle.color.mutedGray
 
     property bool textFieldEditable: true
 
-    property string borderColor: AmneziaStyle.color.slateGray
-    property string borderFocusedColor: AmneziaStyle.color.paleGray
+    property string borderColor: ВадькаVPNStyle.color.slateGray
+    property string borderFocusedColor: ВадькаVPNStyle.color.paleGray
 
-    property string backgroundColor: AmneziaStyle.color.onyxBlack
-    property string backgroundDisabledColor: AmneziaStyle.color.transparent
-    property string bgBorderHoveredColor: AmneziaStyle.color.charcoalGray
+    property string backgroundColor: ВадькаVPNStyle.color.onyxBlack
+    property string backgroundDisabledColor: ВадькаVPNStyle.color.transparent
+    property string bgBorderHoveredColor: ВадькаVPNStyle.color.charcoalGray
 
     implicitWidth: content.implicitWidth
     implicitHeight: content.implicitHeight
@@ -90,7 +90,7 @@ Item {
                     SmallTextType {
                         text: root.subtitleText
                         visible: root.subtitleText !== ""
-                        color: AmneziaStyle.color.charcoalGray
+                        color: ВадькаVPNStyle.color.charcoalGray
                         font.pixelSize: 13
                         Layout.fillWidth: true
                         Layout.topMargin: visible ? 2 : 0
@@ -114,10 +114,10 @@ Item {
 
                         inputMethodHints: Qt.ImhNoAutoUppercase | Qt.ImhSensitiveData | Qt.ImhNoPredictiveText
 
-                        placeholderTextColor: AmneziaStyle.color.charcoalGray
+                        placeholderTextColor: ВадькаVPNStyle.color.charcoalGray
 
-                        selectionColor:  AmneziaStyle.color.richBrown
-                        selectedTextColor: AmneziaStyle.color.paleGray
+                        selectionColor:  ВадькаVPNStyle.color.richBrown
+                        selectedTextColor: ВадькаVPNStyle.color.paleGray
 
                         font.pixelSize: 16
                         font.weight: 400
@@ -182,7 +182,7 @@ Item {
 
             text: root.errorText
             visible: root.errorText !== ""
-            color: AmneziaStyle.color.vibrantRed
+            color: ВадькаVPNStyle.color.vibrantRed
 
             Layout.fillWidth: true
         }
@@ -241,7 +241,7 @@ Item {
         hoverEnabled: true
 
         image: "qrc:/images/controls/info.svg"
-        imageColor: hintTooltip.opened ? AmneziaStyle.color.paleGray : AmneziaStyle.color.mutedGray
+        imageColor: hintTooltip.opened ? ВадькаVPNStyle.color.paleGray : ВадькаVPNStyle.color.mutedGray
 
         anchors.top: content.top
         anchors.right: content.right
@@ -265,15 +265,15 @@ Item {
 
             contentItem: Text {
                 text: root.hintText
-                color: AmneziaStyle.color.paleGray
+                color: ВадькаVPNStyle.color.paleGray
                 wrapMode: Text.WordWrap
                 font.pixelSize: 14
                 font.family: "PT Root UI VF"
             }
             background: Rectangle {
-                color: AmneziaStyle.color.slateGray
+                color: ВадькаVPNStyle.color.slateGray
                 radius: 12
-                border.color: AmneziaStyle.color.charcoalGray
+                border.color: ВадькаVPNStyle.color.charcoalGray
                 border.width: 1
             }
         }

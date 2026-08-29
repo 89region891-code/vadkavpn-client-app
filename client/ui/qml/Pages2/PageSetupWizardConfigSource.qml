@@ -106,11 +106,11 @@ PageType {
                             clickedFunction: function() {
                                 var fileName = ""
                                 if (GC.isMobile()) {
-                                    fileName = "AmneziaVPN.log"
+                                    fileName = "ВадькаVPNVPN.log"
                                 } else {
                                     fileName = SystemController.getFileName(qsTr("Save"),
                                                                             qsTr("Logs files (*.log)"),
-                                                                            StandardPaths.standardLocations(StandardPaths.DocumentsLocation) + "/AmneziaVPN",
+                                                                            StandardPaths.standardLocations(StandardPaths.DocumentsLocation) + "/ВадькаVPNVPN",
                                                                             true,
                                                                             ".log")
                                 }
@@ -134,7 +134,7 @@ PageType {
                             descriptionOnTop: true
 
                             rightImageSource: "qrc:/images/controls/copy.svg"
-                            rightImageColor: AmneziaStyle.color.paleGray
+                            rightImageColor: ВадькаVPNStyle.color.paleGray
 
                             visible: SettingsController.getInstallationUuid() !== ""
                             clickedFunction: function() {
@@ -203,7 +203,7 @@ PageType {
                 Layout.leftMargin: 16
                 Layout.bottomMargin: 24
 
-                color: AmneziaStyle.color.charcoalGray
+                color: ВадькаVPNStyle.color.charcoalGray
                 text: qsTr("Other connection options")
             }
         }
@@ -224,8 +224,8 @@ PageType {
                 headerText: title
                 bodyText: description
 
-                showRecommendedBadge: featuredAmneziaConnection
-                recommendedText: featuredAmneziaConnection ? qsTr("Recommended") : ""
+                showRecommendedBadge: featuredВадькаVPNConnection
+                recommendedText: featuredВадькаVPNConnection ? qsTr("Recommended") : ""
 
                 rightImageSource: "qrc:/images/controls/chevron-right.svg"
                 leftImageSource: imageSource
@@ -251,13 +251,13 @@ PageType {
 
                 visible: Qt.platform.os !== "ios" && !IsMacOsNeBuild
 
-                defaultColor: AmneziaStyle.color.transparent
-                hoveredColor: AmneziaStyle.color.translucentWhite
-                pressedColor: AmneziaStyle.color.sheerWhite
-                disabledColor: AmneziaStyle.color.mutedGray
-                textColor: AmneziaStyle.color.goldenApricot
+                defaultColor: ВадькаVPNStyle.color.transparent
+                hoveredColor: ВадькаVPNStyle.color.translucentWhite
+                pressedColor: ВадькаVPNStyle.color.sheerWhite
+                disabledColor: ВадькаVPNStyle.color.mutedGray
+                textColor: ВадькаVPNStyle.color.goldenApricot
 
-                text: qsTr("Site Amnezia")
+                text: qsTr("Site ВадькаVPN")
 
                 rightImageSource: "qrc:/images/controls/external-link.svg"
 
@@ -269,7 +269,7 @@ PageType {
     }
 
     property list<QtObject> variants: [
-        amneziaVpn,
+        ВадькаVPNVpn,
         selfHostVpn,
         backupRestore,
         fileOpen,
@@ -279,12 +279,12 @@ PageType {
     ]
     
     QtObject {
-        id: amneziaVpn
+        id: ВадькаVPNVpn
 
-        property string title: qsTr("VPN by Amnezia")
+        property string title: qsTr("VPN by ВадькаVPN")
         property string description: qsTr("The easiest way to connect to the VPN")
-        property string imageSource: "qrc:/images/controls/amnezia.svg"
-        property bool featuredAmneziaConnection: true
+        property string imageSource: "qrc:/images/controls/ВадькаVPN.svg"
+        property bool featuredВадькаVPNConnection: true
         property bool isVisible: true
         property var handler: function() {
             PageController.showBusyIndicator(true)
@@ -299,9 +299,9 @@ PageType {
     QtObject {
         id: selfHostVpn
 
-        property bool featuredAmneziaConnection: false
+        property bool featuredВадькаVPNConnection: false
         property string title: qsTr("Self-hosted VPN")
-        property string description: qsTr("Configure Amnezia VPN on your own server")
+        property string description: qsTr("Configure ВадькаVPN VPN on your own server")
         property string imageSource: "qrc:/images/controls/server.svg"
         property bool isVisible: true
         property var handler: function() {
@@ -312,7 +312,7 @@ PageType {
     QtObject {
         id: backupRestore
 
-        property bool featuredAmneziaConnection: false
+        property bool featuredВадькаVPNConnection: false
         property string title: qsTr("Restore from backup")
         property string description: qsTr("")
         property string imageSource: "qrc:/images/controls/archive-restore.svg"
@@ -338,7 +338,7 @@ PageType {
     QtObject {
         id: fileOpen
 
-        property bool featuredAmneziaConnection: false
+        property bool featuredВадькаVPNConnection: false
         property string title: qsTr("File with connection settings")
         property string description: qsTr("")
         property string imageSource: "qrc:/images/controls/folder-search-2.svg"
@@ -357,7 +357,7 @@ PageType {
     QtObject {
         id: qrScan
 
-        property bool featuredAmneziaConnection: false
+        property bool featuredВадькаVPNConnection: false
         property string title: qsTr("QR code")
         property string description: qsTr("")
         property string imageSource: "qrc:/images/controls/scan-line.svg"
@@ -373,7 +373,7 @@ PageType {
     QtObject {
         id: restorePurchases
 
-        property bool featuredAmneziaConnection: false
+        property bool featuredВадькаVPNConnection: false
         property string title: qsTr("Restore purchases")
         property string description: qsTr("")
         property string imageSource: "qrc:/images/controls/refresh-cw.svg"
@@ -388,7 +388,7 @@ PageType {
     QtObject {
         id: siteLink
 
-        property bool featuredAmneziaConnection: false
+        property bool featuredВадькаVPNConnection: false
         property string title: qsTr("I have nothing")
         property string description: qsTr("")
         property string imageSource: "qrc:/images/controls/help-circle.svg"

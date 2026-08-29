@@ -97,7 +97,7 @@ ErrorCode OpenVpnProtocol::prepare()
 
         return ErrorCode::NoError;
     }, [] () {
-        return ErrorCode::AmneziaServiceConnectionFailed;
+        return ErrorCode::ВадькаVPNServiceConnectionFailed;
     });
 }
 
@@ -186,12 +186,12 @@ ErrorCode OpenVpnProtocol::start()
         return lastError();
     }
 
-#ifdef AMNEZIA_DESKTOP
+#ifdef ВадькаVPN_DESKTOP
     const ErrorCode res = IpcClient::withInterface([&](QSharedPointer<IpcInterfaceReplica> iface) {
-        QString ip = NetworkUtilities::getIPAddress(m_configData.value(amnezia::configKey::hostName).toString());
+        QString ip = NetworkUtilities::getIPAddress(m_configData.value(ВадькаVPN::configKey::hostName).toString());
         QRemoteObjectPendingReply<bool> reply = iface->addKillSwitchAllowedRange(QStringList(ip));
         if (!reply.waitForFinished(1000) || !reply.returnValue()) {
-            return ErrorCode::AmneziaServiceConnectionFailed;
+            return ErrorCode::ВадькаVPNServiceConnectionFailed;
         }
         return ErrorCode::NoError;
     });
@@ -247,8 +247,8 @@ ErrorCode OpenVpnProtocol::start()
     m_openVpnProcess = IpcClient::CreatePrivilegedProcess();
 
     if (!m_openVpnProcess) {
-        setLastError(ErrorCode::AmneziaServiceConnectionFailed);
-        return ErrorCode::AmneziaServiceConnectionFailed;
+        setLastError(ErrorCode::ВадькаVPNServiceConnectionFailed);
+        return ErrorCode::ВадькаVPNServiceConnectionFailed;
     }
 
     m_openVpnProcess->setProgram(PermittedProcess::OpenVPN);
@@ -379,7 +379,7 @@ void OpenVpnProtocol::updateVpnGateway(const QString &line)
                                 m_configData.insert("vpnAdapterIndex", netInterfaces.at(i).index());
                                 m_configData.insert("vpnGateway", m_vpnGateway);
                                 m_configData.insert("vpnServer",
-                                                    NetworkUtilities::getIPAddress(m_configData.value(amnezia::configKey::hostName).toString()));
+                                                    NetworkUtilities::getIPAddress(m_configData.value(ВадькаVPN::configKey::hostName).toString()));
                                 iface->enablePeerTraffic(m_configData);
                             }
                         }
@@ -390,7 +390,7 @@ void OpenVpnProtocol::updateVpnGateway(const QString &line)
                 // killSwitch toggle
                 if (QVariant(m_configData.value(configKey::killSwitchOption).toString()).toBool()) {
                     m_configData.insert("vpnServer",
-                                        NetworkUtilities::getIPAddress(m_configData.value(amnezia::configKey::hostName).toString()));
+                                        NetworkUtilities::getIPAddress(m_configData.value(ВадькаVPN::configKey::hostName).toString()));
                     IpcClient::withInterface([&](QSharedPointer<IpcInterfaceReplica> iface) {
                         QRemoteObjectPendingReply<bool> reply = iface->enableKillSwitch(m_configData, 0);
                         if (!reply.waitForFinished(1000) || !reply.returnValue()) {

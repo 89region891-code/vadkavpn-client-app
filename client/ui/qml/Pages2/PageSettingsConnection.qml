@@ -57,18 +57,18 @@ PageType {
             width: listView.width
 
             SwitcherType {
-                id: amneziaDnsSwitch
+                id: ВадькаVPNDnsSwitch
 
                 Layout.fillWidth: true
                 Layout.margins: 16
 
-                text: qsTr("Use AmneziaDNS")
-                descriptionText: qsTr("If AmneziaDNS is installed on the server")
+                text: qsTr("Use ВадькаVPNDNS")
+                descriptionText: qsTr("If ВадькаVPNDNS is installed on the server")
 
-                checked: SettingsController.isAmneziaDnsEnabled()
+                checked: SettingsController.isВадькаVPNDnsEnabled()
                 onToggled: function() {
-                    if (checked !== SettingsController.isAmneziaDnsEnabled()) {
-                        SettingsController.toggleAmneziaDns(checked)
+                    if (checked !== SettingsController.isВадькаVPNDnsEnabled()) {
+                        SettingsController.toggleВадькаVPNDns(checked)
                     }
                 }
             }
@@ -81,7 +81,7 @@ PageType {
                 Layout.fillWidth: true
 
                 text: qsTr("DNS servers")
-                descriptionText: qsTr("When AmneziaDNS is not used or installed")
+                descriptionText: qsTr("When ВадькаVPNDNS is not used or installed")
                 rightImageSource: "qrc:/images/controls/chevron-right.svg"
 
                 clickedFunction: function() {

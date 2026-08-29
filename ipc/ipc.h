@@ -8,9 +8,9 @@
 
 #include "../client/core/utils/utilities.h"
 
-#define IPC_SERVICE_URL "local:AmneziaVpnIpcInterface"
+#define IPC_SERVICE_URL "local:ВадькаVPNVpnIpcInterface"
 
-namespace amnezia {
+namespace ВадькаVPN {
 
 enum PermittedProcess {
     Invalid,
@@ -111,6 +111,6 @@ inline QStringList sanitizeArguments(PermittedProcess proc, const QStringList &a
     return sanitized;
 }
 
-} // namespace amnezia
+} // namespace ВадькаVPN
 
 #endif // IPC_H

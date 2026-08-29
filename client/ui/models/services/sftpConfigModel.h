@@ -27,17 +27,17 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
 
 public slots:
-    void updateModel(amnezia::DockerContainer container, const amnezia::SftpProtocolConfig &protocolConfig);
-    amnezia::SftpProtocolConfig getProtocolConfig();
+    void updateModel(ВадькаVPN::DockerContainer container, const ВадькаVPN::SftpProtocolConfig &protocolConfig);
+    ВадькаVPN::SftpProtocolConfig getProtocolConfig();
 
 protected:
     QHash<int, QByteArray> roleNames() const override;
 
 private:
-    amnezia::DockerContainer m_container;
-    amnezia::SftpProtocolConfig m_protocolConfig;
+    ВадькаVPN::DockerContainer m_container;
+    ВадькаVPN::SftpProtocolConfig m_protocolConfig;
     
-    void applyDefaults(amnezia::SftpProtocolConfig& config);
+    void applyDefaults(ВадькаVPN::SftpProtocolConfig& config);
 };
 
 #endif // SFTPCONFIGMODEL_H

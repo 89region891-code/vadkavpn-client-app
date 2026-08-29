@@ -1,7 +1,7 @@
 #!/bin/sh
 # Do not use set -e: Telemt / curl / kill edge cases should not abort the whole configure step.
 
-echo "[*] Amnezia Telemt: configure script start"
+echo "[*] ВадькаVPN Telemt: configure script start"
 mkdir -p /data/tlsfront
 
 # Secret: regenerate (fresh install) -> env var -> saved file -> openssl
@@ -17,11 +17,11 @@ fi
 # Must be exactly 32 hex chars
 echo "$SECRET" | grep -qE '^[0-9a-fA-F]{32}$' || SECRET=$(openssl rand -hex 16)
 
-# Build config.toml (other variables substituted on the host by Amnezia before upload)
+# Build config.toml (other variables substituted on the host by ВадькаVPN before upload)
 rm -f /data/config.toml
 
 {
-    echo "### Amnezia Telemt — generated"
+    echo "### ВадькаVPN Telemt — generated"
     echo "[general]"
     echo "use_middle_proxy = $TELEMT_USE_MIDDLE_PROXY"
     echo "log_level = \"normal\""

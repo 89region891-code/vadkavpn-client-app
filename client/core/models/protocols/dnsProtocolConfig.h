@@ -3,7 +3,7 @@
 
 #include <QJsonObject>
 
-namespace amnezia
+namespace ВадькаVPN
 {
 
 struct DnsProtocolConfig {
@@ -11,7 +11,7 @@ struct DnsProtocolConfig {
     static DnsProtocolConfig fromJson(const QJsonObject& json);
 };
 
-} // namespace amnezia
+} // namespace ВадькаVPN
 
 #endif // DNSPROTOCOLCONFIG_H
 

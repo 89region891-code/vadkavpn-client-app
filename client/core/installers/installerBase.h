@@ -18,12 +18,12 @@ class InstallerBase : public QObject
 public:
     explicit InstallerBase(QObject *parent = nullptr);
 
-    virtual amnezia::ContainerConfig generateConfig(amnezia::DockerContainer container, int port, amnezia::TransportProto transportProto);
+    virtual ВадькаVPN::ContainerConfig generateConfig(ВадькаVPN::DockerContainer container, int port, ВадькаVPN::TransportProto transportProto);
 
-    virtual amnezia::ErrorCode extractConfigFromContainer(amnezia::DockerContainer container, const amnezia::ServerCredentials &credentials,
-                                                 SshSession* sshSession, amnezia::ContainerConfig &config);
+    virtual ВадькаVPN::ErrorCode extractConfigFromContainer(ВадькаVPN::DockerContainer container, const ВадькаVPN::ServerCredentials &credentials,
+                                                 SshSession* sshSession, ВадькаVPN::ContainerConfig &config);
 
-    amnezia::ContainerConfig createBaseConfig(amnezia::DockerContainer container, int port, amnezia::TransportProto transportProto);
+    ВадькаVPN::ContainerConfig createBaseConfig(ВадькаVPN::DockerContainer container, int port, ВадькаVPN::TransportProto transportProto);
 
 protected:
 };

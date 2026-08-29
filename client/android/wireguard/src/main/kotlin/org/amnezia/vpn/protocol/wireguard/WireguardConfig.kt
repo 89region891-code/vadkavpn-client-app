@@ -1,9 +1,9 @@
-package org.amnezia.vpn.protocol.wireguard
+package org.ВадькаVPN.vpn.protocol.wireguard
 
 import android.util.Base64
-import org.amnezia.vpn.protocol.BadConfigException
-import org.amnezia.vpn.protocol.ProtocolConfig
-import org.amnezia.vpn.util.net.InetEndpoint
+import org.ВадькаVPN.vpn.protocol.BadConfigException
+import org.ВадькаVPN.vpn.protocol.ProtocolConfig
+import org.ВадькаVPN.vpn.util.net.InetEndpoint
 
 private const val WIREGUARD_DEFAULT_MTU = 1280
 
@@ -235,7 +235,7 @@ open class WireguardConfig protected constructor(
 @OptIn(ExperimentalStdlibApi::class)
 internal fun String.base64ToHex(): String = Base64.decode(this, Base64.DEFAULT).toHexString()
 
-/** Converts awg-quick on/off (and 0/1/true/false) to UAPI 1/0 for amneziawg-go ParseBool. */
+/** Converts awg-quick on/off (and 0/1/true/false) to UAPI 1/0 for ВадькаVPNwg-go ParseBool. */
 internal fun String.toUapiBool(): String = when (trim().lowercase()) {
     "on", "1", "true", "t", "yes" -> "1"
     else -> "0"

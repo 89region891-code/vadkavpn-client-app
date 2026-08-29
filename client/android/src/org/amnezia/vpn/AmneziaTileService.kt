@@ -1,4 +1,4 @@
-package org.amnezia.vpn
+package org.ВадькаVPN.vpn
 
 import android.annotation.SuppressLint
 import android.app.PendingIntent
@@ -19,19 +19,19 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import org.amnezia.vpn.protocol.ProtocolState
-import org.amnezia.vpn.protocol.ProtocolState.CONNECTED
-import org.amnezia.vpn.protocol.ProtocolState.CONNECTING
-import org.amnezia.vpn.protocol.ProtocolState.DISCONNECTED
-import org.amnezia.vpn.protocol.ProtocolState.DISCONNECTING
-import org.amnezia.vpn.protocol.ProtocolState.RECONNECTING
-import org.amnezia.vpn.protocol.ProtocolState.UNKNOWN
-import org.amnezia.vpn.util.Log
+import org.ВадькаVPN.vpn.protocol.ProtocolState
+import org.ВадькаVPN.vpn.protocol.ProtocolState.CONNECTED
+import org.ВадькаVPN.vpn.protocol.ProtocolState.CONNECTING
+import org.ВадькаVPN.vpn.protocol.ProtocolState.DISCONNECTED
+import org.ВадькаVPN.vpn.protocol.ProtocolState.DISCONNECTING
+import org.ВадькаVPN.vpn.protocol.ProtocolState.RECONNECTING
+import org.ВадькаVPN.vpn.protocol.ProtocolState.UNKNOWN
+import org.ВадькаVPN.vpn.util.Log
 
-private const val TAG = "AmneziaTileService"
-private const val DEFAULT_TILE_LABEL = "AmneziaVPN"
+private const val TAG = "ВадькаVPNTileService"
+private const val DEFAULT_TILE_LABEL = "ВадькаVPNVPN"
 
-class AmneziaTileService : TileService() {
+class ВадькаVPNTileService : TileService() {
 
     private lateinit var scope: CoroutineScope
     private var vpnStateListeningJob: Job? = null
@@ -71,7 +71,7 @@ class AmneziaTileService : TileService() {
 
     override fun onCreate() {
         super.onCreate()
-        Log.d(TAG, "Create Amnezia Tile Service")
+        Log.d(TAG, "Create ВадькаVPN Tile Service")
         scope = CoroutineScope(SupervisorJob())
         vpnServiceMessenger = IpcMessenger(
             "VpnService",
@@ -80,7 +80,7 @@ class AmneziaTileService : TileService() {
     }
 
     override fun onDestroy() {
-        Log.d(TAG, "Destroy Amnezia Tile Service")
+        Log.d(TAG, "Destroy ВадькаVPN Tile Service")
         doUnbindService()
         scope.cancel()
         super.onDestroy()
@@ -91,7 +91,7 @@ class AmneziaTileService : TileService() {
         try {
             super.onBind(intent)
         } catch (e: Throwable) {
-            Log.e(TAG, "Failed to bind AmneziaTileService: $e")
+            Log.e(TAG, "Failed to bind ВадькаVPNTileService: $e")
             null
         }
 
@@ -101,7 +101,7 @@ class AmneziaTileService : TileService() {
             Log.d(TAG, "Start listening")
             vpnProto = VpnStateStore.getVpnState().vpnProto
             vpnProto.also { proto ->
-                if (proto != null && AmneziaVpnService.isRunning(applicationContext, proto.processName)) {
+                if (proto != null && ВадькаVPNVpnService.isRunning(applicationContext, proto.processName)) {
                     Log.d(TAG, "Vpn service is running")
                     doBindService()
                 } else {
@@ -145,7 +145,7 @@ class AmneziaTileService : TileService() {
             }
         } else {
             Log.d(TAG, "Start Activity")
-            Intent(this, AmneziaActivity::class.java).apply {
+            Intent(this, ВадькаVPNActivity::class.java).apply {
                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             }.also {
                 startActivityAndCollapseCompat(it)

@@ -120,7 +120,7 @@
 			<key>UTTypeIconFiles</key>
 			<array/>
 			<key>UTTypeIdentifier</key>
-			<string>${BUILD_IOS_APP_IDENTIFIER}.amnezia-config</string>
+			<string>${BUILD_IOS_APP_IDENTIFIER}.ВадькаVPN-config</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
@@ -213,7 +213,7 @@
                         <string>Alternate</string>
                         <key>LSItemContentTypes</key>
                         <array>
-                                <string>${BUILD_IOS_APP_IDENTIFIER}.amnezia-config</string>
+                                <string>${BUILD_IOS_APP_IDENTIFIER}.ВадькаVPN-config</string>
                                 <string>${BUILD_IOS_APP_IDENTIFIER}.wireguard-config</string>
                                 <string>${BUILD_IOS_APP_IDENTIFIER}.openvpn-config</string>
                                 <string>${BUILD_IOS_APP_IDENTIFIER}.backup-config</string>

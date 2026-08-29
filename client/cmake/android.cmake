@@ -49,14 +49,14 @@ set(SOURCES ${SOURCES}
 
 
 find_package(awg-android REQUIRED)
-set(LIBS ${LIBS} amnezia::awg-android)
-set_property(TARGET ${PROJECT} APPEND PROPERTY QT_ANDROID_EXTRA_LIBS ${AMNEZIA_ANDROID_LIBWG_PATH} ${AMNEZIA_ANDROID_LIBWG_QUICK_PATH})
+set(LIBS ${LIBS} ВадькаVPN::awg-android)
+set_property(TARGET ${PROJECT} APPEND PROPERTY QT_ANDROID_EXTRA_LIBS ${ВадькаVPN_ANDROID_LIBWG_PATH} ${ВадькаVPN_ANDROID_LIBWG_QUICK_PATH})
 
-find_package(amnezia-libxray REQUIRED)
-file(COPY ${AMNEZIA_LIBXRAY_PATH} DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/android/xray/libXray)
+find_package(ВадькаVPN-libxray REQUIRED)
+file(COPY ${ВадькаVPN_LIBXRAY_PATH} DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/android/xray/libXray)
 
 find_package(openvpn-pt-android REQUIRED)
-set(LIBS ${LIBS} amnezia::openvpn-pt-android)
+set(LIBS ${LIBS} ВадькаVPN::openvpn-pt-android)
 set_property(TARGET ${PROJECT} APPEND PROPERTY QT_ANDROID_EXTRA_LIBS ${OPENVPN_PT_ANDROID_LIBCK_OVPN_PLUGIN_PATH})
 
 set(APP_ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/android)

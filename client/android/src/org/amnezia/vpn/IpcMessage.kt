@@ -1,4 +1,4 @@
-package org.amnezia.vpn
+package org.ВадькаVPN.vpn
 
 import android.os.Bundle
 import android.os.Message

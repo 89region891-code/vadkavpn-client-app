@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-# Debian-based image with Telemt binary (shell + jq for Amnezia configure scripts).
+# Debian-based image with Telemt binary (shell + jq for ВадькаVPN configure scripts).
 # Binary from https://github.com/telemt/telemt releases (same pattern as upstream Dockerfile minimal stage).
 
 FROM debian:12-slim
@@ -33,10 +33,10 @@ RUN set -eux; \
     strip --strip-unneeded /usr/local/bin/telemt || true; \
     rm -f "/tmp/${ASSET}" "/tmp/${ASSET}.sha256" /tmp/telemt
 
-RUN mkdir -p /opt/amnezia /data
-RUN printf '#!/bin/sh\ntail -f /dev/null\n' > /opt/amnezia/start.sh && \
-    chmod a+x /opt/amnezia/start.sh
+RUN mkdir -p /opt/ВадькаVPN /data
+RUN printf '#!/bin/sh\ntail -f /dev/null\n' > /opt/ВадькаVPN/start.sh && \
+    chmod a+x /opt/ВадькаVPN/start.sh
 
 VOLUME /data
-ENTRYPOINT ["/bin/sh", "/opt/amnezia/start.sh"]
+ENTRYPOINT ["/bin/sh", "/opt/ВадькаVPN/start.sh"]
 CMD [""]

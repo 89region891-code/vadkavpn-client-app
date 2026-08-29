@@ -1,13 +1,13 @@
 cmake_minimum_required(VERSION 3.25.0 FATAL_ERROR)
 
-set(PROJECT AmneziaVPN-service)
-project(${PROJECT} VERSION ${AMNEZIAVPN_VERSION})
+set(PROJECT ВадькаVPNVPN-service)
+project(${PROJECT} VERSION ${ВадькаVPNVPN_VERSION})
 
 if (APPLE)
     # CMAKE_INSTALL_BINDIR must be called before find_package(Qt6) for
     # Qt to configure prefixes properly
-    # FIXME: make Amnezia-service a bundle and remove this hack completely
-    set(CMAKE_INSTALL_BINDIR "AmneziaVPN.app/Contents/MacOS")
+    # FIXME: make ВадькаVPN-service a bundle and remove this hack completely
+    set(CMAKE_INSTALL_BINDIR "ВадькаVPNVPN.app/Contents/MacOS")
 endif()
 
 set(CMAKE_CXX_STANDARD 20)
@@ -123,8 +123,8 @@ set(RESOURCES)
 
 if(WIN32)
     configure_file(
-        ${CMAKE_CURRENT_LIST_DIR}/amneziavpn-service.rc.in
-        ${CMAKE_CURRENT_BINARY_DIR}/amneziavpn-service.rc
+        ${CMAKE_CURRENT_LIST_DIR}/ВадькаVPNvpn-service.rc.in
+        ${CMAKE_CURRENT_BINARY_DIR}/ВадькаVPNvpn-service.rc
     )
 
     set(HEADERS ${HEADERS}
@@ -168,7 +168,7 @@ if(WIN32)
     )
 
     set(RESOURCES ${RESOURCES}
-        ${CMAKE_CURRENT_BINARY_DIR}/amneziavpn-service.rc
+        ${CMAKE_CURRENT_BINARY_DIR}/ВадькаVPNvpn-service.rc
     )
 
     set(LIBS
@@ -291,8 +291,8 @@ add_executable(${PROJECT} ${SOURCES} ${HEADERS} ${RESOURCES})
 target_link_libraries(${PROJECT} PRIVATE Qt6::Core Qt6::Widgets Qt6::Network Qt6::RemoteObjects Qt6::Core5Compat Qt6::DBus Qt6::Concurrent ${LIBS})
 target_compile_definitions(${PROJECT} PRIVATE "MZ_$<UPPER_CASE:${MZ_PLATFORM_NAME}>")
 
-find_package(amnezia-xray-bindings REQUIRED)
-target_link_libraries(${PROJECT} PRIVATE amnezia::xray-bindings)
+find_package(ВадькаVPN-xray-bindings REQUIRED)
+target_link_libraries(${PROJECT} PRIVATE ВадькаVPN::xray-bindings)
 
 find_package(OpenSSL REQUIRED)
 target_link_libraries(${PROJECT} PRIVATE OpenSSL::SSL OpenSSL::Crypto)
@@ -331,7 +331,7 @@ qt_add_repc_sources(${PROJECT} ${CMAKE_CURRENT_LIST_DIR}/../../ipc/ipc_process_i
 if(APPLE)
     install(DIRECTORY ${CMAKE_SOURCE_DIR}/deploy/data/macos/pf
         DESTINATION ${CMAKE_INSTALL_BINDIR}
-        COMPONENT AmneziaVPN
+        COMPONENT ВадькаVPNVPN
     )
     add_custom_command(TARGET ${PROJECT} POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E $<IF:$<CONFIG:Debug>,copy_directory,true>
@@ -344,7 +344,7 @@ endif()
 # install non-linked dependencies
 if(WIN32)
     find_package(awg-windows REQUIRED)
-    list(APPEND CONAN_EXECS $<TARGET_FILE:amnezia::awg-windows>)
+    list(APPEND CONAN_EXECS $<TARGET_FILE:ВадькаVPN::awg-windows>)
 
     find_package(wintun REQUIRED)
     list(APPEND CONAN_BINS $<TARGET_FILE:zx2c4::wintun>)
@@ -352,7 +352,7 @@ if(WIN32)
     list(APPEND CONAN_BINS $<TARGET_FILE:OpenSSL::SSL> $<TARGET_FILE:OpenSSL::Crypto>)
 else()
     find_package(awg-go REQUIRED)
-    list(APPEND CONAN_EXECS $<TARGET_FILE:amnezia::awg-go>)
+    list(APPEND CONAN_EXECS $<TARGET_FILE:ВадькаVPN::awg-go>)
 endif()
 
 find_package(openvpn REQUIRED)
@@ -382,7 +382,7 @@ if(LINUX)
 elseif(APPLE)
     file(GENERATE OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/set_openvpn_rpath.cmake CONTENT
 [=[
-set(ovpn "$<TARGET_FILE_DIR:AmneziaVPN-service>/openvpn")
+set(ovpn "$<TARGET_FILE_DIR:ВадькаVPNVPN-service>/openvpn")
 set(dir "$<TARGET_FILE_DIR:OpenSSL::SSL>")
 execute_process(COMMAND install_name_tool -delete_rpath "${dir}" "${ovpn}" ERROR_QUIET)
 execute_process(COMMAND install_name_tool -add_rpath "${dir}" "${ovpn}")
@@ -398,7 +398,7 @@ if(WIN32)
     # to the files so just omit it for it
     install(FILES ${CONAN_EXECS}
         DESTINATION ${CMAKE_INSTALL_BINDIR}
-        COMPONENT AmneziaVPN
+        COMPONENT ВадькаVPNVPN
     )
 else()
     set(CONAN_EXECS_INSTALL ${CONAN_EXECS})
@@ -407,7 +407,7 @@ else()
     endif()
     install(FILES ${CONAN_EXECS_INSTALL}
         DESTINATION ${CMAKE_INSTALL_BINDIR}
-        COMPONENT AmneziaVPN
+        COMPONENT ВадькаVPNVPN
         PERMISSIONS
             OWNER_READ OWNER_EXECUTE
             GROUP_READ GROUP_EXECUTE
@@ -416,7 +416,7 @@ else()
 endif()
 install(FILES ${CONAN_BINS}
     DESTINATION ${CMAKE_INSTALL_BINDIR}
-    COMPONENT AmneziaVPN
+    COMPONENT ВадькаVPNVPN
 )
 
 # install openvpn via the service's dep set to ship its openssl, then
@@ -428,7 +428,7 @@ if(LINUX)
             OWNER_READ OWNER_EXECUTE
             GROUP_READ GROUP_EXECUTE
             WORLD_READ WORLD_EXECUTE
-        COMPONENT AmneziaVPN
+        COMPONENT ВадькаVPNVPN
     )
     install(CODE "
         set(_ovpn \"\$ENV{DESTDIR}\${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_BINDIR}/openvpn\")
@@ -438,7 +438,7 @@ if(LINUX)
         file(CHMOD \"\${_ovpn}\" PERMISSIONS
             OWNER_READ OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
     "
-        COMPONENT AmneziaVPN
+        COMPONENT ВадькаVPNVPN
     )
 elseif(APPLE)
     install(CODE "
@@ -446,7 +446,7 @@ elseif(APPLE)
         execute_process(COMMAND install_name_tool -delete_rpath \"$<TARGET_FILE_DIR:OpenSSL::SSL>\" \"\${_ovpn}\" ERROR_QUIET)
         execute_process(COMMAND install_name_tool -add_rpath \"@executable_path/../Frameworks\" \"\${_ovpn}\")
     "
-        COMPONENT AmneziaVPN
+        COMPONENT ВадькаVPNVPN
     )
 endif()
 
@@ -460,7 +460,7 @@ if (WIN32)
     )
     install(DIRECTORY "${TAP_WINDOWS6_BIN}/"
         DESTINATION "${CMAKE_INSTALL_BINDIR}/tap"
-        COMPONENT AmneziaVPN
+        COMPONENT ВадькаVPNVPN
     )
 
     find_package(win-split-tunnel REQUIRED)
@@ -471,7 +471,7 @@ if (WIN32)
     )
     install(DIRECTORY "${WIN_SPLIT_TUNNEL_BIN}/"
         DESTINATION ${CMAKE_INSTALL_BINDIR}
-        COMPONENT AmneziaVPN
+        COMPONENT ВадькаVPNVPN
     )
 endif()
 
@@ -479,7 +479,7 @@ endif()
 install(TARGETS ${PROJECT}
     DESTINATION ${CMAKE_INSTALL_BINDIR}
     RUNTIME_DEPENDENCY_SET service_deps
-    COMPONENT AmneziaVPN
+    COMPONENT ВадькаVPNVPN
 )
 
 if(APPLE)
@@ -502,7 +502,7 @@ install(RUNTIME_DEPENDENCY_SET service_deps
         [[^/lib.*]]
         [[^/usr/lib.*]]
     DIRECTORIES ${CONAN_RUNTIME_LIB_DIRS}
-    COMPONENT AmneziaVPN
+    COMPONENT ВадькаVPNVPN
     DESTINATION "${RUNTIME_DEPS_DIR}"
 )
 
@@ -512,5 +512,5 @@ qt_generate_deploy_app_script(
     NO_UNSUPPORTED_PLATFORM_ERROR
 )
 install(SCRIPT ${QT_DEPLOY_SCRIPT}
-    COMPONENT AmneziaVPN
+    COMPONENT ВадькаVPNVPN
 )

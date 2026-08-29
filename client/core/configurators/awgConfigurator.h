@@ -11,10 +11,10 @@ class AwgConfigurator : public WireguardConfigurator
 public:
     AwgConfigurator(SshSession* sshSession, QObject *parent = nullptr);
 
-    amnezia::ProtocolConfig createConfig(const amnezia::ServerCredentials &credentials, amnezia::DockerContainer container,
-                                const amnezia::ContainerConfig &containerConfig,
-                                const amnezia::DnsSettings &dnsSettings,
-                                amnezia::ErrorCode &errorCode) override;
+    ВадькаVPN::ProtocolConfig createConfig(const ВадькаVPN::ServerCredentials &credentials, ВадькаVPN::DockerContainer container,
+                                const ВадькаVPN::ContainerConfig &containerConfig,
+                                const ВадькаVPN::DnsSettings &dnsSettings,
+                                ВадькаVPN::ErrorCode &errorCode) override;
 };
 
 #endif // AWGCONFIGURATOR_H

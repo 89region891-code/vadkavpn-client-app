@@ -9,7 +9,7 @@
 #include <QHostAddress>
 #include <QRegularExpression>
 
-using namespace amnezia;
+using namespace ВадькаVPN;
 using namespace ProtocolUtils;
 
 XrayConfigModel::XrayConfigModel(QObject* parent) : QAbstractListModel(parent)
@@ -259,7 +259,7 @@ QVariant XrayConfigModel::data(const QModelIndex& index, int role) const
     return QVariant();
 }
 
-void XrayConfigModel::updateModel(amnezia::DockerContainer container, const amnezia::XrayProtocolConfig& protocolConfig)
+void XrayConfigModel::updateModel(ВадькаVPN::DockerContainer container, const ВадькаVPN::XrayProtocolConfig& protocolConfig)
 {
     const bool wasUnsavedChanges = hasUnsavedChanges();
 
@@ -284,7 +284,7 @@ void XrayConfigModel::updateModel(amnezia::DockerContainer container, const amne
     }
 }
 
-void XrayConfigModel::applyDefaultsToServerConfig(amnezia::XrayServerConfig &config, bool fillFlowDefault)
+void XrayConfigModel::applyDefaultsToServerConfig(ВадькаVPN::XrayServerConfig &config, bool fillFlowDefault)
 {
     if (config.port.isEmpty()) {
         config.port = protocols::xray::defaultPort;
@@ -292,7 +292,7 @@ void XrayConfigModel::applyDefaultsToServerConfig(amnezia::XrayServerConfig &con
 
     if (config.transportProto.isEmpty()) {
         config.transportProto = ProtocolUtils::transportProtoToString(
-            ProtocolUtils::defaultTransportProto(amnezia::Proto::Xray), amnezia::Proto::Xray);
+            ProtocolUtils::defaultTransportProto(ВадькаVPN::Proto::Xray), ВадькаVPN::Proto::Xray);
     }
 
     if (config.site.isEmpty()) {
@@ -357,7 +357,7 @@ void XrayConfigModel::applyDefaultsToServerConfig(amnezia::XrayServerConfig &con
     }
 }
 
-amnezia::XrayProtocolConfig XrayConfigModel::getProtocolConfig()
+ВадькаVPN::XrayProtocolConfig XrayConfigModel::getProtocolConfig()
 {
     const bool serverSettingsChanged =
             !m_protocolConfig.serverConfig.hasEqualServerSettings(m_originalProtocolConfig.serverConfig);
@@ -457,7 +457,7 @@ void XrayConfigModel::resetToDefaults()
     const bool wasUnsavedChanges = hasUnsavedChanges();
 
     beginResetModel();
-    m_protocolConfig.serverConfig = amnezia::XrayServerConfig{};
+    m_protocolConfig.serverConfig = ВадькаVPN::XrayServerConfig{};
     applyDefaultsToServerConfig(m_protocolConfig.serverConfig);
     endResetModel();
 
@@ -466,7 +466,7 @@ void XrayConfigModel::resetToDefaults()
     }
 }
 
-void XrayConfigModel::applyServerConfig(const amnezia::XrayServerConfig &serverConfig)
+void XrayConfigModel::applyServerConfig(const ВадькаVPN::XrayServerConfig &serverConfig)
 {
     const bool wasUnsavedChanges = hasUnsavedChanges();
 

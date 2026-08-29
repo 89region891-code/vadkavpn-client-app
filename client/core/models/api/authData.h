@@ -8,7 +8,7 @@
 #include "core/utils/constants/apiKeys.h"
 #include "core/utils/constants/apiConstants.h"
 
-namespace amnezia
+namespace ВадькаVPN
 {
 
 struct AuthData {
@@ -18,7 +18,7 @@ struct AuthData {
     static AuthData fromJson(const QJsonObject& json);
 };
 
-} // namespace amnezia
+} // namespace ВадькаVPN
 
 #endif // AUTHDATA_H
 

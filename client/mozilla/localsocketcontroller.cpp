@@ -104,11 +104,11 @@ void LocalSocketController::initializeInternal() {
   m_daemonState = eInitializing;
 
 #ifdef MZ_WINDOWS
-  QString path = "\\\\.\\pipe\\amneziavpn";
+  QString path = "\\\\.\\pipe\\ВадькаVPNvpn";
 #else
-  QString path = "/var/run/amneziavpn/daemon.socket";
+  QString path = "/var/run/ВадькаVPNvpn/daemon.socket";
   if (!QFileInfo::exists(path)) {
-    path = "/tmp/amneziavpn.socket";
+    path = "/tmp/ВадькаVPNvpn.socket";
   }
 #endif
 
@@ -128,18 +128,18 @@ void LocalSocketController::activate(const QJsonObject &rawConfig) {
   int splitTunnelType = rawConfig.value("splitTunnelType").toInt();
   QJsonArray splitTunnelSites = rawConfig.value("splitTunnelSites").toArray();
 
-  int appSplitTunnelType = rawConfig.value(amnezia::configKey::appSplitTunnelType).toInt();
-  QJsonArray splitTunnelApps = rawConfig.value(amnezia::configKey::splitTunnelApps).toArray();
-  QJsonArray allowedDns = rawConfig.value(amnezia::configKey::allowedDnsServers).toArray();
+  int appSplitTunnelType = rawConfig.value(ВадькаVPN::configKey::appSplitTunnelType).toInt();
+  QJsonArray splitTunnelApps = rawConfig.value(ВадькаVPN::configKey::splitTunnelApps).toArray();
+  QJsonArray allowedDns = rawConfig.value(ВадькаVPN::configKey::allowedDnsServers).toArray();
 
   QJsonObject wgConfig = rawConfig.value(protocolName + "_config_data").toObject();
 
   QJsonObject json;
   json.insert("type", "activate");
   //  json.insert("hopindex", QJsonValue((double)hop.m_hopindex));
-  json.insert("privateKey", wgConfig.value(amnezia::configKey::clientPrivKey));
-  json.insert("deviceIpv4Address", wgConfig.value(amnezia::configKey::clientIp));
-  m_deviceIpv4 = wgConfig.value(amnezia::configKey::clientIp).toString();
+  json.insert("privateKey", wgConfig.value(ВадькаVPN::configKey::clientPrivKey));
+  json.insert("deviceIpv4Address", wgConfig.value(ВадькаVPN::configKey::clientIp));
+  m_deviceIpv4 = wgConfig.value(ВадькаVPN::configKey::clientIp).toString();
 
   // set up IPv6 unique-local-address, ULA, with "fd00::/8" prefix, not globally routable.
   // this will be default IPv6 gateway, OS recognizes that IPv6 link is local and switches to IPv4.
@@ -150,32 +150,32 @@ void LocalSocketController::activate(const QJsonObject &rawConfig) {
   // simply "dead::1" is globally-routable, don't use it
   json.insert("deviceIpv6Address", "fd58:baa6:dead::1");
 
-  json.insert("serverPublicKey", wgConfig.value(amnezia::configKey::serverPubKey));
-  json.insert("serverPskKey", wgConfig.value(amnezia::configKey::pskKey));
-  json.insert("serverIpv4AddrIn", wgConfig.value(amnezia::configKey::hostName));
+  json.insert("serverPublicKey", wgConfig.value(ВадькаVPN::configKey::serverPubKey));
+  json.insert("serverPskKey", wgConfig.value(ВадькаVPN::configKey::pskKey));
+  json.insert("serverIpv4AddrIn", wgConfig.value(ВадькаVPN::configKey::hostName));
   //  json.insert("serverIpv6AddrIn", QJsonValue(hop.m_server.ipv6AddrIn()));
-  json.insert("deviceMTU", wgConfig.value(amnezia::configKey::mtu));
+  json.insert("deviceMTU", wgConfig.value(ВадькаVPN::configKey::mtu));
 
-  json.insert("serverPort", wgConfig.value(amnezia::configKey::port).toInt());
-  json.insert("serverIpv4Gateway", wgConfig.value(amnezia::configKey::hostName));
+  json.insert("serverPort", wgConfig.value(ВадькаVPN::configKey::port).toInt());
+  json.insert("serverIpv4Gateway", wgConfig.value(ВадькаVPN::configKey::hostName));
   //  json.insert("serverIpv6Gateway", QJsonValue(hop.m_server.ipv6Gateway()));
 
-  if (wgConfig.contains(amnezia::configKey::persistentKeepAlive)) {
+  if (wgConfig.contains(ВадькаVPN::configKey::persistentKeepAlive)) {
     json.insert("persistentKeepalive",
-                wgConfig.value(amnezia::configKey::persistentKeepAlive).toString());
+                wgConfig.value(ВадькаVPN::configKey::persistentKeepAlive).toString());
   }
 
-  json.insert("primaryDnsServer", rawConfig.value(amnezia::configKey::dns1));
+  json.insert("primaryDnsServer", rawConfig.value(ВадькаVPN::configKey::dns1));
 
-  // We don't use secondary DNS if primary DNS is AmneziaDNS
-  if (!rawConfig.value(amnezia::configKey::dns1).toString().
-    contains(amnezia::protocols::dns::amneziaDnsIp)) {
-    json.insert("secondaryDnsServer", rawConfig.value(amnezia::configKey::dns2));
+  // We don't use secondary DNS if primary DNS is ВадькаVPNDNS
+  if (!rawConfig.value(ВадькаVPN::configKey::dns1).toString().
+    contains(ВадькаVPN::protocols::dns::ВадькаVPNDnsIp)) {
+    json.insert("secondaryDnsServer", rawConfig.value(ВадькаVPN::configKey::dns2));
   }
 
   QJsonArray jsAllowedIPAddesses;
 
-  QJsonArray plainAllowedIP = wgConfig.value(amnezia::configKey::allowedIps).toArray();
+  QJsonArray plainAllowedIP = wgConfig.value(ВадькаVPN::configKey::allowedIps).toArray();
   QJsonArray defaultAllowedIP = { "0.0.0.0/0", "::/0" };
 
   if (plainAllowedIP != defaultAllowedIP && !plainAllowedIP.isEmpty()) {
@@ -236,7 +236,7 @@ void LocalSocketController::activate(const QJsonObject &rawConfig) {
   json.insert("allowedIPAddressRanges", jsAllowedIPAddesses);
 
   QJsonArray jsExcludedAddresses;
-  jsExcludedAddresses.append(wgConfig.value(amnezia::configKey::hostName));
+  jsExcludedAddresses.append(wgConfig.value(ВадькаVPN::configKey::hostName));
   if (splitTunnelType == 2) {
     for (auto v : splitTunnelSites) {
           QString ipRange = v.toString();
@@ -250,9 +250,9 @@ void LocalSocketController::activate(const QJsonObject &rawConfig) {
 
   json.insert("allowedDnsServers", allowedDns);
 
-  json.insert(amnezia::configKey::killSwitchOption, rawConfig.value(amnezia::configKey::killSwitchOption));
+  json.insert(ВадькаVPN::configKey::killSwitchOption, rawConfig.value(ВадькаVPN::configKey::killSwitchOption));
 
-  const QStringList awgProtocolKeys = amnezia::configKey::awgProtocolKeys();
+  const QStringList awgProtocolKeys = ВадькаVPN::configKey::awgProtocolKeys();
 
   for (const QString &key : awgProtocolKeys) {
     const QJsonValue value = wgConfig.value(key);

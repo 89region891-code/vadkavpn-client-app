@@ -1,4 +1,4 @@
-FROM amneziavpn/ipsec-server:latest
+FROM ВадькаVPNvpn/ipsec-server:latest
 
-RUN mkdir -p /opt/amnezia
-LABEL maintainer="AmneziaVPN"
+RUN mkdir -p /opt/ВадькаVPN
+LABEL maintainer="ВадькаVPNVPN"

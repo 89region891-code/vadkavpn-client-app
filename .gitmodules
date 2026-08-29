@@ -4,10 +4,10 @@
 [submodule "client/3rd/SortFilterProxyModel"]
 	path = client/3rd/SortFilterProxyModel
 	url = https://github.com/mitchcurtis/SortFilterProxyModel.git
-[submodule "client/3rd/amneziawg-apple"]
-	path = client/3rd/amneziawg-apple
-	url = https://github.com/amnezia-vpn/amneziawg-apple
+[submodule "client/3rd/ВадькаVPNwg-apple"]
+	path = client/3rd/ВадькаVPNwg-apple
+	url = https://github.com/ВадькаVPN-vpn/ВадькаVPNwg-apple
 [submodule "client/3rd/qtgamepad"]
 	path = client/3rd/qtgamepad
-	url = https://github.com/amnezia-vpn/qtgamepad.git
+	url = https://github.com/ВадькаVPN-vpn/qtgamepad.git
 	branch = 6.6

@@ -1,7 +1,7 @@
 #ifndef PROTOCOLCONSTANTS_H
 #define PROTOCOLCONSTANTS_H
 
-namespace amnezia
+namespace ВадькаVPN
 {
 
     namespace protocols
@@ -9,7 +9,7 @@ namespace amnezia
 
         namespace dns
         {
-            constexpr char amneziaDnsIp[] = "172.29.172.254";
+            constexpr char ВадькаVPNDnsIp[] = "172.29.172.254";
         }
 
         namespace openvpn
@@ -19,11 +19,11 @@ namespace amnezia
             constexpr char defaultSubnetCidr[] = "24";
             constexpr char defaultMtu[] = "1500";
 
-            constexpr char serverConfigPath[] = "/opt/amnezia/openvpn/server.conf";
-            constexpr char caCertPath[] = "/opt/amnezia/openvpn/pki/ca.crt";
-            constexpr char clientCertPath[] = "/opt/amnezia/openvpn/pki/issued";
-            constexpr char taKeyPath[] = "/opt/amnezia/openvpn/ta.key";
-            constexpr char clientsDirPath[] = "/opt/amnezia/openvpn/clients";
+            constexpr char serverConfigPath[] = "/opt/ВадькаVPN/openvpn/server.conf";
+            constexpr char caCertPath[] = "/opt/ВадькаVPN/openvpn/pki/ca.crt";
+            constexpr char clientCertPath[] = "/opt/ВадькаVPN/openvpn/pki/issued";
+            constexpr char taKeyPath[] = "/opt/ВадькаVPN/openvpn/ta.key";
+            constexpr char clientsDirPath[] = "/opt/ВадькаVPN/openvpn/clients";
             constexpr char defaultPort[] = "1194";
             constexpr char defaultTransportProto[] = "udp";
             constexpr char defaultCipher[] = "AES-256-GCM";
@@ -32,7 +32,7 @@ namespace amnezia
             constexpr bool defaultNcpDisable = false;
             constexpr bool defaultTlsAuth = true;
             constexpr char ncpDisableString[] = "ncp-disable";
-            constexpr char tlsAuthString[] = "tls-auth /opt/amnezia/openvpn/ta.key 0";
+            constexpr char tlsAuthString[] = "tls-auth /opt/ВадькаVPN/openvpn/ta.key 0";
 
             constexpr char defaultAdditionalClientConfig[] = "";
             constexpr char defaultAdditionalServerConfig[] = "";
@@ -40,7 +40,7 @@ namespace amnezia
 
         namespace shadowsocks
         {
-            constexpr char ssKeyPath[] = "/opt/amnezia/shadowsocks/shadowsocks.key";
+            constexpr char ssKeyPath[] = "/opt/ВадькаVPN/shadowsocks/shadowsocks.key";
             constexpr char defaultPort[] = "6789";
             constexpr char defaultLocalProxyPort[] = "8585";
             constexpr char defaultCipher[] = "chacha20-ietf-poly1305";
@@ -48,11 +48,11 @@ namespace amnezia
 
         namespace xray
         {
-            constexpr char serverConfigPath[] = "/opt/amnezia/xray/server.json";
-            constexpr char uuidPath[] = "/opt/amnezia/xray/xray_uuid.key";
-            constexpr char PublicKeyPath[] = "/opt/amnezia/xray/xray_public.key";
-            constexpr char PrivateKeyPath[] = "/opt/amnezia/xray/xray_private.key";
-            constexpr char shortidPath[] = "/opt/amnezia/xray/xray_short_id.key";
+            constexpr char serverConfigPath[] = "/opt/ВадькаVPN/xray/server.json";
+            constexpr char uuidPath[] = "/opt/ВадькаVPN/xray/xray_uuid.key";
+            constexpr char PublicKeyPath[] = "/opt/ВадькаVPN/xray/xray_public.key";
+            constexpr char PrivateKeyPath[] = "/opt/ВадькаVPN/xray/xray_private.key";
+            constexpr char shortidPath[] = "/opt/ВадькаVPN/xray/xray_short_id.key";
             constexpr char defaultSite[] = "www.googletagmanager.com";
 
             constexpr char defaultPort[] = "443";
@@ -124,9 +124,9 @@ namespace amnezia
 
         namespace cloak
         {
-            constexpr char ckPublicKeyPath[] = "/opt/amnezia/cloak/cloak_public.key";
-            constexpr char ckBypassUidKeyPath[] = "/opt/amnezia/cloak/cloak_bypass_uid.key";
-            constexpr char ckAdminKeyPath[] = "/opt/amnezia/cloak/cloak_admin_uid.key";
+            constexpr char ckPublicKeyPath[] = "/opt/ВадькаVPN/cloak/cloak_public.key";
+            constexpr char ckBypassUidKeyPath[] = "/opt/ВадькаVPN/cloak/cloak_bypass_uid.key";
+            constexpr char ckAdminKeyPath[] = "/opt/ВадькаVPN/cloak/cloak_admin_uid.key";
             constexpr char defaultPort[] = "443";
             constexpr char defaultRedirSite[] = "tile.openstreetmap.org";
             constexpr char defaultCipher[] = "chacha20-poly1305";
@@ -157,9 +157,9 @@ namespace amnezia
 #else
             constexpr char defaultMtu[] = "1376";
 #endif
-            constexpr char serverConfigPath[] = "/opt/amnezia/wireguard/wg0.conf";
-            constexpr char serverPublicKeyPath[] = "/opt/amnezia/wireguard/wireguard_server_public_key.key";
-            constexpr char serverPskKeyPath[] = "/opt/amnezia/wireguard/wireguard_psk.key";
+            constexpr char serverConfigPath[] = "/opt/ВадькаVPN/wireguard/wg0.conf";
+            constexpr char serverPublicKeyPath[] = "/opt/ВадькаVPN/wireguard/wireguard_server_public_key.key";
+            constexpr char serverPskKeyPath[] = "/opt/ВадькаVPN/wireguard/wireguard_psk.key";
 
         }
 
@@ -178,10 +178,10 @@ namespace amnezia
             constexpr char defaultMtu[] = "1376";
 #endif
 
-            constexpr char serverConfigPath[] = "/opt/amnezia/awg/awg0.conf";
-            constexpr char serverLegacyConfigPath[] = "/opt/amnezia/awg/wg0.conf";
-            constexpr char serverPublicKeyPath[] = "/opt/amnezia/awg/wireguard_server_public_key.key";
-            constexpr char serverPskKeyPath[] = "/opt/amnezia/awg/wireguard_psk.key";
+            constexpr char serverConfigPath[] = "/opt/ВадькаVPN/awg/awg0.conf";
+            constexpr char serverLegacyConfigPath[] = "/opt/ВадькаVPN/awg/wg0.conf";
+            constexpr char serverPublicKeyPath[] = "/opt/ВадькаVPN/awg/wireguard_server_public_key.key";
+            constexpr char serverPskKeyPath[] = "/opt/ВадькаVPN/awg/wireguard_psk.key";
 
             constexpr char defaultJunkPacketCount[] = "3";
             constexpr char defaultJunkPacketMinSize[] = "10";
@@ -286,7 +286,7 @@ namespace amnezia
 
             constexpr char defaultPort[]           = "443";
             constexpr char defaultTlsDomain[]      = "googletagmanager.com";
-            constexpr char defaultUserName[]       = "amnezia";
+            constexpr char defaultUserName[]       = "ВадькаVPN";
             constexpr char defaultWorkers[]        = "2";
             constexpr char workersModeAuto[]       = "auto";
             constexpr char workersModeManual[]     = "manual";

@@ -4,7 +4,7 @@
 #include <QMetaEnum>
 #include <QObject>
 
-namespace amnezia
+namespace ВадькаVPN
 {
     namespace error_code_ns
     {
@@ -16,7 +16,7 @@ namespace amnezia
         UnknownError = 100,
         InternalError = 101,
         NotImplementedError = 102,
-        AmneziaServiceNotRunning = 103,
+        ВадькаVPNServiceNotRunning = 103,
         NotSupportedOnThisPlatform = 104,
 
         // Server errors
@@ -58,7 +58,7 @@ namespace amnezia
 
         // Distro errors
         OpenVpnExecutableMissing = 600,
-        AmneziaServiceConnectionFailed = 603,
+        ВадькаVPNServiceConnectionFailed = 603,
         ExecutableMissing = 604,
         XrayExecutableMissing = 605,
         Tun2SockExecutableMissing = 606,
@@ -133,6 +133,6 @@ namespace amnezia
     using ErrorCode = error_code_ns::ErrorCode;
 }
 
-Q_DECLARE_METATYPE(amnezia::ErrorCode)
+Q_DECLARE_METATYPE(ВадькаVPN::ErrorCode)
 
 #endif // ERRORCODES_H

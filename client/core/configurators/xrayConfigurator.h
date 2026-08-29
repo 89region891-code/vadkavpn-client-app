@@ -16,51 +16,51 @@ class XrayConfigurator : public ConfiguratorBase
 public:
     XrayConfigurator(SshSession* sshSession, QObject *parent = nullptr);
 
-    amnezia::ProtocolConfig createConfig(const amnezia::ServerCredentials &credentials, amnezia::DockerContainer container, const amnezia::ContainerConfig &containerConfig,
-                                const amnezia::DnsSettings &dnsSettings,
-                                amnezia::ErrorCode &errorCode) override;
+    ВадькаVPN::ProtocolConfig createConfig(const ВадькаVPN::ServerCredentials &credentials, ВадькаVPN::DockerContainer container, const ВадькаVPN::ContainerConfig &containerConfig,
+                                const ВадькаVPN::DnsSettings &dnsSettings,
+                                ВадькаVPN::ErrorCode &errorCode) override;
 
-    amnezia::ProtocolConfig processConfigWithLocalSettings(const amnezia::ConnectionSettings &settings,
-                                                           amnezia::ProtocolConfig protocolConfig) override;
+    ВадькаVPN::ProtocolConfig processConfigWithLocalSettings(const ВадькаVPN::ConnectionSettings &settings,
+                                                           ВадькаVPN::ProtocolConfig protocolConfig) override;
 
-    amnezia::ErrorCode applyServerSettingsToRemote(const amnezia::ServerCredentials &credentials,
-                                                   amnezia::DockerContainer container,
-                                                   amnezia::ContainerConfig &containerConfig,
-                                                   const amnezia::DnsSettings &dnsSettings,
+    ВадькаVPN::ErrorCode applyServerSettingsToRemote(const ВадькаVPN::ServerCredentials &credentials,
+                                                   ВадькаVPN::DockerContainer container,
+                                                   ВадькаVPN::ContainerConfig &containerConfig,
+                                                   const ВадькаVPN::DnsSettings &dnsSettings,
                                                    bool appendNewClient,
                                                    QString *outClientId = nullptr);
 
-    amnezia::ErrorCode writeServerConfigForSetup(const amnezia::ServerCredentials &credentials,
-                                                 amnezia::DockerContainer container,
-                                                 amnezia::ContainerConfig &containerConfig,
-                                                 const amnezia::DnsSettings &dnsSettings);
+    ВадькаVPN::ErrorCode writeServerConfigForSetup(const ВадькаVPN::ServerCredentials &credentials,
+                                                 ВадькаVPN::DockerContainer container,
+                                                 ВадькаVPN::ContainerConfig &containerConfig,
+                                                 const ВадькаVPN::DnsSettings &dnsSettings);
 
 private:
-    amnezia::ErrorCode readContainerKeyFile(amnezia::DockerContainer container,
-                                            const amnezia::ServerCredentials &credentials,
+    ВадькаVPN::ErrorCode readContainerKeyFile(ВадькаVPN::DockerContainer container,
+                                            const ВадькаVPN::ServerCredentials &credentials,
                                             const QString &path, QString &out) const;
 
-    QString prepareServerConfig(const amnezia::ServerCredentials &credentials, amnezia::DockerContainer container, const amnezia::ContainerConfig &containerConfig,
-                                const amnezia::DnsSettings &dnsSettings,
-                                amnezia::ErrorCode &errorCode);
+    QString prepareServerConfig(const ВадькаVPN::ServerCredentials &credentials, ВадькаVPN::DockerContainer container, const ВадькаVPN::ContainerConfig &containerConfig,
+                                const ВадькаVPN::DnsSettings &dnsSettings,
+                                ВадькаVPN::ErrorCode &errorCode);
 
-    amnezia::ErrorCode uploadServerConfigJson(const amnezia::ServerCredentials &credentials, amnezia::DockerContainer container,
-                                              const amnezia::DnsSettings &dnsSettings, const QJsonObject &serverConfig) const;
+    ВадькаVPN::ErrorCode uploadServerConfigJson(const ВадькаVPN::ServerCredentials &credentials, ВадькаVPN::DockerContainer container,
+                                              const ВадькаVPN::DnsSettings &dnsSettings, const QJsonObject &serverConfig) const;
 
-    amnezia::XrayProtocolConfig buildClientProtocolConfig(const amnezia::ServerCredentials &credentials,
-                                                          amnezia::DockerContainer container,
-                                                          const amnezia::XrayServerConfig &srv,
+    ВадькаVPN::XrayProtocolConfig buildClientProtocolConfig(const ВадькаVPN::ServerCredentials &credentials,
+                                                          ВадькаVPN::DockerContainer container,
+                                                          const ВадькаVPN::XrayServerConfig &srv,
                                                           const QString &clientId,
-                                                          amnezia::ErrorCode &errorCode,
+                                                          ВадькаVPN::ErrorCode &errorCode,
                                                           const QString &prefetchedRealityPublicKey = {},
                                                           const QString &prefetchedRealityShortId = {}) const;
 
-    amnezia::ErrorCode readRealityKeyFiles(amnezia::DockerContainer container,
-                                           const amnezia::ServerCredentials &credentials,
+    ВадькаVPN::ErrorCode readRealityKeyFiles(ВадькаVPN::DockerContainer container,
+                                           const ВадькаVPN::ServerCredentials &credentials,
                                            QString &outPublicKey,
                                            QString &outShortId) const;
 
-    QJsonObject buildStreamSettings(const amnezia::XrayServerConfig &srv,
+    QJsonObject buildStreamSettings(const ВадькаVPN::XrayServerConfig &srv,
                                     const QString &clientId) const;
 };
 

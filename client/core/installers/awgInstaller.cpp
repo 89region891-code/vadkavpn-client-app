@@ -16,7 +16,7 @@
 #include "core/utils/utilities.h"
 #include "core/models/protocols/awgProtocolConfig.h"
 
-using namespace amnezia;
+using namespace ВадькаVPN;
 using namespace ProtocolUtils;
 
 AwgInstaller::AwgInstaller(QObject *parent)
@@ -48,13 +48,13 @@ void AwgInstaller::generateAwgParameters(AwgServerConfig &serverConfig)
     // Ensure all values are unique and don't create equal packet sizes
     QSet<int> usedValues { s1, s4 };
 
-    while (usedValues.contains(s2) || s1 + amnezia::AwgConstant::messageInitiationSize == s2 + amnezia::AwgConstant::messageResponseSize) {
+    while (usedValues.contains(s2) || s1 + ВадькаVPN::AwgConstant::messageInitiationSize == s2 + ВадькаVPN::AwgConstant::messageResponseSize) {
         s2 = QRandomGenerator::global()->bounded(protocols::awg::junkPacketSizeMin, protocols::awg::responsePacketJunkSizeMax);
     }
     usedValues.insert(s2);
 
-    while (usedValues.contains(s3) || s1 + amnezia::AwgConstant::messageInitiationSize == s3 + amnezia::AwgConstant::messageCookieReplySize
-           || s2 + amnezia::AwgConstant::messageResponseSize == s3 + amnezia::AwgConstant::messageCookieReplySize) {
+    while (usedValues.contains(s3) || s1 + ВадькаVPN::AwgConstant::messageInitiationSize == s3 + ВадькаVPN::AwgConstant::messageCookieReplySize
+           || s2 + ВадькаVPN::AwgConstant::messageResponseSize == s3 + ВадькаVPN::AwgConstant::messageCookieReplySize) {
         s3 = QRandomGenerator::global()->bounded(protocols::awg::junkPacketSizeMin, protocols::awg::cookieReplyPacketJunkSizeMax);
     }
 

@@ -53,10 +53,10 @@ UIAction *makeEditAction(NSString *title, const QPointer<QQuickItem> &target, co
 // keyboard appears) nothing suitable is first responder and the present is
 // silently ignored ("did not have performable commands and/or actions").
 // This zero-sized subview steps in as the first responder for those cases.
-@interface AmneziaEditMenuResponderView : UIView
+@interface ВадькаVPNEditMenuResponderView : UIView
 @end
 
-@implementation AmneziaEditMenuResponderView
+@implementation ВадькаVPNEditMenuResponderView
 
 - (BOOL)canBecomeFirstResponder
 {
@@ -71,12 +71,12 @@ UIAction *makeEditAction(NSString *title, const QPointer<QQuickItem> &target, co
 // first responder only while the virtual keyboard is up (never for read-only
 // fields), which would leave the menu empty.
 API_AVAILABLE(ios(16.0))
-@interface AmneziaEditMenuDelegate : NSObject <UIEditMenuInteractionDelegate>
+@interface ВадькаVPNEditMenuDelegate : NSObject <UIEditMenuInteractionDelegate>
 @property (nonatomic, weak) UIView *responderView;
 - (void)setTargetItem:(QQuickItem *)item;
 @end
 
-@implementation AmneziaEditMenuDelegate {
+@implementation ВадькаVPNEditMenuDelegate {
     QPointer<QQuickItem> m_target;
 }
 
@@ -164,14 +164,14 @@ void IosContextMenu::present(QQuickItem *target, qreal x, qreal y)
     // Scene coordinates match the backing view's coordinate space.
     const QPointF scenePos = target->mapToScene(QPointF(x, y));
 
-    AmneziaEditMenuDelegate *delegate = objc_getAssociatedObject(view, kEditMenuDelegateKey);
+    ВадькаVPNEditMenuDelegate *delegate = objc_getAssociatedObject(view, kEditMenuDelegateKey);
     UIEditMenuInteraction *interaction = objc_getAssociatedObject(view, kEditMenuInteractionKey);
-    AmneziaEditMenuResponderView *responderView = objc_getAssociatedObject(view, kEditMenuResponderKey);
+    ВадькаVPNEditMenuResponderView *responderView = objc_getAssociatedObject(view, kEditMenuResponderKey);
     if (!interaction) {
-        responderView = [[AmneziaEditMenuResponderView alloc] initWithFrame:CGRectZero];
+        responderView = [[ВадькаVPNEditMenuResponderView alloc] initWithFrame:CGRectZero];
         [view addSubview:responderView];
 
-        delegate = [[AmneziaEditMenuDelegate alloc] init];
+        delegate = [[ВадькаVPNEditMenuDelegate alloc] init];
         delegate.responderView = responderView;
 
         interaction = [[UIEditMenuInteraction alloc] initWithDelegate:delegate];

@@ -31,7 +31,7 @@
     #include "core/utils/swiftBridge.h"
 #endif
 
-using namespace amnezia;
+using namespace ВадькаVPN;
 
 namespace
 {
@@ -184,7 +184,7 @@ void SubscriptionController::updateApiConfigInJson(QJsonObject &serverConfigJson
     apiConfig[apiDefs::key::serviceProtocol] = serviceProtocol;
     apiConfig[apiDefs::key::userCountryCode] = userCountryCode;
 
-    if (serverConfigJson.value(configKey::configVersion).toInt() == serverConfigUtils::ConfigSource::AmneziaGateway) {
+    if (serverConfigJson.value(configKey::configVersion).toInt() == serverConfigUtils::ConfigSource::ВадькаVPNGateway) {
         QJsonObject responseObj = QJsonDocument::fromJson(apiResponseBody).object();
         if (responseObj.contains(apiDefs::key::serviceInfo)) {
             apiConfig.insert(apiDefs::key::serviceInfo, responseObj.value(apiDefs::key::serviceInfo).toObject());
@@ -239,7 +239,7 @@ ErrorCode SubscriptionController::applyImportedServiceConfig(const QString &user
 
     updateApiConfigInJson(serverConfigJson, serviceType, serviceProtocol, userCountryCode, responseBody);
 
-    if (serverConfigJson.value(configKey::configVersion).toInt() != serverConfigUtils::ConfigSource::AmneziaGateway) {
+    if (serverConfigJson.value(configKey::configVersion).toInt() != serverConfigUtils::ConfigSource::ВадькаVPNGateway) {
         return ErrorCode::InternalError;
     }
 
@@ -291,7 +291,7 @@ ErrorCode SubscriptionController::importTrialFromGateway(const QString &userCoun
     }
 
     QJsonObject configObject = QJsonDocument::fromJson(configBytes).object();
-    if (configObject.value(configKey::configVersion).toInt() != serverConfigUtils::ConfigSource::AmneziaGateway) {
+    if (configObject.value(configKey::configVersion).toInt() != serverConfigUtils::ConfigSource::ВадькаVPNGateway) {
         return ErrorCode::InternalError;
     }
 
@@ -380,7 +380,7 @@ ErrorCode SubscriptionController::applyUpdatedServiceConfig(const QString &serve
 
     updateApiConfigInJson(serverConfigJson, apiV2->apiConfig.serviceType, serviceProtocol, apiV2->apiConfig.userCountryCode, responseBody);
 
-    if (serverConfigJson.value(configKey::configVersion).toInt() != serverConfigUtils::ConfigSource::AmneziaGateway) {
+    if (serverConfigJson.value(configKey::configVersion).toInt() != serverConfigUtils::ConfigSource::ВадькаVPNGateway) {
         return ErrorCode::InternalError;
     }
 

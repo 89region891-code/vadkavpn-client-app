@@ -25,16 +25,16 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
 
 public slots:
-    void updateModel(amnezia::DockerContainer container, const amnezia::TorProtocolConfig &protocolConfig);
-    amnezia::TorProtocolConfig getProtocolConfig();
+    void updateModel(ВадькаVPN::DockerContainer container, const ВадькаVPN::TorProtocolConfig &protocolConfig);
+    ВадькаVPN::TorProtocolConfig getProtocolConfig();
 
 protected:
     QHash<int, QByteArray> roleNames() const override;
 
 private:
-    amnezia::DockerContainer m_container;
-    amnezia::TorProtocolConfig m_protocolConfig;
-    amnezia::TorProtocolConfig m_originalProtocolConfig;
+    ВадькаVPN::DockerContainer m_container;
+    ВадькаVPN::TorProtocolConfig m_protocolConfig;
+    ВадькаVPN::TorProtocolConfig m_originalProtocolConfig;
 };
 
 #endif // TORCONFIGMODEL_H

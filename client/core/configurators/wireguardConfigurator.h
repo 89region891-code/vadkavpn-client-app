@@ -29,31 +29,31 @@ public:
         QString port;
     };
 
-    amnezia::ProtocolConfig createConfig(const amnezia::ServerCredentials &credentials, amnezia::DockerContainer container,
-                                const amnezia::ContainerConfig &containerConfig,
-                                const amnezia::DnsSettings &dnsSettings,
-                                amnezia::ErrorCode &errorCode) override;
+    ВадькаVPN::ProtocolConfig createConfig(const ВадькаVPN::ServerCredentials &credentials, ВадькаVPN::DockerContainer container,
+                                const ВадькаVPN::ContainerConfig &containerConfig,
+                                const ВадькаVPN::DnsSettings &dnsSettings,
+                                ВадькаVPN::ErrorCode &errorCode) override;
 
-    amnezia::ProtocolConfig processConfigWithLocalSettings(const amnezia::ConnectionSettings &settings,
-                                                           amnezia::ProtocolConfig protocolConfig) override;
-    amnezia::ProtocolConfig processConfigWithExportSettings(const amnezia::ExportSettings &settings,
-                                                            amnezia::ProtocolConfig protocolConfig) override;
+    ВадькаVPN::ProtocolConfig processConfigWithLocalSettings(const ВадькаVPN::ConnectionSettings &settings,
+                                                           ВадькаVPN::ProtocolConfig protocolConfig) override;
+    ВадькаVPN::ProtocolConfig processConfigWithExportSettings(const ВадькаVPN::ExportSettings &settings,
+                                                            ВадькаVPN::ProtocolConfig protocolConfig) override;
 
     static ConnectionData genClientKeys();
 
 private:
     QList<QHostAddress> getIpsFromConf(const QString &input);
-    ConnectionData prepareWireguardConfig(const amnezia::ServerCredentials &credentials, amnezia::DockerContainer container,
-                                          const amnezia::WireGuardServerConfig* serverConfig,
-                                          const amnezia::AwgServerConfig* awgServerConfig,
-                                          const amnezia::DnsSettings &dnsSettings,
-                                          amnezia::ErrorCode &errorCode);
+    ConnectionData prepareWireguardConfig(const ВадькаVPN::ServerCredentials &credentials, ВадькаVPN::DockerContainer container,
+                                          const ВадькаVPN::WireGuardServerConfig* serverConfig,
+                                          const ВадькаVPN::AwgServerConfig* awgServerConfig,
+                                          const ВадькаVPN::DnsSettings &dnsSettings,
+                                          ВадькаVPN::ErrorCode &errorCode);
 
     bool m_isAwg;
     QString m_serverConfigPath;
     QString m_serverPublicKeyPath;
     QString m_serverPskKeyPath;
-    amnezia::ProtocolScriptType m_configTemplate;
+    ВадькаVPN::ProtocolScriptType m_configTemplate;
     QString m_protocolName;
     QString m_defaultPort;
 };

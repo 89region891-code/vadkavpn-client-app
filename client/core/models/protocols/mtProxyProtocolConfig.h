@@ -5,7 +5,7 @@
 #include <QString>
 #include <QStringList>
 
-namespace amnezia {
+namespace ВадькаVPN {
 
     struct MtProxyProtocolConfig {
         QString port;
@@ -33,6 +33,6 @@ namespace amnezia {
         bool equalsDockerDeploymentSettings(const MtProxyProtocolConfig &other) const;
     };
 
-} // namespace amnezia
+} // namespace ВадькаVPN
 
 #endif // MTPROXYPROTOCOLCONFIG_H

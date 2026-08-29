@@ -6,7 +6,7 @@
 #include <QString>
 #include <optional>
 
-namespace amnezia
+namespace ВадькаVPN
 {
 
 // ── xPadding ─────────────────────────────────────────────────────────────────
@@ -74,7 +74,7 @@ struct XrayXhttpConfig {
     XrayXmuxConfig     xmux;
 
     QJsonObject toJson() const;
-    /// Reads only keys present in JSON (no Amnezia UI defaults). Use XrayConfigModel::applyDefaultsToServerConfig for UI.
+    /// Reads only keys present in JSON (no ВадькаVPN UI defaults). Use XrayConfigModel::applyDefaultsToServerConfig for UI.
     static XrayXhttpConfig fromJson(const QJsonObject &json);
 };
 
@@ -143,6 +143,6 @@ struct XrayProtocolConfig {
     bool hydrateServerConfigFromClientNative();
 };
 
-} // namespace amnezia
+} // namespace ВадькаVPN
 
 #endif // XRAYPROTOCOLCONFIG_H

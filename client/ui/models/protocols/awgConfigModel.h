@@ -76,8 +76,8 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
 
 public slots:
-    void updateModel(amnezia::DockerContainer container, const amnezia::AwgProtocolConfig &protocolConfig);
-    amnezia::AwgProtocolConfig getProtocolConfig();
+    void updateModel(ВадькаVPN::DockerContainer container, const ВадькаVPN::AwgProtocolConfig &protocolConfig);
+    ВадькаVPN::AwgProtocolConfig getProtocolConfig();
     bool isServerSettingsEqual();
     
     bool isHeadersEqual(const QString &h1, const QString &h2, const QString &h3, const QString &h4);
@@ -87,13 +87,13 @@ protected:
     QHash<int, QByteArray> roleNames() const override;
 
 private:
-    amnezia::DockerContainer m_container;
-    amnezia::AwgProtocolConfig m_protocolConfig;
-    amnezia::AwgProtocolConfig m_originalProtocolConfig;
+    ВадькаVPN::DockerContainer m_container;
+    ВадькаVPN::AwgProtocolConfig m_protocolConfig;
+    ВадькаVPN::AwgProtocolConfig m_originalProtocolConfig;
     
     QString serverProtocolVersion() const;
-    void applyDefaultsToServerConfig(amnezia::AwgServerConfig& config);
-    void applyDefaultsToClientConfig(amnezia::AwgClientConfig& config);
+    void applyDefaultsToServerConfig(ВадькаVPN::AwgServerConfig& config);
+    void applyDefaultsToClientConfig(ВадькаVPN::AwgClientConfig& config);
 };
 
 #endif // AWGCONFIGMODEL_H

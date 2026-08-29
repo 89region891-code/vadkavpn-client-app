@@ -1,3 +1,3 @@
-package org.amnezia.vpn
+package org.ВадькаVPN.vpn
 
-class OpenVpnService : AmneziaVpnService()
+class OpenVpnService : ВадькаVPNVpnService()

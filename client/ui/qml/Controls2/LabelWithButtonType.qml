@@ -23,23 +23,23 @@ Item {
     property string rightImageSource
     property string leftImageSource
     property string rightWarningImageSource
-    property string rightWarningImageColor: AmneziaStyle.color.goldenApricot
+    property string rightWarningImageColor: ВадькаVPNStyle.color.goldenApricot
     property bool isLeftImageHoverEnabled: true
     property bool isSmallLeftImage: false
 
     property alias rightButton: rightImage
     property alias eyeButton: eyeImage
 
-    property string textColor: AmneziaStyle.color.paleGray
-    property string textDisabledColor: AmneziaStyle.color.mutedGray
-    property string descriptionColor: AmneziaStyle.color.mutedGray
-    property string descriptionDisabledColor: AmneziaStyle.color.charcoalGray
+    property string textColor: ВадькаVPNStyle.color.paleGray
+    property string textDisabledColor: ВадькаVPNStyle.color.mutedGray
+    property string descriptionColor: ВадькаVPNStyle.color.mutedGray
+    property string descriptionDisabledColor: ВадькаVPNStyle.color.charcoalGray
     property real textOpacity: 1.0
 
-    property string borderFocusedColor: AmneziaStyle.color.paleGray
+    property string borderFocusedColor: ВадькаVPNStyle.color.paleGray
     property int borderFocusedWidth: 1
 
-    property string rightImageColor: AmneziaStyle.color.paleGray
+    property string rightImageColor: ВадькаVPNStyle.color.paleGray
     property string leftImageColor: ""
 
     property bool descriptionOnTop: false
@@ -133,7 +133,7 @@ Item {
             Layout.rightMargin: isSmallLeftImage ? 8 : (rightImageSource || !isLeftImageHoverEnabled) ? 16 : 0
 
             radius: 12
-            color: AmneziaStyle.color.transparent
+            color: ВадькаVPNStyle.color.transparent
 
             Behavior on color {
                 PropertyAnimation { duration: 200 }
@@ -237,7 +237,7 @@ Item {
             Layout.alignment: Qt.AlignRight
 
             radius: 12
-            color: AmneziaStyle.color.transparent
+            color: ВадькаVPNStyle.color.transparent
 
             Image {
                 id: rightWarningImage
@@ -271,7 +271,7 @@ Item {
                 id: eyeImageBackground
                 anchors.fill: parent
                 radius: 12
-                color: AmneziaStyle.color.transparent
+                color: ВадькаVPNStyle.color.transparent
 
                 Behavior on color {
                     PropertyAnimation { duration: 200 }
@@ -308,7 +308,7 @@ Item {
                 id: rightImageBackground
                 anchors.fill: parent
                 radius: 12
-                color: AmneziaStyle.color.transparent
+                color: ВадькаVPNStyle.color.transparent
 
                 Behavior on color {
                     PropertyAnimation { duration: 200 }
@@ -325,9 +325,9 @@ Item {
     Rectangle {
         id: background
         anchors.fill: root
-        color: AmneziaStyle.color.transparent
+        color: ВадькаVPNStyle.color.transparent
 
-        border.color: root.activeFocus ? root.borderFocusedColor : AmneziaStyle.color.transparent
+        border.color: root.activeFocus ? root.borderFocusedColor : ВадькаVPNStyle.color.transparent
         border.width: root.activeFocus ? root.borderFocusedWidth : 0
 
 

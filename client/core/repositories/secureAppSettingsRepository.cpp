@@ -14,10 +14,10 @@
 #include "core/utils/constants/configKeys.h"
 #include "core/utils/networkUtilities.h"
 
-using namespace amnezia;
+using namespace ВадькаVPN;
 
 namespace {
-    constexpr char gatewayEndpoint[] = "http://gw.amnezia.org:80/";
+    constexpr char gatewayEndpoint[] = "http://gw.ВадькаVPN.org:80/";
 }
 
 SecureAppSettingsRepository::SecureAppSettingsRepository(SecureQSettings* settings, QObject *parent)
@@ -49,15 +49,15 @@ void SecureAppSettingsRepository::setAppLanguage(QLocale locale)
     emit appLanguageChanged(locale);
 }
 
-bool SecureAppSettingsRepository::useAmneziaDns() const
+bool SecureAppSettingsRepository::useВадькаVPNDns() const
 {
-    return value("Conf/useAmneziaDns", true).toBool();
+    return value("Conf/useВадькаVPNDns", true).toBool();
 }
 
-void SecureAppSettingsRepository::setUseAmneziaDns(bool enabled)
+void SecureAppSettingsRepository::setUseВадькаVPNDns(bool enabled)
 {
-    setValue("Conf/useAmneziaDns", enabled);
-    emit useAmneziaDnsChanged(enabled);
+    setValue("Conf/useВадькаVPNDns", enabled);
+    emit useВадькаVPNDnsChanged(enabled);
 }
 
 QStringList SecureAppSettingsRepository::getAllowedDnsServers() const

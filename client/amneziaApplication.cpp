@@ -1,4 +1,4 @@
-#include "amneziaApplication.h"
+#include "ВадькаVPNApplication.h"
 
 #include <QClipboard>
 #include <QFontDatabase>
@@ -36,9 +36,9 @@
 #endif
          
 
-bool AmneziaApplication::m_forceQuit = false;
+bool ВадькаVPNApplication::m_forceQuit = false;
 
-AmneziaApplication::AmneziaApplication(int &argc, char *argv[]) : AMNEZIA_BASE_CLASS(argc, argv),
+ВадькаVPNApplication::ВадькаVPNApplication(int &argc, char *argv[]) : ВадькаVPN_BASE_CLASS(argc, argv),
       m_optAutostart({QStringLiteral("a"), QStringLiteral("autostart")}, QStringLiteral("System autostart")),
       m_optCleanup  ({QStringLiteral("c"), QStringLiteral("cleanup")}, QStringLiteral("Cleanup logs")),
       m_optConnect  ({QStringLiteral("connect")}, QStringLiteral("Connect to server by index on startup"), QStringLiteral("index")),
@@ -67,9 +67,9 @@ AmneziaApplication::AmneziaApplication(int &argc, char *argv[]) : AMNEZIA_BASE_C
     m_nam = new QNetworkAccessManager(this);
 }
 
-AmneziaApplication::~AmneziaApplication()
+ВадькаVPNApplication::~ВадькаVPNApplication()
 {
-#ifdef AMNEZIA_DESKTOP
+#ifdef ВадькаVPN_DESKTOP
     if (m_vpnConnection && m_vpnConnectionThread.isRunning()) {
         QMetaObject::invokeMethod(m_vpnConnection.get(), "disconnectSlots", Qt::BlockingQueuedConnection);
         
@@ -103,7 +103,7 @@ namespace {
 }
 #endif
 
-void AmneziaApplication::init()
+void ВадькаVPNApplication::init()
 {
     m_engine = new QQmlApplicationEngine;
 
@@ -220,12 +220,12 @@ void AmneziaApplication::init()
     }
 }
 
-void AmneziaApplication::registerTypes()
+void ВадькаVPNApplication::registerTypes()
 {
     qRegisterMetaType<ServerCredentials>("ServerCredentials");
 
     qRegisterMetaType<DockerContainer>("DockerContainer");
-    using namespace amnezia::ProtocolEnumNS;
+    using namespace ВадькаVPN::ProtocolEnumNS;
     qRegisterMetaType<TransportProto>("TransportProto");
     qRegisterMetaType<Proto>("Proto");
     qRegisterMetaType<ServiceType>("ServiceType");
@@ -246,19 +246,19 @@ void AmneziaApplication::registerTypes()
     qmlRegisterType<PublicHostInputValidator>("MtProxyConfig", 1, 0, "PublicHostInputValidator");
     qmlRegisterType<PublicHostInputValidator>("TelemtConfig", 1, 0, "PublicHostInputValidator");
 
-    amnezia::declareQmlProtocolEnum();
+    ВадькаVPN::declareQmlProtocolEnum();
     Vpn::declareQmlVpnConnectionStateEnum();
     PageLoader::declareQmlPageEnum();
 }
 
-void AmneziaApplication::loadFonts()
+void ВадькаVPNApplication::loadFonts()
 {
     QQuickStyle::setStyle("Basic");
 
     QFontDatabase::addApplicationFont(QStringLiteral(APP_UI_FONT_RESOURCE));
 }
 
-bool AmneziaApplication::parseCommands()
+bool ВадькаVPNApplication::parseCommands()
 {
     m_parser.setApplicationDescription(APPLICATION_NAME);
     m_parser.addHelpOption();
@@ -281,7 +281,7 @@ bool AmneziaApplication::parseCommands()
 }
 
 #if !defined(Q_OS_ANDROID) && !defined(Q_OS_IOS) && !defined(MACOS_NE)
-void AmneziaApplication::startLocalServer() {
+void ВадькаVPNApplication::startLocalServer() {
     const QString serverName(APP_INSTANCE_NAME);
     QLocalServer::removeServer(serverName);
 
@@ -298,7 +298,7 @@ void AmneziaApplication::startLocalServer() {
 }
 #endif
 
-bool AmneziaApplication::eventFilter(QObject *watched, QEvent *event)
+bool ВадькаVPNApplication::eventFilter(QObject *watched, QEvent *event)
 {
     if (event->type() == QEvent::Close) {
 #if defined(Q_OS_ANDROID) || defined(Q_OS_IOS)
@@ -318,23 +318,23 @@ bool AmneziaApplication::eventFilter(QObject *watched, QEvent *event)
     return QObject::eventFilter(watched, event);
 }
 
-void AmneziaApplication::forceQuit()
+void ВадькаVPNApplication::forceQuit()
 {
     m_forceQuit = true;
     quit();
 }
 
-QQmlApplicationEngine *AmneziaApplication::qmlEngine() const
+QQmlApplicationEngine *ВадькаVPNApplication::qmlEngine() const
 {
     return m_engine;
 }
 
-QNetworkAccessManager *AmneziaApplication::networkManager()
+QNetworkAccessManager *ВадькаVPNApplication::networkManager()
 {
     return m_nam;
 }
 
-QClipboard *AmneziaApplication::getClipboard()
+QClipboard *ВадькаVPNApplication::getClipboard()
 {
     return this->clipboard();
 }

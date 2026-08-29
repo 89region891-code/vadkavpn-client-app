@@ -1,4 +1,4 @@
-package org.amnezia.awg
+package org.ВадькаVPN.awg
 
 object GoBackend {
     external fun awgGetConfig(handle: Int): String?

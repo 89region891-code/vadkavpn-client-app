@@ -71,7 +71,7 @@ void CoreSignalHandlers::initAllHandlers()
     initTranslationsUpdatedHandler();
     initLanguageHandler();
     initAutoConnectHandler();
-    initAmneziaDnsToggledHandler();
+    initВадькаVPNDnsToggledHandler();
     initServersModelUpdateHandler();
     initClientManagementModelUpdateHandler();
     initSitesModelUpdateHandler();
@@ -251,9 +251,9 @@ void CoreSignalHandlers::initAutoConnectHandler()
     }
 }
 
-void CoreSignalHandlers::initAmneziaDnsToggledHandler()
+void CoreSignalHandlers::initВадькаVPNDnsToggledHandler()
 {
-    connect(m_coreController->m_appSettingsRepository, &SecureAppSettingsRepository::useAmneziaDnsChanged, m_coreController->m_serversUiController, &ServersUiController::updateModel);
+    connect(m_coreController->m_appSettingsRepository, &SecureAppSettingsRepository::useВадькаVPNDnsChanged, m_coreController->m_serversUiController, &ServersUiController::updateModel);
 }
 
 void CoreSignalHandlers::initServersModelUpdateHandler()

@@ -62,7 +62,7 @@ class AwgWindows(ConanFile):
         self.requires("wintun/[*]")
 
     def source(self):
-        get(self, f"https://github.com/amnezia-vpn/amneziawg-windows/archive/refs/tags/v{self.version}.zip",
+        get(self, f"https://github.com/ВадькаVPN-vpn/ВадькаVPNwg-windows/archive/refs/tags/v{self.version}.zip",
             sha256="d941861e3c0fada70b6b66b08aad4c77098d612aa11dd41b8ad70dd8afa6c61b", strip_root=True)
         
     def generate(self):
@@ -99,4 +99,4 @@ class AwgWindows(ConanFile):
     def package_info(self):
         self.cpp_info.exe = True
         self.cpp_info.location = os.path.join(self.package_folder, "bin", "tunnel.dll")
-        self.cpp_info.set_property("cmake_target_name", "amnezia::awg-windows")
+        self.cpp_info.set_property("cmake_target_name", "ВадькаVPN::awg-windows")

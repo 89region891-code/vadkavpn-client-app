@@ -1,4 +1,4 @@
-package org.amnezia.vpn
+package org.ВадькаVPN.vpn
 
 import android.annotation.SuppressLint
 import android.app.ActivityManager
@@ -40,28 +40,28 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withTimeout
-import org.amnezia.vpn.protocol.BadConfigException
-import org.amnezia.vpn.protocol.ProtocolState.CONNECTED
-import org.amnezia.vpn.protocol.ProtocolState.CONNECTING
-import org.amnezia.vpn.protocol.ProtocolState.DISCONNECTED
-import org.amnezia.vpn.protocol.ProtocolState.DISCONNECTING
-import org.amnezia.vpn.protocol.ProtocolState.RECONNECTING
-import org.amnezia.vpn.protocol.ProtocolState.UNKNOWN
-import org.amnezia.vpn.protocol.VpnException
-import org.amnezia.vpn.protocol.VpnStartException
-import org.amnezia.vpn.protocol.putStatus
-import org.amnezia.vpn.util.LoadLibraryException
-import org.amnezia.vpn.util.Log
-import org.amnezia.vpn.util.Prefs
-import org.amnezia.vpn.util.net.NetworkState
-import org.amnezia.vpn.util.net.TrafficStats
+import org.ВадькаVPN.vpn.protocol.BadConfigException
+import org.ВадькаVPN.vpn.protocol.ProtocolState.CONNECTED
+import org.ВадькаVPN.vpn.protocol.ProtocolState.CONNECTING
+import org.ВадькаVPN.vpn.protocol.ProtocolState.DISCONNECTED
+import org.ВадькаVPN.vpn.protocol.ProtocolState.DISCONNECTING
+import org.ВадькаVPN.vpn.protocol.ProtocolState.RECONNECTING
+import org.ВадькаVPN.vpn.protocol.ProtocolState.UNKNOWN
+import org.ВадькаVPN.vpn.protocol.VpnException
+import org.ВадькаVPN.vpn.protocol.VpnStartException
+import org.ВадькаVPN.vpn.protocol.putStatus
+import org.ВадькаVPN.vpn.util.LoadLibraryException
+import org.ВадькаVPN.vpn.util.Log
+import org.ВадькаVPN.vpn.util.Prefs
+import org.ВадькаVPN.vpn.util.net.NetworkState
+import org.ВадькаVPN.vpn.util.net.TrafficStats
 import org.json.JSONException
 import org.json.JSONObject
 
-private const val TAG = "AmneziaVpnService"
+private const val TAG = "ВадькаVPNVpnService"
 
-const val ACTION_DISCONNECT = "org.amnezia.vpn.action.disconnect"
-const val ACTION_CONNECT = "org.amnezia.vpn.action.connect"
+const val ACTION_DISCONNECT = "org.ВадькаVPN.vpn.action.disconnect"
+const val ACTION_CONNECT = "org.ВадькаVPN.vpn.action.connect"
 
 const val MSG_VPN_CONFIG = "VPN_CONFIG"
 const val MSG_ERROR = "ERROR"
@@ -78,7 +78,7 @@ private const val DISCONNECT_TIMEOUT = 5000L
 private const val STOP_SERVICE_TIMEOUT = 5000L
 
 @SuppressLint("Registered")
-open class AmneziaVpnService : VpnService() {
+open class ВадькаVPNVpnService : VpnService() {
 
     private lateinit var mainScope: CoroutineScope
     private lateinit var connectionScope: CoroutineScope
@@ -167,7 +167,7 @@ open class AmneziaVpnService : VpnService() {
                         clientMessengers[msg.replyTo]?.let { clientMessenger ->
                             clientMessenger.send {
                                 ServiceEvent.STATUS.packToMessage {
-                                    putStatus(this@AmneziaVpnService.protocolState.value)
+                                    putStatus(this@ВадькаVPNVpnService.protocolState.value)
                                 }
                             }
                         }
@@ -206,7 +206,7 @@ open class AmneziaVpnService : VpnService() {
      */
     override fun onCreate() {
         super.onCreate()
-        Log.d(TAG, "Create Amnezia VPN service")
+        Log.d(TAG, "Create ВадькаVPN VPN service")
         mainScope = CoroutineScope(SupervisorJob() + Dispatchers.Main.immediate)
         connectionScope = CoroutineScope(SupervisorJob() + Dispatchers.IO + connectionExceptionHandler)
         loadServerData()

@@ -38,7 +38,7 @@ public:
 signals:
 
 private:
-    amnezia::PermittedProcess m_program = amnezia::PermittedProcess::Invalid;
+    ВадькаVPN::PermittedProcess m_program = ВадькаVPN::PermittedProcess::Invalid;
     QSharedPointer<QProcess> m_process;
 };
 

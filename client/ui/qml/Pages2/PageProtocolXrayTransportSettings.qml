@@ -114,7 +114,7 @@ PageType {
                     Layout.topMargin: 24
                     Layout.bottomMargin: 8
                     text: qsTr("mKCP Settings")
-                    color: AmneziaStyle.color.mutedGray
+                    color: ВадькаVPNStyle.color.mutedGray
                 }
 
                 TextFieldWithHeaderType {
@@ -287,7 +287,7 @@ PageType {
                     Layout.topMargin: 24
                     Layout.bottomMargin: 8
                     text: qsTr("HTTP Profile")
-                    color: AmneziaStyle.color.mutedGray
+                    color: ВадькаVPNStyle.color.mutedGray
                 }
 
                 TextFieldWithHeaderType {
@@ -407,7 +407,7 @@ PageType {
                     Layout.topMargin: 24
                     Layout.bottomMargin: 8
                     text: qsTr("Session & Sequence")
-                    color: AmneziaStyle.color.mutedGray
+                    color: ВадькаVPNStyle.color.mutedGray
                 }
 
                 DropDownType {
@@ -604,7 +604,7 @@ PageType {
                     Layout.topMargin: 24
                     Layout.bottomMargin: 8
                     text: qsTr("Traffic Shaping")
-                    color: AmneziaStyle.color.mutedGray
+                    color: ВадькаVPNStyle.color.mutedGray
                 }
 
                 TextFieldWithHeaderType {
@@ -653,7 +653,7 @@ PageType {
                     Layout.topMargin: 16
                     Layout.bottomMargin: 8
                     text: qsTr("scMaxEachPostBytes")
-                    color: AmneziaStyle.color.mutedGray
+                    color: ВадькаVPNStyle.color.mutedGray
                 }
                 MinMaxRowType {
                     Layout.fillWidth: true
@@ -675,7 +675,7 @@ PageType {
                     Layout.topMargin: 16
                     Layout.bottomMargin: 8
                     text: qsTr("scStreamUpServerSecs")
-                    color: AmneziaStyle.color.mutedGray
+                    color: ВадькаVPNStyle.color.mutedGray
                 }
                 MinMaxRowType {
                     Layout.fillWidth: true
@@ -697,7 +697,7 @@ PageType {
                     Layout.topMargin: 16
                     Layout.bottomMargin: 8
                     text: qsTr("scMinPostsIntervalMs")
-                    color: AmneziaStyle.color.mutedGray
+                    color: ВадькаVPNStyle.color.mutedGray
                 }
                 MinMaxRowType {
                     Layout.fillWidth: true
@@ -720,7 +720,7 @@ PageType {
                     Layout.topMargin: 24
                     Layout.bottomMargin: 8
                     text: qsTr("Padding and multiplexing")
-                    color: AmneziaStyle.color.mutedGray
+                    color: ВадькаVPNStyle.color.mutedGray
                 }
 
                 LabelWithButtonType {

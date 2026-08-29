@@ -1,4 +1,4 @@
-package org.amnezia.vpn
+package org.ВадькаVPN.vpn
 
 import android.app.AlertDialog
 import android.app.KeyguardManager
@@ -16,7 +16,7 @@ import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
 import androidx.core.content.ContextCompat
 import androidx.core.content.getSystemService
-import org.amnezia.vpn.util.Log
+import org.ВадькаVPN.vpn.util.Log
 
 private const val TAG = "VpnRequestActivity"
 const val EXTRA_PROTOCOL = "PROTOCOL"
@@ -82,7 +82,7 @@ class VpnRequestActivity : ComponentActivity() {
                 ContextCompat.startForegroundService(this, it)
             }
         } ?: run {
-            Intent(this, AmneziaActivity::class.java).apply {
+            Intent(this, ВадькаVPNActivity::class.java).apply {
                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             }.also {
                 startActivity(it)

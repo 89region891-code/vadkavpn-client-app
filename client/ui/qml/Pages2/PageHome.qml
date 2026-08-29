@@ -40,7 +40,7 @@ PageType {
 
     function protocolDisplayName(protocol) {
         switch (protocol) {
-        case "awg": return "AmneziaWG"
+        case "awg": return "ВадькаVPNWG"
         case "vless": return "VLESS"
         default: return protocol
         }
@@ -110,11 +110,11 @@ PageType {
 
                 implicitHeight: 36
 
-                defaultColor: AmneziaStyle.color.transparent
-                hoveredColor: AmneziaStyle.color.translucentWhite
-                pressedColor: AmneziaStyle.color.sheerWhite
-                disabledColor: AmneziaStyle.color.mutedGray
-                textColor: AmneziaStyle.color.mutedGray
+                defaultColor: ВадькаVPNStyle.color.transparent
+                hoveredColor: ВадькаVPNStyle.color.translucentWhite
+                pressedColor: ВадькаVPNStyle.color.sheerWhite
+                disabledColor: ВадькаVPNStyle.color.mutedGray
+                textColor: ВадькаVPNStyle.color.mutedGray
                 borderWidth: 0
 
                 visible: isLoggingEnabled ? true : false
@@ -138,11 +138,11 @@ PageType {
 
                 implicitHeight: 36
 
-                defaultColor: AmneziaStyle.color.transparent
-                hoveredColor: AmneziaStyle.color.translucentWhite
-                pressedColor: AmneziaStyle.color.sheerWhite
-                disabledColor: AmneziaStyle.color.mutedGray
-                textColor: AmneziaStyle.color.mutedGray
+                defaultColor: ВадькаVPNStyle.color.transparent
+                hoveredColor: ВадькаVPNStyle.color.translucentWhite
+                pressedColor: ВадькаVPNStyle.color.sheerWhite
+                disabledColor: ВадькаVPNStyle.color.mutedGray
+                textColor: ВадькаVPNStyle.color.mutedGray
                 borderWidth: 0
 
                 visible: SettingsController.isDevModeEnabled && isDevGatewayEnabled
@@ -174,11 +174,11 @@ PageType {
 
                 implicitHeight: 36
 
-                defaultColor: AmneziaStyle.color.transparent
-                hoveredColor: AmneziaStyle.color.translucentWhite
-                pressedColor: AmneziaStyle.color.sheerWhite
-                disabledColor: AmneziaStyle.color.mutedGray
-                textColor: AmneziaStyle.color.mutedGray
+                defaultColor: ВадькаVPNStyle.color.transparent
+                hoveredColor: ВадькаVPNStyle.color.translucentWhite
+                pressedColor: ВадькаVPNStyle.color.sheerWhite
+                disabledColor: ВадькаVPNStyle.color.mutedGray
+                textColor: ВадькаVPNStyle.color.mutedGray
                 borderWidth: 0
 
                 buttonTextLabel.lineHeight: 20
@@ -328,7 +328,7 @@ PageType {
 
                         hoverEnabled: false
                         image: "qrc:/images/controls/chevron-down.svg"
-                        imageColor: AmneziaStyle.color.paleGray
+                        imageColor: ВадькаVPNStyle.color.paleGray
 
                         icon.width: 18
                         icon.height: 18
@@ -366,11 +366,11 @@ PageType {
                         leftPadding: 16
                         rightPadding: 16
 
-                        defaultColor: AmneziaStyle.color.transparent
-                        hoveredColor: AmneziaStyle.color.translucentWhite
-                        pressedColor: AmneziaStyle.color.sheerWhite
-                        disabledColor: AmneziaStyle.color.transparent
-                        textColor: AmneziaStyle.color.mutedGray
+                        defaultColor: ВадькаVPNStyle.color.transparent
+                        hoveredColor: ВадькаVPNStyle.color.translucentWhite
+                        pressedColor: ВадькаVPNStyle.color.sheerWhite
+                        disabledColor: ВадькаVPNStyle.color.transparent
+                        textColor: ВадькаVPNStyle.color.mutedGray
 
                         buttonTextLabel.lineHeight: 16
                         buttonTextLabel.font.pixelSize: 13
@@ -419,11 +419,11 @@ PageType {
 
                     visible: root.isOutdatedAwgWarningVisible
 
-                    backGroundColor: AmneziaStyle.color.transparent
+                    backGroundColor: ВадькаVPNStyle.color.transparent
                     iconPath: "qrc:/images/controls/alert-circle.svg"
-                    imageColor: AmneziaStyle.color.goldenApricot
-                    textColor: AmneziaStyle.color.goldenApricot
-                    textString: qsTr("AmneziaWG 2.0 is outdated and no longer supported. Continued use requires a fresh installation of the AmneziaWG 3.1 container.")
+                    imageColor: ВадькаVPNStyle.color.goldenApricot
+                    textColor: ВадькаVPNStyle.color.goldenApricot
+                    textString: qsTr("ВадькаVPNWG 2.0 is outdated and no longer supported. Continued use requires a fresh installation of the ВадькаVPNWG 3.1 container.")
                 }
 
                 RowLayout {
@@ -446,11 +446,11 @@ PageType {
                         leftPadding: 16
                         rightPadding: 16
 
-                        defaultColor: AmneziaStyle.color.transparent
-                        hoveredColor: AmneziaStyle.color.translucentWhite
-                        pressedColor: AmneziaStyle.color.sheerWhite
-                        disabledColor: AmneziaStyle.color.transparent
-                        textColor: AmneziaStyle.color.mutedGray
+                        defaultColor: ВадькаVPNStyle.color.transparent
+                        hoveredColor: ВадькаVPNStyle.color.translucentWhite
+                        pressedColor: ВадькаVPNStyle.color.sheerWhite
+                        disabledColor: ВадькаVPNStyle.color.transparent
+                        textColor: ВадькаVPNStyle.color.mutedGray
 
                         buttonTextLabel.lineHeight: 16
                         buttonTextLabel.font.pixelSize: 13
@@ -460,7 +460,7 @@ PageType {
                             ? root.protocolDisplayName(root.apiCurrentProtocol)
                             : root.protocolDisplayName(root.apiAvailableProtocols[0])
                         leftImageSource: "qrc:/images/controls/arrow-left-right.svg"
-                        leftImageColor: AmneziaStyle.color.mutedGray
+                        leftImageColor: ВадькаVPNStyle.color.mutedGray
 
                         rightImageSource: enabled ? "qrc:/images/controls/chevron-down.svg" : ""
 
@@ -502,19 +502,19 @@ PageType {
 
                         Component.onCompleted: root.containersDropDownRef = containersDropDown
 
-                        rootButtonImageColor: AmneziaStyle.color.midnightBlack
-                        rootButtonBackgroundColor: AmneziaStyle.color.paleGray
-                        rootButtonBackgroundHoveredColor: AmneziaStyle.color.mistyGray
-                        rootButtonBackgroundPressedColor: AmneziaStyle.color.cloudyGray
-                        rootButtonHoveredBorderColor: AmneziaStyle.color.transparent
-                        rootButtonDefaultBorderColor: AmneziaStyle.color.transparent
+                        rootButtonImageColor: ВадькаVPNStyle.color.midnightBlack
+                        rootButtonBackgroundColor: ВадькаVPNStyle.color.paleGray
+                        rootButtonBackgroundHoveredColor: ВадькаVPNStyle.color.mistyGray
+                        rootButtonBackgroundPressedColor: ВадькаVPNStyle.color.cloudyGray
+                        rootButtonHoveredBorderColor: ВадькаVPNStyle.color.transparent
+                        rootButtonDefaultBorderColor: ВадькаVPNStyle.color.transparent
                         rootButtonTextTopMargin: 8
                         rootButtonTextBottomMargin: 8
 
                         enabled: drawer.isOpened
 
                         text: ServersUiController.defaultServerDefaultContainerName
-                        textColor: AmneziaStyle.color.midnightBlack
+                        textColor: ВадькаVPNStyle.color.midnightBlack
                         headerText: qsTr("VPN protocol")
                         headerBackButtonImage: "qrc:/images/controls/arrow-left.svg"
 

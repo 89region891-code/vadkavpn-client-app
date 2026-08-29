@@ -230,11 +230,11 @@ bool KillSwitch::enablePeerTraffic(const QJsonObject &configStr) {
 #ifdef Q_OS_WIN
     InterfaceConfig config;
 
-    config.m_primaryDnsServer = configStr.value(amnezia::configKey::dns1).toString();
+    config.m_primaryDnsServer = configStr.value(ВадькаVPN::configKey::dns1).toString();
 
-    // We don't use secondary DNS if primary DNS is AmneziaDNS
-    if (!config.m_primaryDnsServer.contains(amnezia::protocols::dns::amneziaDnsIp)) {
-        config.m_secondaryDnsServer = configStr.value(amnezia::configKey::dns2).toString();
+    // We don't use secondary DNS if primary DNS is ВадькаVPNDNS
+    if (!config.m_primaryDnsServer.contains(ВадькаVPN::protocols::dns::ВадькаVPNDnsIp)) {
+        config.m_secondaryDnsServer = configStr.value(ВадькаVPN::configKey::dns2).toString();
     }
 
     config.m_serverPublicKey = "openvpn";
@@ -272,14 +272,14 @@ bool KillSwitch::enablePeerTraffic(const QJsonObject &configStr) {
         }
     }
 
-    for (const QJsonValue &i : configStr.value(amnezia::configKey::splitTunnelApps).toArray()) {
+    for (const QJsonValue &i : configStr.value(ВадькаVPN::configKey::splitTunnelApps).toArray()) {
         if (!i.isString()) {
             break;
         }
         config.m_vpnDisabledApps.append(i.toString());
     }
 
-    for (auto dns : configStr.value(amnezia::configKey::allowedDnsServers).toArray()) {
+    for (auto dns : configStr.value(ВадькаVPN::configKey::allowedDnsServers).toArray()) {
         if (!dns.isString()) {
             break;
         }
@@ -287,7 +287,7 @@ bool KillSwitch::enablePeerTraffic(const QJsonObject &configStr) {
     }
 
     // killSwitch toggle
-    if (QVariant(configStr.value(amnezia::configKey::killSwitchOption).toString()).toBool()) {
+    if (QVariant(configStr.value(ВадькаVPN::configKey::killSwitchOption).toString()).toBool()) {
         WindowsFirewall::create(this)->enablePeerTraffic(config);
     }
 
@@ -316,18 +316,18 @@ bool KillSwitch::enableKillSwitch(const QJsonObject &configStr, int vpnAdapterIn
     QStringList blocknets;
     QStringList allowedDnsServers;
 
-    const QString dns1 = configStr.value(amnezia::configKey::dns1).toString();
-    // We don't use secondary DNS if primary DNS is AmneziaDNS
-    const QString dns2 = dns1.contains(amnezia::protocols::dns::amneziaDnsIp)
+    const QString dns1 = configStr.value(ВадькаVPN::configKey::dns1).toString();
+    // We don't use secondary DNS if primary DNS is ВадькаVPNDNS
+    const QString dns2 = dns1.contains(ВадькаVPN::protocols::dns::ВадькаVPNDnsIp)
             ? QString()
-            : configStr.value(amnezia::configKey::dns2).toString();
+            : configStr.value(ВадькаVPN::configKey::dns2).toString();
 
     if ((!dns1.isEmpty() && !isValidIpOrCidr(dns1)) || (!dns2.isEmpty() && !isValidIpOrCidr(dns2))) {
         qCritical() << "IPC: invalid dns1/dns2, rejecting enableKillSwitch";
         return false;
     }
 
-    for (const QJsonValue &dns : configStr.value(amnezia::configKey::allowedDnsServers).toArray()) {
+    for (const QJsonValue &dns : configStr.value(ВадькаVPN::configKey::allowedDnsServers).toArray()) {
         if (!dns.isString()) break;
         const QString dnsStr = dns.toString();
         if (isValidIpOrCidr(dnsStr))

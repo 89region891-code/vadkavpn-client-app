@@ -27,8 +27,8 @@ public:
                                const bool isStrictKillSwitchEnabled, SecureAppSettingsRepository *appSettingsRepository,
                                QObject *parent = nullptr);
 
-    amnezia::ErrorCode post(const QString &endpoint, const QJsonObject apiPayload, QByteArray &responseBody);
-    QFuture<QPair<amnezia::ErrorCode, QByteArray>> postAsync(const QString &endpoint, const QJsonObject apiPayload);
+    ВадькаVPN::ErrorCode post(const QString &endpoint, const QJsonObject apiPayload, QByteArray &responseBody);
+    QFuture<QPair<ВадькаVPN::ErrorCode, QByteArray>> postAsync(const QString &endpoint, const QJsonObject apiPayload);
 
 private:
     struct EncryptedRequestData
@@ -38,7 +38,7 @@ private:
         QByteArray key;
         QByteArray iv;
         QByteArray salt;
-        amnezia::ErrorCode errorCode;
+        ВадькаVPN::ErrorCode errorCode;
     };
 
     struct DecryptionResult

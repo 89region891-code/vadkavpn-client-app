@@ -22,5 +22,5 @@ execute_process(
 )
 
 execute_process(
-    COMMAND ${CONAN_COMMAND} remote add amnezia "https://artifactory.amnezia.org/artifactory/api/conan/client-prebuilts" --force
+    COMMAND ${CONAN_COMMAND} remote add ВадькаVPN "https://artifactory.ВадькаVPN.org/artifactory/api/conan/client-prebuilts" --force
 )

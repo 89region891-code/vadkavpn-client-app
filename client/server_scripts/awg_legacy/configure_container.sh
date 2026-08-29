@@ -1,15 +1,15 @@
-mkdir -p /opt/amnezia/awg
-cd /opt/amnezia/awg
+mkdir -p /opt/ВадькаVPN/awg
+cd /opt/ВадькаVPN/awg
 WIREGUARD_SERVER_PRIVATE_KEY=$(wg genkey)
-echo $WIREGUARD_SERVER_PRIVATE_KEY > /opt/amnezia/awg/wireguard_server_private_key.key
+echo $WIREGUARD_SERVER_PRIVATE_KEY > /opt/ВадькаVPN/awg/wireguard_server_private_key.key
 
 WIREGUARD_SERVER_PUBLIC_KEY=$(echo $WIREGUARD_SERVER_PRIVATE_KEY | wg pubkey)
-echo $WIREGUARD_SERVER_PUBLIC_KEY > /opt/amnezia/awg/wireguard_server_public_key.key
+echo $WIREGUARD_SERVER_PUBLIC_KEY > /opt/ВадькаVPN/awg/wireguard_server_public_key.key
 
 WIREGUARD_PSK=$(wg genpsk)
-echo $WIREGUARD_PSK > /opt/amnezia/awg/wireguard_psk.key
+echo $WIREGUARD_PSK > /opt/ВадькаVPN/awg/wireguard_psk.key
 
-cat > /opt/amnezia/awg/wg0.conf <<EOF
+cat > /opt/ВадькаVPN/awg/wg0.conf <<EOF
 [Interface]
 PrivateKey = $WIREGUARD_SERVER_PRIVATE_KEY
 Address = $AWG_SUBNET_IP/$WIREGUARD_SUBNET_CIDR

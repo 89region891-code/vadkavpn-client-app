@@ -1,4 +1,4 @@
-package org.amnezia.vpn
+package org.ВадькаVPN.vpn
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -63,17 +63,17 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
-import org.amnezia.vpn.protocol.getStatistics
-import org.amnezia.vpn.protocol.getStatus
-import org.amnezia.vpn.qt.QtAndroidController
-import org.amnezia.vpn.util.LibraryLoader.loadSharedLibrary
-import org.amnezia.vpn.util.Log
-import org.amnezia.vpn.util.Prefs
+import org.ВадькаVPN.vpn.protocol.getStatistics
+import org.ВадькаVPN.vpn.protocol.getStatus
+import org.ВадькаVPN.vpn.qt.QtAndroidController
+import org.ВадькаVPN.vpn.util.LibraryLoader.loadSharedLibrary
+import org.ВадькаVPN.vpn.util.Log
+import org.ВадькаVPN.vpn.util.Prefs
 import org.json.JSONException
 import org.json.JSONObject
 import org.qtproject.qt.android.bindings.QtActivity
 
-private const val TAG = "AmneziaActivity"
+private const val TAG = "ВадькаVPNActivity"
 const val ACTIVITY_MESSENGER_NAME = "Activity"
 
 private const val CHECK_VPN_PERMISSION_ACTION_CODE = 1
@@ -85,7 +85,7 @@ private const val PREFS_NOTIFICATION_PERMISSION_ASKED = "NOTIFICATION_PERMISSION
 private const val OPEN_FILE_AFTER_RESUME_DELAY_MS = 400L
 private const val KEY_PENDING_OPEN_FILE_URI = "pending_open_file_uri"
 
-class AmneziaActivity : QtActivity() {
+class ВадькаVPNActivity : QtActivity() {
 
     private lateinit var mainScope: CoroutineScope
     private val qtInitialized = CompletableDeferred<Unit>()
@@ -193,7 +193,7 @@ class AmneziaActivity : QtActivity() {
      */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d(TAG, "Create Amnezia activity")
+        Log.d(TAG, "Create ВадькаVPN activity")
         loadLibs()
 
         // Configure window for edge-to-edge display
@@ -273,11 +273,11 @@ class AmneziaActivity : QtActivity() {
 
     override fun onStart() {
         super.onStart()
-        Log.d(TAG, "Start Amnezia activity")
+        Log.d(TAG, "Start ВадькаVPN activity")
         mainScope.launch {
             qtInitialized.await()
             vpnProto?.let { proto ->
-                if (AmneziaVpnService.isRunning(applicationContext, proto.processName)) {
+                if (ВадькаVPNVpnService.isRunning(applicationContext, proto.processName)) {
                     doBindService()
                 }
             }
@@ -290,7 +290,7 @@ class AmneziaActivity : QtActivity() {
         // Cancel all pending operations when activity stops
         resumeHandler.removeCallbacksAndMessages(null)
         openFileDeliveryScheduled = false
-        Log.d(TAG, "Stop Amnezia activity")
+        Log.d(TAG, "Stop ВадькаVPN activity")
         doUnbindService()
         mainScope.launch {
             qtInitialized.await()
@@ -373,13 +373,13 @@ class AmneziaActivity : QtActivity() {
         // Cancel all pending operations when activity pauses
         resumeHandler.removeCallbacksAndMessages(null)
         openFileDeliveryScheduled = false
-        Log.d(TAG, "Pause Amnezia activity")
+        Log.d(TAG, "Pause ВадькаVPN activity")
     }
 
     override fun onResume() {
         super.onResume()
         isActivityResumed = true
-        Log.d(TAG, "Resume Amnezia activity")
+        Log.d(TAG, "Resume ВадькаVPN activity")
         if (qtInitialized.isCompleted) {
             QtAndroidController.onActivityResumed()
         }
@@ -490,7 +490,7 @@ class AmneziaActivity : QtActivity() {
         hasWindowFocus = false
         // Cancel all pending operations when activity is destroyed
         resumeHandler.removeCallbacksAndMessages(null)
-        Log.d(TAG, "Destroy Amnezia activity")
+        Log.d(TAG, "Destroy ВадькаVPN activity")
         unregisterBroadcastReceiver(notificationStateReceiver)
         notificationStateReceiver = null
         mainScope.cancel()
@@ -680,7 +680,7 @@ class AmneziaActivity : QtActivity() {
             startActivityForResult(intent, CHECK_VPN_PERMISSION_ACTION_CODE, ActivityResultHandler(
                 onSuccess = {
                     Log.d(TAG, "Vpn permission granted")
-                    Toast.makeText(this@AmneziaActivity, resources.getText(R.string.vpnGranted), Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@ВадькаVPNActivity, resources.getText(R.string.vpnGranted), Toast.LENGTH_LONG).show()
                     onPermissionGranted()
                 },
                 onFail = {
@@ -874,7 +874,7 @@ class AmneziaActivity : QtActivity() {
                         }
                     ))
                 } catch (_: ActivityNotFoundException) {
-                    Toast.makeText(this@AmneziaActivity, "Unsupported", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@ВадькаVPNActivity, "Unsupported", Toast.LENGTH_LONG).show()
                 }
             }
         }
@@ -919,7 +919,7 @@ class AmneziaActivity : QtActivity() {
                     `package` = systemPickerPackage
                 }
             } else {
-                Intent(this@AmneziaActivity, TvFilePicker::class.java)
+                Intent(this@ВадькаVPNActivity, TvFilePicker::class.java)
             }
 
             try {
@@ -1181,7 +1181,7 @@ class AmneziaActivity : QtActivity() {
         Log.v(TAG, "Request authentication")
         mainScope.launch {
             qtInitialized.await()
-            Intent(this@AmneziaActivity, AuthActivity::class.java).also {
+            Intent(this@ВадькаVPNActivity, AuthActivity::class.java).also {
                 startActivity(it)
             }
         }
@@ -1305,14 +1305,14 @@ class AmneziaActivity : QtActivity() {
 
     @Suppress("unused")
     fun purchaseSubscription(offerToken: String): String {
-        return blockingCall { billingRepository.purchaseSubscription(this@AmneziaActivity, offerToken) }
+        return blockingCall { billingRepository.purchaseSubscription(this@ВадькаVPNActivity, offerToken) }
     }
 
     @Suppress("unused")
     fun upgradeSubscription(offerToken: String, oldPurchaseToken: String): String {
         Log.v(TAG, "Upgrade subscription")
         return blockingCall {
-            billingRepository.upgradeSubscription(this@AmneziaActivity, offerToken, oldPurchaseToken)
+            billingRepository.upgradeSubscription(this@ВадькаVPNActivity, offerToken, oldPurchaseToken)
         }
     }
 

@@ -40,14 +40,14 @@ SettingsController::SettingsController(SecureServersRepository* serversRepositor
     m_isDevModeEnabled = m_appSettingsRepository->isDevGatewayEnv();
 }
 
-void SettingsController::toggleAmneziaDns(bool enable)
+void SettingsController::toggleВадькаVPNDns(bool enable)
 {
-    m_appSettingsRepository->setUseAmneziaDns(enable);
+    m_appSettingsRepository->setUseВадькаVPNDns(enable);
 }
 
-bool SettingsController::isAmneziaDnsEnabled() const
+bool SettingsController::isВадькаVPNDnsEnabled() const
 {
-    return m_appSettingsRepository->useAmneziaDns();
+    return m_appSettingsRepository->useВадькаVPNDns();
 }
 
 QString SettingsController::getPrimaryDns() const
@@ -114,7 +114,7 @@ QByteArray SettingsController::backupAppConfig() const
     config["Conf/autoStart"] = isAutoStartEnabled();
     config["Conf/killSwitchEnabled"] = isKillSwitchEnabled();
     config["Conf/strictKillSwitchEnabled"] = isStrictKillSwitchEnabled();
-    config["Conf/useAmneziaDns"] = isAmneziaDnsEnabled();
+    config["Conf/useВадькаVPNDns"] = isВадькаVPNDnsEnabled();
 
     return QJsonDocument(config).toJson();
 }

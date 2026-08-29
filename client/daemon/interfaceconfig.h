@@ -74,7 +74,7 @@ class InterfaceConfig {
       const QMap<QString, QString>& extra = QMap<QString, QString>()) const;
 
   // Converts awg-quick on/off (and 0/1/true/false) to UAPI 1/0.
-  // amneziawg-go uses strconv.ParseBool and rejects "on"/"off".
+  // ВадькаVPNwg-go uses strconv.ParseBool and rejects "on"/"off".
   static QString awgBoolToUapi(const QString& value);
 };
 

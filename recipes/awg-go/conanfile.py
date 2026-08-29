@@ -18,7 +18,7 @@ class AwgGo(ConanFile):
     package_type = "application"
     settings = "os", "arch"
 
-    _binary_name = "amneziawg-go"
+    _binary_name = "ВадькаVPNwg-go"
 
     _arch_map = {
         "x86": "386",
@@ -60,7 +60,7 @@ class AwgGo(ConanFile):
             )
 
     def source(self):
-        get(self, f"https://github.com/amnezia-vpn/amneziawg-go/archive/refs/tags/v{self.version}.zip",
+        get(self, f"https://github.com/ВадькаVPN-vpn/ВадькаVPNwg-go/archive/refs/tags/v{self.version}.zip",
             sha256="a95853baa25d438a3e92ea5207bd315e3a45143b5209488ebf7f0b44e2e2bcc3", strip_root=True
         )
 
@@ -121,4 +121,4 @@ class AwgGo(ConanFile):
     def package_info(self):
         self.cpp_info.exe = True
         self.cpp_info.location = os.path.join(self.package_folder, self._binary_name)
-        self.cpp_info.set_property("cmake_target_name", "amnezia::awg-go")
+        self.cpp_info.set_property("cmake_target_name", "ВадькаVPN::awg-go")

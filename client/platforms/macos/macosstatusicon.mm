@@ -67,7 +67,7 @@ void MacOSStatusIcon::showMessage(const QString& title, const QString& message) 
   content.body = message.toNSString();
   content.sound = [UNNotificationSound defaultSound];
 
-  UNNotificationRequest* request = [UNNotificationRequest requestWithIdentifier:@"amneziavpn"
+  UNNotificationRequest* request = [UNNotificationRequest requestWithIdentifier:@"ВадькаVPNvpn"
                                                                         content:content
                                                                         trigger:nil];
   [content release];

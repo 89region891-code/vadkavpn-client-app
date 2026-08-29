@@ -11,31 +11,31 @@ Item {
     id: root
 
     property string text
-    property string textColor: AmneziaStyle.color.paleGray
-    property string textDisabledColor: AmneziaStyle.color.mutedGray
+    property string textColor: ВадькаVPNStyle.color.paleGray
+    property string textDisabledColor: ВадькаVPNStyle.color.mutedGray
     property int textMaximumLineCount: 2
     property int textElide: Qt.ElideRight
 
     property string descriptionText
-    property string descriptionTextColor: AmneziaStyle.color.mutedGray
-    property string descriptionTextDisabledColor: AmneziaStyle.color.charcoalGray
+    property string descriptionTextColor: ВадькаVPNStyle.color.mutedGray
+    property string descriptionTextDisabledColor: ВадькаVPNStyle.color.charcoalGray
 
     property string headerText
     property string headerBackButtonImage
 
     property var rootButtonClickedFunction
     property string rootButtonImage: "qrc:/images/controls/chevron-down.svg"
-    property string rootButtonImageColor: AmneziaStyle.color.paleGray
-    property string rootButtonBackgroundColor: AmneziaStyle.color.onyxBlack
-    property string rootButtonBackgroundHoveredColor: AmneziaStyle.color.onyxBlack
-    property string rootButtonBackgroundPressedColor: AmneziaStyle.color.onyxBlack
+    property string rootButtonImageColor: ВадькаVPNStyle.color.paleGray
+    property string rootButtonBackgroundColor: ВадькаVPNStyle.color.onyxBlack
+    property string rootButtonBackgroundHoveredColor: ВадькаVPNStyle.color.onyxBlack
+    property string rootButtonBackgroundPressedColor: ВадькаVPNStyle.color.onyxBlack
 
-    property string borderFocusedColor: AmneziaStyle.color.paleGray
+    property string borderFocusedColor: ВадькаVPNStyle.color.paleGray
     property int borderFocusedWidth: 1
 
-    property string rootButtonHoveredBorderColor: AmneziaStyle.color.charcoalGray
-    property string rootButtonDefaultBorderColor: AmneziaStyle.color.slateGray
-    property string rootButtonPressedBorderColor: AmneziaStyle.color.paleGray
+    property string rootButtonHoveredBorderColor: ВадькаVPNStyle.color.charcoalGray
+    property string rootButtonDefaultBorderColor: ВадькаVPNStyle.color.slateGray
+    property string rootButtonPressedBorderColor: ВадькаVPNStyle.color.paleGray
 
     property int rootButtonTextLeftMargins: 16
     property int rootButtonTextTopMargin: 16
@@ -113,8 +113,8 @@ Item {
     Rectangle {
         id: focusBorder
 
-        color: AmneziaStyle.color.transparent
-        border.color: root.activeFocus ? root.borderFocusedColor : AmneziaStyle.color.transparent
+        color: ВадькаVPNStyle.color.transparent
+        border.color: root.activeFocus ? root.borderFocusedColor : ВадькаVPNStyle.color.transparent
         border.width: root.activeFocus ? root.borderFocusedWidth : 0
         anchors.fill: rootButtonContent
         radius: 16
@@ -134,7 +134,7 @@ Item {
                     }
                     return root.hovered ? root.rootButtonBackgroundHoveredColor : root.rootButtonBackgroundColor
                 } else {
-                    return AmneziaStyle.color.transparent
+                    return ВадькаVPNStyle.color.transparent
                 }
             }
 

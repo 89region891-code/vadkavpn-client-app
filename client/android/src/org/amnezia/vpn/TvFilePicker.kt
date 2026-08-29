@@ -1,4 +1,4 @@
-package org.amnezia.vpn
+package org.ВадькаVPN.vpn
 
 import android.Manifest
 import android.app.AlertDialog
@@ -12,7 +12,7 @@ import android.os.Bundle
 import android.os.Environment
 import androidx.activity.ComponentActivity
 import androidx.activity.result.contract.ActivityResultContracts
-import org.amnezia.vpn.util.Log
+import org.ВадькаVPN.vpn.util.Log
 import java.io.File
 
 private const val TAG = "TvFilePicker"

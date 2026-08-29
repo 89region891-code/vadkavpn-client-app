@@ -3,7 +3,7 @@
 #include <libssh/libssh.h>
 #include <openssl/ssl.h>
 
-#include "amneziaApplication.h"
+#include "ВадькаVPNApplication.h"
 #include "core/utils/osSignalHandler.h"
 #include "core/utils/migrations.h"
 #include "core/utils/appUiConfig.h"
@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
     qputenv("ANDROID_OPENSSL_SUFFIX", "_3");
 #endif
 
-    AmneziaApplication app(argc, argv);
+    ВадькаVPNApplication app(argc, argv);
     OsSignalHandler::setup();
 
     anchorOpenSSL();

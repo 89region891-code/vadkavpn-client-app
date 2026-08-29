@@ -23,7 +23,7 @@
     #include "platforms/android/android_utils.h"
 #endif
 
-using namespace amnezia;
+using namespace ВадькаVPN;
 
 #if defined(Q_OS_IOS) || defined(MACOS_NE)
 namespace
@@ -188,7 +188,7 @@ ErrorCode StorePurchaseController::importServiceFromMarket(const QString &userCo
 
     quint16 crc = qChecksum(QJsonDocument(configObject).toJson());
 
-    if (configObject.value(configKey::configVersion).toInt() != serverConfigUtils::ConfigSource::AmneziaGateway) {
+    if (configObject.value(configKey::configVersion).toInt() != serverConfigUtils::ConfigSource::ВадькаVPNGateway) {
         return ErrorCode::InternalError;
     }
 

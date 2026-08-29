@@ -9,19 +9,19 @@ import "TextTypes"
 RadioButton {
     id: root
 
-    property string hoveredColor: AmneziaStyle.color.barelyTranslucentWhite
-    property string defaultColor: AmneziaStyle.color.transparent
-    property string checkedColor: AmneziaStyle.color.transparent
-    property string disabledColor: AmneziaStyle.color.transparent
+    property string hoveredColor: ВадькаVPNStyle.color.barelyTranslucentWhite
+    property string defaultColor: ВадькаVPNStyle.color.transparent
+    property string checkedColor: ВадькаVPNStyle.color.transparent
+    property string disabledColor: ВадькаVPNStyle.color.transparent
 
-    property string textColor: AmneziaStyle.color.paleGray
-    property string textDisabledColor: AmneziaStyle.color.mutedGray
+    property string textColor: ВадькаVPNStyle.color.paleGray
+    property string textDisabledColor: ВадькаVPNStyle.color.mutedGray
 
-    property string pressedBorderColor: AmneziaStyle.color.charcoalGray
-    property string checkedBorderColor: AmneziaStyle.color.goldenApricot
-    property string defaultBodredColor: AmneziaStyle.color.transparent
-    property string checkedDisabledBorderColor: AmneziaStyle.color.mutedBrown
-    property string borderFocusedColor: AmneziaStyle.color.paleGray
+    property string pressedBorderColor: ВадькаVPNStyle.color.charcoalGray
+    property string checkedBorderColor: ВадькаVPNStyle.color.goldenApricot
+    property string defaultBodredColor: ВадькаVPNStyle.color.transparent
+    property string checkedDisabledBorderColor: ВадькаVPNStyle.color.mutedBrown
+    property string borderFocusedColor: ВадькаVPNStyle.color.paleGray
     property int borderWidth: 0
 
     implicitWidth: content.implicitWidth

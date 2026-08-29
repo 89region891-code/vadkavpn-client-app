@@ -4,7 +4,7 @@
 #include <QLatin1String>
 #include <QStringList>
 
-namespace amnezia
+namespace ВадькаVPN
 {
     namespace configKey
     {
@@ -159,11 +159,11 @@ namespace amnezia
 
         constexpr QLatin1String nameOverriddenByUser("nameOverriddenByUser");
 
-        constexpr QLatin1String amneziaOpenvpn("amnezia-openvpn");
-        constexpr QLatin1String amneziaWireguard("amnezia-wireguard");
-        constexpr QLatin1String amneziaAwg("amnezia-awg");
-        constexpr QLatin1String amneziaXray("amnezia-xray");
-        constexpr QLatin1String amneziaSsxray("amnezia-ssxray");
+        constexpr QLatin1String ВадькаVPNOpenvpn("ВадькаVPN-openvpn");
+        constexpr QLatin1String ВадькаVPNWireguard("ВадькаVPN-wireguard");
+        constexpr QLatin1String ВадькаVPNAwg("ВадькаVPN-awg");
+        constexpr QLatin1String ВадькаVPNXray("ВадькаVPN-xray");
+        constexpr QLatin1String ВадькаVPNSsxray("ВадькаVPN-ssxray");
 
         constexpr QLatin1String clientName("clientName");
         constexpr QLatin1String userData("userData");

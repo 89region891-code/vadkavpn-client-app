@@ -68,7 +68,7 @@ target_link_libraries(${CLIENT_IOS_NE_TARGET_NAME} PRIVATE ${FW_LIBRESOLV})
 target_compile_options(${CLIENT_IOS_NE_TARGET_NAME} PRIVATE -DGROUP_ID=\"${BUILD_IOS_GROUP_IDENTIFIER}\")
 target_compile_options(${CLIENT_IOS_NE_TARGET_NAME} PRIVATE -DNETWORK_EXTENSION=1)
 
-set(WG_APPLE_SOURCE_DIR ${CLIENT_ROOT_DIR}/3rd/amneziawg-apple/Sources)
+set(WG_APPLE_SOURCE_DIR ${CLIENT_ROOT_DIR}/3rd/ВадькаVPNwg-apple/Sources)
 
 target_sources(${CLIENT_IOS_NE_TARGET_NAME} PRIVATE
     ${WG_APPLE_SOURCE_DIR}/WireGuardKit/WireGuardAdapter.swift
@@ -117,14 +117,14 @@ target_include_directories(${CLIENT_IOS_NE_TARGET_NAME} PRIVATE ${CMAKE_CURRENT_
 
 find_package(openvpnadapter REQUIRED)
 # FIXME(ygurov): https://github.com/conan-io/conan/issues/20034
-set_property(TARGET amnezia::openvpnadapter APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
-set_property(TARGET amnezia::openvpnadapter APPEND PROPERTY IMPORTED_CONFIGURATIONS MINSIZEREL)
-set_property(TARGET amnezia::openvpnadapter APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
-set_property(TARGET amnezia::openvpnadapter APPEND PROPERTY IMPORTED_CONFIGURATIONS RELWITHDEBINFO)
-target_link_libraries(${CLIENT_IOS_NE_TARGET_NAME} PRIVATE amnezia::openvpnadapter)
+set_property(TARGET ВадькаVPN::openvpnadapter APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
+set_property(TARGET ВадькаVPN::openvpnadapter APPEND PROPERTY IMPORTED_CONFIGURATIONS MINSIZEREL)
+set_property(TARGET ВадькаVPN::openvpnadapter APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
+set_property(TARGET ВадькаVPN::openvpnadapter APPEND PROPERTY IMPORTED_CONFIGURATIONS RELWITHDEBINFO)
+target_link_libraries(${CLIENT_IOS_NE_TARGET_NAME} PRIVATE ВадькаVPN::openvpnadapter)
 
 find_package(awg-apple REQUIRED)
-target_link_libraries(${CLIENT_IOS_NE_TARGET_NAME} PRIVATE amnezia::awg-apple)
+target_link_libraries(${CLIENT_IOS_NE_TARGET_NAME} PRIVATE ВадькаVPN::awg-apple)
 
 find_package(hev-socks5-tunnel REQUIRED)
 # FIXME(ygurov): https://github.com/conan-io/conan/issues/20034

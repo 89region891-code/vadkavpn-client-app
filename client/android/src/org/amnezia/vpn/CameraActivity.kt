@@ -1,4 +1,4 @@
-package org.amnezia.vpn
+package org.ВадькаVPN.vpn
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -23,9 +23,9 @@ import com.google.mlkit.vision.barcode.BarcodeScanning
 import com.google.mlkit.vision.barcode.ZoomSuggestionOptions
 import com.google.mlkit.vision.barcode.common.Barcode
 import com.google.mlkit.vision.common.InputImage
-import org.amnezia.vpn.databinding.CameraPreviewBinding
-import org.amnezia.vpn.qt.QtAndroidController
-import org.amnezia.vpn.util.Log
+import org.ВадькаVPN.vpn.databinding.CameraPreviewBinding
+import org.ВадькаVPN.vpn.qt.QtAndroidController
+import org.ВадькаVPN.vpn.util.Log
 
 private const val TAG = "CameraActivity"
 

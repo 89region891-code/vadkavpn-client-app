@@ -12,7 +12,7 @@ class AppSplitTunnelingController
 public:
     explicit AppSplitTunnelingController(SecureAppSettingsRepository* appSettingsRepository);
 
-    bool addApp(const amnezia::InstalledAppInfo &appInfo);
+    bool addApp(const ВадькаVPN::InstalledAppInfo &appInfo);
     void removeApp(int index);
     void clearAppsList();
     void setRouteMode(AppsRouteMode routeMode);
@@ -20,12 +20,12 @@ public:
 
     AppsRouteMode getRouteMode() const;
     bool isSplitTunnelingEnabled() const;
-    QVector<amnezia::InstalledAppInfo> getApps() const;
+    QVector<ВадькаVPN::InstalledAppInfo> getApps() const;
 
 private:
     SecureAppSettingsRepository* m_appSettingsRepository;
     AppsRouteMode m_currentRouteMode;
-    QVector<amnezia::InstalledAppInfo> m_apps;
+    QVector<ВадькаVPN::InstalledAppInfo> m_apps;
 };
 
 #endif // APPSPLITTUNNELINGCONTROLLER_H

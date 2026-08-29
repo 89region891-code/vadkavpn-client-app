@@ -4,6 +4,6 @@ sudo docker run -d \
   --restart always \
   --ulimit nofile=65536:65536 \
   -p $TELEMT_PORT:$TELEMT_PORT/tcp \
-  -v amnezia-telemt-data:/data \
+  -v ВадькаVPN-telemt-data:/data \
   --name $CONTAINER_NAME \
   $CONTAINER_NAME

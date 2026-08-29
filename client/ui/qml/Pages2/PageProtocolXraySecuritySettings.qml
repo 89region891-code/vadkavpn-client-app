@@ -91,7 +91,7 @@ PageType {
                 Layout.rightMargin: 16
                 Layout.topMargin: 8
                 visible: !realityAllowed
-                color: AmneziaStyle.color.goldenApricot
+                color: ВадькаVPNStyle.color.goldenApricot
                 text: qsTr("REALITY is not supported with the mKCP transport. Use None or TLS.")
             }
 

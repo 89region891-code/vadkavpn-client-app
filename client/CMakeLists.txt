@@ -79,9 +79,9 @@ qt6_add_resources(QRC ${QRC}
 
 # -- i18n begin
 if(CLIENT_TS_FILES)
-    set(AMNEZIAVPN_TS_FILES ${CLIENT_TS_FILES})
+    set(ВадькаVPNVPN_TS_FILES ${CLIENT_TS_FILES})
 else()
-    set(AMNEZIAVPN_TS_FILES
+    set(ВадькаVPNVPN_TS_FILES
         ${CMAKE_CURRENT_LIST_DIR}/translations/${CLIENT_TS_PREFIX}_ru_RU.ts
         ${CMAKE_CURRENT_LIST_DIR}/translations/${CLIENT_TS_PREFIX}_zh_CN.ts
         ${CMAKE_CURRENT_LIST_DIR}/translations/${CLIENT_TS_PREFIX}_fa_IR.ts
@@ -95,11 +95,11 @@ else()
     )
 endif()
 
-file(GLOB_RECURSE AMNEZIAVPN_QML_FILES ${CMAKE_CURRENT_LIST_DIR}/ui/qml/*.qml)
+file(GLOB_RECURSE ВадькаVPNVPN_QML_FILES ${CMAKE_CURRENT_LIST_DIR}/ui/qml/*.qml)
 
 qt6_add_translations(${PROJECT}
-    TS_FILES ${AMNEZIAVPN_TS_FILES}
-    SOURCES ${AMNEZIAVPN_QML_FILES}
+    TS_FILES ${ВадькаVPNVPN_TS_FILES}
+    SOURCES ${ВадькаVPNVPN_QML_FILES}
     RESOURCE_PREFIX "/translations"
 )
 # -- i18n end
@@ -170,8 +170,8 @@ endif()
 
 if(WIN32)
     configure_file(
-        ${CMAKE_CURRENT_LIST_DIR}/platforms/windows/amneziavpn.rc.in
-        ${CMAKE_CURRENT_BINARY_DIR}/amneziavpn.rc
+        ${CMAKE_CURRENT_LIST_DIR}/platforms/windows/ВадькаVPNvpn.rc.in
+        ${CMAKE_CURRENT_BINARY_DIR}/ВадькаVPNvpn.rc
     )
 
     set(LIBS ${LIBS}
@@ -207,7 +207,7 @@ if(LINUX AND NOT ANDROID)
 endif()
 
 if(WIN32 OR (APPLE AND NOT IOS AND NOT MACOS_NE) OR (LINUX AND NOT ANDROID))
-    add_compile_definitions(AMNEZIA_DESKTOP)
+    add_compile_definitions(ВадькаVPN_DESKTOP)
 endif()
 
 if(ANDROID)
@@ -244,11 +244,11 @@ endif()
 install(TARGETS ${PROJECT}
     DESTINATION ${CMAKE_INSTALL_BINDIR}
     RUNTIME_DEPENDENCY_SET client_deps
-    COMPONENT AmneziaVPN
+    COMPONENT ВадькаVPNVPN
 )
 
 if(APPLE)
-    set(RUNTIME_DEPS_DIR ${CMAKE_INSTALL_BINDIR}/AmneziaVPN.app/Contents/Frameworks)
+    set(RUNTIME_DEPS_DIR ${CMAKE_INSTALL_BINDIR}/ВадькаVPNVPN.app/Contents/Frameworks)
 else()
     set(RUNTIME_DEPS_DIR ${CMAKE_INSTALL_BINDIR})
 endif()
@@ -267,7 +267,7 @@ install(RUNTIME_DEPENDENCY_SET client_deps
         [[^/lib.*]]
         [[^/usr/lib.*]]
     DIRECTORIES ${CONAN_RUNTIME_LIB_DIRS}
-    COMPONENT AmneziaVPN
+    COMPONENT ВадькаVPNVPN
     DESTINATION "${RUNTIME_DEPS_DIR}"
 )
 
@@ -283,7 +283,7 @@ qt_generate_deploy_qml_app_script(
     DEPLOY_TOOL_OPTIONS ${deploy_tool_options}
 )
 install(SCRIPT ${QT_DEPLOY_SCRIPT}
-    COMPONENT AmneziaVPN
+    COMPONENT ВадькаVPNVPN
 )
 
 if (APPLE AND NOT IOS AND NOT MACOS_NE)
@@ -306,7 +306,7 @@ if(OVPN_SCRIPTS)
 
     install(FILES ${OVPN_SCRIPTS}
         DESTINATION ${CMAKE_INSTALL_BINDIR}
-        COMPONENT AmneziaVPN
+        COMPONENT ВадькаVPNVPN
         PERMISSIONS
             OWNER_READ OWNER_EXECUTE
             GROUP_READ GROUP_EXECUTE

@@ -106,11 +106,11 @@ PageType {
 
                 implicitHeight: 32
 
-                defaultColor: AmneziaStyle.color.transparent
-                hoveredColor: AmneziaStyle.color.translucentWhite
-                pressedColor: AmneziaStyle.color.sheerWhite
-                disabledColor: AmneziaStyle.color.mutedGray
-                textColor: AmneziaStyle.color.goldenApricot
+                defaultColor: ВадькаVPNStyle.color.transparent
+                hoveredColor: ВадькаVPNStyle.color.translucentWhite
+                pressedColor: ВадькаVPNStyle.color.sheerWhite
+                disabledColor: ВадькаVPNStyle.color.mutedGray
+                textColor: ВадькаVPNStyle.color.goldenApricot
 
                 text: showContent ? qsTr("Collapse content") : qsTr("Show content")
 
@@ -150,8 +150,8 @@ PageType {
 
                 iconPath: "qrc:/images/controls/alert-circle.svg"
 
-                textColor: AmneziaStyle.color.vibrantRed
-                imageColor: AmneziaStyle.color.vibrantRed
+                textColor: ВадькаVPNStyle.color.vibrantRed
+                imageColor: ВадькаVPNStyle.color.vibrantRed
             }
 
             WarningType {
@@ -175,7 +175,7 @@ PageType {
                 implicitHeight: configContent.implicitHeight
 
                 radius: 10
-                color: AmneziaStyle.color.onyxBlack
+                color: ВадькаVPNStyle.color.onyxBlack
 
                 visible: showContent
 

@@ -1,15 +1,15 @@
-mkdir -p /opt/amnezia/awg
-cd /opt/amnezia/awg
+mkdir -p /opt/ВадькаVPN/awg
+cd /opt/ВадькаVPN/awg
 WIREGUARD_SERVER_PRIVATE_KEY=$(awg genkey)
-echo $WIREGUARD_SERVER_PRIVATE_KEY > /opt/amnezia/awg/wireguard_server_private_key.key
+echo $WIREGUARD_SERVER_PRIVATE_KEY > /opt/ВадькаVPN/awg/wireguard_server_private_key.key
 
 WIREGUARD_SERVER_PUBLIC_KEY=$(echo $WIREGUARD_SERVER_PRIVATE_KEY | awg pubkey)
-echo $WIREGUARD_SERVER_PUBLIC_KEY > /opt/amnezia/awg/wireguard_server_public_key.key
+echo $WIREGUARD_SERVER_PUBLIC_KEY > /opt/ВадькаVPN/awg/wireguard_server_public_key.key
 
 WIREGUARD_PSK=$(awg genpsk)
-echo $WIREGUARD_PSK > /opt/amnezia/awg/wireguard_psk.key
+echo $WIREGUARD_PSK > /opt/ВадькаVPN/awg/wireguard_psk.key
 
-cat > /opt/amnezia/awg/awg0.conf <<EOF
+cat > /opt/ВадькаVPN/awg/awg0.conf <<EOF
 [Interface]
 PrivateKey = $WIREGUARD_SERVER_PRIVATE_KEY
 Address = $AWG_SUBNET_IP/$WIREGUARD_SUBNET_CIDR
@@ -42,4 +42,4 @@ DisableCookies = $DISABLE_COOKIES
 EOF
 
 # Every AWG parameter is optional - drop the lines whose value came out empty
-sed -i '/^[^=]*= *$/d' /opt/amnezia/awg/awg0.conf
+sed -i '/^[^=]*= *$/d' /opt/ВадькаVPN/awg/awg0.conf

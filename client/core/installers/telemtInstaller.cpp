@@ -14,11 +14,11 @@
 
 #include <QtGlobal>
 
-using namespace amnezia;
+using namespace ВадькаVPN;
 
 namespace {
-    constexpr QLatin1String kTelemtClientJsonPath("/data/amnezia-telemt-client.json");
-    constexpr QLatin1String kTelemtClientJsonUploadPath("data/amnezia-telemt-client.json");
+    constexpr QLatin1String kTelemtClientJsonPath("/data/ВадькаVPN-telemt-client.json");
+    constexpr QLatin1String kTelemtClientJsonUploadPath("data/ВадькаVPN-telemt-client.json");
     constexpr QLatin1String kTelemtSecretPath("/data/secret");
     constexpr QLatin1String kTelemtConfigTomlPath("/data/config.toml");
 }

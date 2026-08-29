@@ -23,17 +23,17 @@ public:
         QString host; // host ip
     };
 
-    amnezia::ProtocolConfig createConfig(const amnezia::ServerCredentials &credentials, amnezia::DockerContainer container,
-                                const amnezia::ContainerConfig &containerConfig,
-                                const amnezia::DnsSettings &dnsSettings,
-                                amnezia::ErrorCode &errorCode) override;
+    ВадькаVPN::ProtocolConfig createConfig(const ВадькаVPN::ServerCredentials &credentials, ВадькаVPN::DockerContainer container,
+                                const ВадькаVPN::ContainerConfig &containerConfig,
+                                const ВадькаVPN::DnsSettings &dnsSettings,
+                                ВадькаVPN::ErrorCode &errorCode) override;
 
     QString genIkev2Config(const ConnectionData &connData);
     QString genMobileConfig(const ConnectionData &connData);
     QString genStrongSwanConfig(const ConnectionData &connData);
 
-    ConnectionData prepareIkev2Config(const amnezia::ServerCredentials &credentials,
-        amnezia::DockerContainer container, amnezia::ErrorCode &errorCode);
+    ConnectionData prepareIkev2Config(const ВадькаVPN::ServerCredentials &credentials,
+        ВадькаVPN::DockerContainer container, ВадькаVPN::ErrorCode &errorCode);
 };
 
 #endif // IKEV2_CONFIGURATOR_H

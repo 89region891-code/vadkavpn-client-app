@@ -1,11 +1,11 @@
-cat > /opt/amnezia/openvpn/server.conf <<EOF
+cat > /opt/ВадькаVPN/openvpn/server.conf <<EOF
 port $OPENVPN_PORT
 proto $OPENVPN_TRANSPORT_PROTO
 dev tun
-ca /opt/amnezia/openvpn/ca.crt
-cert /opt/amnezia/openvpn/AmneziaReq.crt
-key /opt/amnezia/openvpn/AmneziaReq.key
-dh /opt/amnezia/openvpn/dh.pem
+ca /opt/ВадькаVPN/openvpn/ca.crt
+cert /opt/ВадькаVPN/openvpn/ВадькаVPNReq.crt
+key /opt/ВадькаVPN/openvpn/ВадькаVPNReq.key
+dh /opt/ВадькаVPN/openvpn/dh.pem
 server $OPENVPN_SUBNET_IP $OPENVPN_SUBNET_MASK
 ifconfig-pool-persist ipp.txt
 duplicate-cn
@@ -18,7 +18,7 @@ user nobody
 group nobody
 persist-key
 persist-tun
-crl-verify /opt/amnezia/openvpn/crl.pem
+crl-verify /opt/ВадькаVPN/openvpn/crl.pem
 status openvpn-status.log
 verb 1
 tls-server

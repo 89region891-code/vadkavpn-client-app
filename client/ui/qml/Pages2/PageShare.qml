@@ -20,7 +20,7 @@ PageType {
     id: root
 
     enum ConfigType {
-        AmneziaConnection,
+        ВадькаVPNConnection,
         OpenVpn,
         WireGuard,
         Awg,
@@ -46,39 +46,39 @@ PageType {
             var serverId = ServersUiController.processedServerId
 
             switch (type) {
-            case PageShare.ConfigType.AmneziaConnection: {
+            case PageShare.ConfigType.ВадькаVPNConnection: {
                 ExportController.generateConnectionConfig(serverId, containerIndex, clientNameTextField.textField.text);
-                configCaption = qsTr("Save AmneziaVPN config")
+                configCaption = qsTr("Save ВадькаVPNVPN config")
                 configExtension = ".vpn"
-                configFileName = "amnezia_config"
+                configFileName = "ВадькаVPN_config"
                 break;
             }
             case PageShare.ConfigType.OpenVpn: {
                 ExportController.generateOpenVpnConfig(serverId, clientNameTextField.textField.text)
                 configCaption = qsTr("Save OpenVPN config")
                 configExtension = ".ovpn"
-                configFileName = "amnezia_for_openvpn"
+                configFileName = "ВадькаVPN_for_openvpn"
                 break
             }
             case PageShare.ConfigType.WireGuard: {
                 ExportController.generateWireGuardConfig(serverId, clientNameTextField.textField.text)
                 configCaption = qsTr("Save WireGuard config")
                 configExtension = ".conf"
-                configFileName = "amnezia_for_wireguard"
+                configFileName = "ВадькаVPN_for_wireguard"
                 break
             }
             case PageShare.ConfigType.Awg: {
                 ExportController.generateAwgConfig(serverId, containerIndex, clientNameTextField.textField.text)
-                configCaption = qsTr("Save AmneziaWG config")
+                configCaption = qsTr("Save ВадькаVPNWG config")
                 configExtension = ".conf"
-                configFileName = "amnezia_for_awg"
+                configFileName = "ВадькаVPN_for_awg"
                 break
             }
             case PageShare.ConfigType.Xray: {
                 ExportController.generateXrayConfig(serverId, clientNameTextField.textField.text)
                 configCaption = qsTr("Save XRay config")
                 configExtension = ".json"
-                configFileName = "amnezia_for_xray"
+                configFileName = "ВадькаVPN_for_xray"
                 break
             }
             }
@@ -100,13 +100,13 @@ PageType {
     property bool showContent: false
     property bool shareButtonEnabled: true
     property list<QtObject> connectionTypesModel: [
-        amneziaConnectionFormat
+        ВадькаVPNConnectionFormat
     ]
 
     QtObject {
-        id: amneziaConnectionFormat
-        readonly property string name: qsTr("For the AmneziaVPN app")
-        readonly property int type: PageShare.ConfigType.AmneziaConnection
+        id: ВадькаVPNConnectionFormat
+        readonly property string name: qsTr("For the ВадькаVPNVPN app")
+        readonly property int type: PageShare.ConfigType.ВадькаVPNConnection
     }
     QtObject {
         id: openVpnConnectionFormat
@@ -120,7 +120,7 @@ PageType {
     }
     QtObject {
         id: awgConnectionFormat
-        readonly property string name: qsTr("AmneziaWG native format")
+        readonly property string name: qsTr("ВадькаVPNWG native format")
         readonly property int type: PageShare.ConfigType.Awg
     }
     QtObject {
@@ -217,7 +217,7 @@ PageType {
                 implicitWidth: accessTypeSelectorContent.implicitWidth
                 implicitHeight: accessTypeSelectorContent.implicitHeight
 
-                color: AmneziaStyle.color.onyxBlack
+                color: ВадькаVPNStyle.color.onyxBlack
                 radius: 16
 
                 RowLayout {
@@ -269,7 +269,7 @@ PageType {
                 visible: accessTypeSelector.currentIndex === 0
 
                 text: qsTr("Share VPN access without the ability to manage the server")
-                color: AmneziaStyle.color.mutedGray
+                color: ВадькаVPNStyle.color.mutedGray
             }
 
             TextFieldWithHeaderType {
@@ -443,19 +443,19 @@ PageType {
                     }
 
                     function fillConnectionTypeModel() {
-                        root.connectionTypesModel = [amneziaConnectionFormat]
+                        root.connectionTypesModel = [ВадькаVPNConnectionFormat]
 
                         var index = proxyContainersModel.mapToSource(selectedIndex)
 
-                        if (index === ContainerProps.containerFromString("amnezia-openvpn")) {
+                        if (index === ContainerProps.containerFromString("ВадькаVPN-openvpn")) {
                             root.connectionTypesModel.push(openVpnConnectionFormat)
-                        } else if (index === ContainerProps.containerFromString("amnezia-wireguard")) {
+                        } else if (index === ContainerProps.containerFromString("ВадькаVPN-wireguard")) {
                             root.connectionTypesModel.push(wireGuardConnectionFormat)
-                        } else if (index === ContainerProps.containerFromString("amnezia-awg")) {
+                        } else if (index === ContainerProps.containerFromString("ВадькаVPN-awg")) {
                             root.connectionTypesModel.push(awgConnectionFormat)
-                        } else if (index === ContainerProps.containerFromString("amnezia-awg2")) {
+                        } else if (index === ContainerProps.containerFromString("ВадькаVPN-awg2")) {
                             root.connectionTypesModel.push(awgConnectionFormat)
-                        } else if (index === ContainerProps.containerFromString("amnezia-xray")) {
+                        } else if (index === ContainerProps.containerFromString("ВадькаVPN-xray")) {
                             root.connectionTypesModel.push(xrayConnectionFormat)
                         }
                     }
@@ -593,7 +593,7 @@ PageType {
                 ImageButtonType {
                     id: closeSearchButton
                     image: "qrc:/images/controls/close.svg"
-                    imageColor: AmneziaStyle.color.paleGray
+                    imageColor: ВадькаVPNStyle.color.paleGray
 
                     function clickedFunc() {
                         searchTextField.textField.text = ""
@@ -693,7 +693,7 @@ PageType {
                                 }
 
                                 ParagraphTextType {
-                                    color: AmneziaStyle.color.mutedGray
+                                    color: ВадькаVPNStyle.color.mutedGray
                                     visible: creationDate
                                     Layout.maximumWidth: parent.width
 
@@ -705,7 +705,7 @@ PageType {
                                 }
 
                                 ParagraphTextType {
-                                    color: AmneziaStyle.color.mutedGray
+                                    color: ВадькаVPNStyle.color.mutedGray
                                     visible: latestHandshake
                                     Layout.maximumWidth: parent.width
 
@@ -717,7 +717,7 @@ PageType {
                                 }
 
                                 ParagraphTextType {
-                                    color: AmneziaStyle.color.mutedGray
+                                    color: ВадькаVPNStyle.color.mutedGray
                                     visible: dataReceived
                                     Layout.maximumWidth: parent.width
 
@@ -729,7 +729,7 @@ PageType {
                                 }
 
                                 ParagraphTextType {
-                                    color: AmneziaStyle.color.mutedGray
+                                    color: ВадькаVPNStyle.color.mutedGray
                                     visible: dataSent
                                     Layout.maximumWidth: parent.width
 
@@ -741,7 +741,7 @@ PageType {
                                 }
 
                                 ParagraphTextType {
-                                    color: AmneziaStyle.color.mutedGray
+                                    color: ВадькаVPNStyle.color.mutedGray
                                     visible: allowedIps
                                     Layout.maximumWidth: parent.width
 
@@ -755,11 +755,11 @@ PageType {
                                     Layout.fillWidth: true
                                     Layout.topMargin: 24
 
-                                    defaultColor: AmneziaStyle.color.transparent
-                                    hoveredColor: AmneziaStyle.color.translucentWhite
-                                    pressedColor: AmneziaStyle.color.sheerWhite
-                                    disabledColor: AmneziaStyle.color.mutedGray
-                                    textColor: AmneziaStyle.color.paleGray
+                                    defaultColor: ВадькаVPNStyle.color.transparent
+                                    hoveredColor: ВадькаVPNStyle.color.translucentWhite
+                                    pressedColor: ВадькаVPNStyle.color.sheerWhite
+                                    disabledColor: ВадькаVPNStyle.color.mutedGray
+                                    textColor: ВадькаVPNStyle.color.paleGray
                                     borderWidth: 1
 
                                     text: qsTr("Rename")
@@ -827,11 +827,11 @@ PageType {
                                     Layout.fillWidth: true
                                     Layout.topMargin: 8
 
-                                    defaultColor: AmneziaStyle.color.transparent
-                                    hoveredColor: AmneziaStyle.color.translucentWhite
-                                    pressedColor: AmneziaStyle.color.sheerWhite
-                                    disabledColor: AmneziaStyle.color.mutedGray
-                                    textColor: AmneziaStyle.color.paleGray
+                                    defaultColor: ВадькаVPNStyle.color.transparent
+                                    hoveredColor: ВадькаVPNStyle.color.translucentWhite
+                                    pressedColor: ВадькаVPNStyle.color.sheerWhite
+                                    disabledColor: ВадькаVPNStyle.color.mutedGray
+                                    textColor: ВадькаVPNStyle.color.paleGray
                                     borderWidth: 1
 
                                     text: qsTr("Revoke")

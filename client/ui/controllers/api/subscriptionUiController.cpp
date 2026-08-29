@@ -1,6 +1,6 @@
 #include "subscriptionUiController.h"
 
-#include "amneziaApplication.h"
+#include "ВадькаVPNApplication.h"
 #include "core/configurators/wireguardConfigurator.h"
 #include "core/utils/serverConfigUtils.h"
 #include "core/utils/constants/apiKeys.h"
@@ -24,7 +24,7 @@
 
 namespace
 {
-constexpr char premiumServiceType[] = "amnezia-premium";
+constexpr char premiumServiceType[] = "ВадькаVPN-premium";
 }
 
 SubscriptionUiController::SubscriptionUiController(ServersController* serversController,
@@ -211,7 +211,7 @@ bool SubscriptionUiController::importPremiumFromStore(const QString &storeProduc
 
 #if defined(Q_OS_IOS) || defined(MACOS_NE)
     if (productId.isEmpty()) {
-        productId = QStringLiteral("amnezia_premium_6_month");
+        productId = QStringLiteral("ВадькаVPN_premium_6_month");
     }
 
     errorCode = m_storePurchaseController->processAppStorePurchase(

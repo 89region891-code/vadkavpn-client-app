@@ -21,21 +21,21 @@ class ConfiguratorBase : public QObject
 public:
     explicit ConfiguratorBase(SshSession* sshSession, QObject *parent = nullptr);
 
-    static QScopedPointer<ConfiguratorBase> create(amnezia::Proto protocol,
+    static QScopedPointer<ConfiguratorBase> create(ВадькаVPN::Proto protocol,
                                                    SshSession* sshSession);
 
-    virtual amnezia::ProtocolConfig createConfig(const amnezia::ServerCredentials &credentials, amnezia::DockerContainer container,
-                                        const amnezia::ContainerConfig &containerConfig,
-                                        const amnezia::DnsSettings &dnsSettings,
-                                        amnezia::ErrorCode &errorCode) = 0;
+    virtual ВадькаVPN::ProtocolConfig createConfig(const ВадькаVPN::ServerCredentials &credentials, ВадькаVPN::DockerContainer container,
+                                        const ВадькаVPN::ContainerConfig &containerConfig,
+                                        const ВадькаVPN::DnsSettings &dnsSettings,
+                                        ВадькаVPN::ErrorCode &errorCode) = 0;
 
-    virtual amnezia::ProtocolConfig processConfigWithLocalSettings(const amnezia::ConnectionSettings &settings,
-                                                                   amnezia::ProtocolConfig protocolConfig);
-    virtual amnezia::ProtocolConfig processConfigWithExportSettings(const amnezia::ExportSettings &settings,
-                                                                     amnezia::ProtocolConfig protocolConfig);
+    virtual ВадькаVPN::ProtocolConfig processConfigWithLocalSettings(const ВадькаVPN::ConnectionSettings &settings,
+                                                                   ВадькаVPN::ProtocolConfig protocolConfig);
+    virtual ВадькаVPN::ProtocolConfig processConfigWithExportSettings(const ВадькаVPN::ExportSettings &settings,
+                                                                     ВадькаVPN::ProtocolConfig protocolConfig);
 
 protected:
-    void applyDnsToNativeConfig(const amnezia::DnsSettings &dns, amnezia::ProtocolConfig &protocolConfig);
+    void applyDnsToNativeConfig(const ВадькаVPN::DnsSettings &dns, ВадькаVPN::ProtocolConfig &protocolConfig);
 
     SshSession* m_sshSession;
 };

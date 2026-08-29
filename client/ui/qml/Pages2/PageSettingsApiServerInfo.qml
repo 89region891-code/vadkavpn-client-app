@@ -159,8 +159,8 @@ PageType {
                     : qsTr("Subscription expiring soon")
 
                 color: root.isSubscriptionExpired
-                    ? AmneziaStyle.color.vibrantRed
-                    : AmneziaStyle.color.goldenApricot
+                    ? ВадькаVPNStyle.color.vibrantRed
+                    : ВадькаVPNStyle.color.goldenApricot
             }
 
             ParagraphTextType {
@@ -173,7 +173,7 @@ PageType {
                 Layout.bottomMargin: root.isSubscriptionExpired || root.isSubscriptionExpiringSoon ? 0 : 10
 
                 text: ApiAccountInfoModel.data("serviceDescription")
-                color: AmneziaStyle.color.mutedGray
+                color: ВадькаVPNStyle.color.mutedGray
             }
 
             BasicButtonType {
@@ -188,10 +188,10 @@ PageType {
 
                 text: qsTr("Renew subscription")
 
-                defaultColor: AmneziaStyle.color.paleGray
-                hoveredColor: AmneziaStyle.color.lightGray
-                pressedColor: AmneziaStyle.color.mutedGray
-                textColor: AmneziaStyle.color.midnightBlack
+                defaultColor: ВадькаVPNStyle.color.paleGray
+                hoveredColor: ВадькаVPNStyle.color.lightGray
+                pressedColor: ВадькаVPNStyle.color.mutedGray
+                textColor: ВадькаVPNStyle.color.midnightBlack
 
                 clickedFunc: function() {
                     SubscriptionUiController.getRenewalLink(ServersUiController.processedServerId)
@@ -232,7 +232,7 @@ PageType {
             width: listView.width
             spacing: 0
 
-            readonly property bool isVisibleForAmneziaFree: ApiAccountInfoModel.data("isComponentVisible")
+            readonly property bool isVisibleForВадькаVPNFree: ApiAccountInfoModel.data("isComponentVisible")
 
             BasicButtonType {
                 visible: !root.isSubscriptionExpired && !root.isSubscriptionExpiringSoon
@@ -244,12 +244,12 @@ PageType {
 
                 implicitHeight: 25
 
-                defaultColor: AmneziaStyle.color.transparent
-                hoveredColor: AmneziaStyle.color.translucentWhite
-                pressedColor: AmneziaStyle.color.sheerWhite
-                textColor: AmneziaStyle.color.goldenApricot
+                defaultColor: ВадькаVPNStyle.color.transparent
+                hoveredColor: ВадькаVPNStyle.color.translucentWhite
+                pressedColor: ВадькаVPNStyle.color.sheerWhite
+                textColor: ВадькаVPNStyle.color.goldenApricot
                 leftImageSource: "qrc:/images/controls/refresh-cw.svg"
-                leftImageColor: AmneziaStyle.color.goldenApricot
+                leftImageColor: ВадькаVPNStyle.color.goldenApricot
 
                 text: qsTr("Renew subscription")
 
@@ -261,7 +261,7 @@ PageType {
             DividerType {
                 visible: (!root.isSubscriptionExpired && !root.isSubscriptionExpiringSoon
                     && root.isSubscriptionRenewalAvailable && !root.isInAppPurchase)
-                    || footer.isVisibleForAmneziaFree
+                    || footer.isVisibleForВадькаVPNFree
             }
 
             WarningType {
@@ -272,7 +272,7 @@ PageType {
                 Layout.leftMargin: 16
                 Layout.fillWidth: true
 
-                backGroundColor: AmneziaStyle.color.translucentRichBrown
+                backGroundColor: ВадькаVPNStyle.color.translucentRichBrown
 
                 textString: qsTr("Configurations have been updated for some countries. Download and install the updated configuration files")
 
@@ -293,7 +293,7 @@ PageType {
                 Layout.fillWidth: true
                 Layout.topMargin: warning.visible ? 16 : 0
 
-                visible: footer.isVisibleForAmneziaFree
+                visible: footer.isVisibleForВадькаVPNFree
 
                 text: qsTr("Subscription Key")
                 rightImageSource: "qrc:/images/controls/chevron-right.svg"
@@ -309,13 +309,13 @@ PageType {
             }
 
             DividerType {
-                visible: footer.isVisibleForAmneziaFree
+                visible: footer.isVisibleForВадькаVPNFree
             }
 
             LabelWithButtonType {
                 Layout.fillWidth: true
 
-                visible: footer.isVisibleForAmneziaFree
+                visible: footer.isVisibleForВадькаVPNFree
 
                 text: qsTr("Configuration Files")
 
@@ -329,13 +329,13 @@ PageType {
             }
 
             DividerType {
-                visible: footer.isVisibleForAmneziaFree
+                visible: footer.isVisibleForВадькаVPNFree
             }
 
             LabelWithButtonType {
                 Layout.fillWidth: true
 
-                visible: footer.isVisibleForAmneziaFree
+                visible: footer.isVisibleForВадькаVPNFree
 
                 text: qsTr("Active Devices")
 
@@ -349,12 +349,12 @@ PageType {
             }
 
             DividerType {
-                visible: footer.isVisibleForAmneziaFree
+                visible: footer.isVisibleForВадькаVPNFree
             }
 
             LabelWithButtonType {
                 Layout.fillWidth: true
-                Layout.topMargin: footer.isVisibleForAmneziaFree ? 0 : 32
+                Layout.topMargin: footer.isVisibleForВадькаVPNFree ? 0 : 32
 
                 text: qsTr("Support")
                 rightImageSource: "qrc:/images/controls/chevron-right.svg"
@@ -369,7 +369,7 @@ PageType {
             LabelWithButtonType {
                 Layout.fillWidth: true
 
-                visible: footer.isVisibleForAmneziaFree
+                visible: footer.isVisibleForВадькаVPNFree
 
                 text: qsTr("How to connect on another device")
                 rightImageSource: "qrc:/images/controls/chevron-right.svg"
@@ -380,7 +380,7 @@ PageType {
             }
 
             DividerType {
-                visible: footer.isVisibleForAmneziaFree
+                visible: footer.isVisibleForВадькаVPNFree
             }
 
             BasicButtonType {
@@ -392,9 +392,9 @@ PageType {
                 implicitHeight: 32
 
                 defaultColor: "transparent"
-                hoveredColor: AmneziaStyle.color.translucentWhite
-                pressedColor: AmneziaStyle.color.sheerWhite
-                textColor: AmneziaStyle.color.vibrantRed
+                hoveredColor: ВадькаVPNStyle.color.translucentWhite
+                pressedColor: ВадькаVPNStyle.color.sheerWhite
+                textColor: ВадькаVPNStyle.color.vibrantRed
 
                 text: qsTr("Reload API config")
 
@@ -426,12 +426,12 @@ PageType {
                 Layout.leftMargin: 8
                 implicitHeight: 32
 
-                visible: footer.isVisibleForAmneziaFree
+                visible: footer.isVisibleForВадькаVPNFree
 
                 defaultColor: "transparent"
-                hoveredColor: AmneziaStyle.color.translucentWhite
-                pressedColor: AmneziaStyle.color.sheerWhite
-                textColor: AmneziaStyle.color.vibrantRed
+                hoveredColor: ВадькаVPNStyle.color.translucentWhite
+                pressedColor: ВадькаVPNStyle.color.sheerWhite
+                textColor: ВадькаVPNStyle.color.vibrantRed
 
                 text: qsTr("Unlink this device")
 
@@ -467,9 +467,9 @@ PageType {
                 implicitHeight: 32
 
                 defaultColor: "transparent"
-                hoveredColor: AmneziaStyle.color.translucentWhite
-                pressedColor: AmneziaStyle.color.sheerWhite
-                textColor: AmneziaStyle.color.vibrantRed
+                hoveredColor: ВадькаVPNStyle.color.translucentWhite
+                pressedColor: ВадькаVPNStyle.color.sheerWhite
+                textColor: ВадькаVPNStyle.color.vibrantRed
 
                 text: qsTr("Remove from application")
 

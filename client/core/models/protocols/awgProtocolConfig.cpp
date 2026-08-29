@@ -12,9 +12,9 @@
 #include "../../../core/utils/constants/configKeys.h"
 #include "../../../core/utils/constants/protocolConstants.h"
 
-using namespace amnezia;
+using namespace ВадькаVPN;
 using namespace ProtocolUtils;
-namespace amnezia
+namespace ВадькаVPN
 {
 
 namespace
@@ -510,5 +510,5 @@ bool AwgProtocolConfig::isPacketSizeEqual(int s1, int s2, int s3, int s4)
             || responseSize == transportSize || cookieSize == transportSize);
 }
 
-} // namespace amnezia
+} // namespace ВадькаVPN
 

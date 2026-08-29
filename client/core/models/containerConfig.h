@@ -13,7 +13,7 @@
 #include "core/utils/constants/protocolConstants.h"
 #include "core/models/protocolConfig.h"
 
-namespace amnezia
+namespace ВадькаVPN
 {
 
 using namespace ContainerEnumNS;
@@ -73,7 +73,7 @@ struct ContainerConfig {
     const DnsProtocolConfig* getDnsProtocolConfig() const;
 };
 
-} // namespace amnezia
+} // namespace ВадькаVPN
 
 #endif // CONTAINERCONFIG_H
 

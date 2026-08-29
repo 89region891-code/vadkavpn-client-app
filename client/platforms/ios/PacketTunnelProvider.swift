@@ -12,7 +12,7 @@ enum TunnelProtoType: String {
 
 struct Constants {
   static let kDefaultPathKey = "defaultPath"
-  static let processQueueName = "org.amnezia.process-packets"
+  static let processQueueName = "org.ВадькаVPN.process-packets"
   static let kActivationAttemptId = "activationAttemptId"
   static let ovpnConfigKey = "ovpn"
   static let xrayConfigKey = "xray"
@@ -577,7 +577,7 @@ final class PacketTunnelFlowAdapter: NSObject, OpenVPNAdapterPacketFlow {
 extension NEPacketTunnelFlow: OpenVPNAdapterPacketFlow {}
 
 extension NEProviderStopReason {
-  var amneziaDescription: String {
+  var ВадькаVPNDescription: String {
     switch self {
     case .none:
       return "No specific reason"

@@ -1,6 +1,6 @@
 from conan import ConanFile
 
-class AmneziaVPN(ConanFile):
+class ВадькаVPNVPN(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
     generators = "VirtualBuildEnv", "CMakeConfigDeps"
 
@@ -26,7 +26,7 @@ class AmneziaVPN(ConanFile):
             else:
                 self.requires("awg-go/3.1.20260814")
 
-            self.requires("amnezia-xray-bindings/1.4.0")
+            self.requires("ВадькаVPN-xray-bindings/1.4.0")
             self.requires("tun2socks/2.6.0")
             self.requires("openvpn/2.7.0")
             self.requires("v2ray-rules-dat/202603162227")
@@ -37,11 +37,11 @@ class AmneziaVPN(ConanFile):
             self.requires("openvpnadapter/1.0.0")
 
         if os == "Android":
-            self.requires("amnezia-libxray/1.0.3")
+            self.requires("ВадькаVPN-libxray/1.0.3")
             self.requires("awg-android/3.1.20260814")
             self.requires("openvpn-pt-android/1.0.0")
 
-        # expicitly use libssh@amnezia to prevent it from being downloaded from conan-center
-        self.requires("libssh/0.11.3@amnezia")
+        # expicitly use libssh@ВадькаVPN to prevent it from being downloaded from conan-center
+        self.requires("libssh/0.11.3@ВадькаVPN")
         self.requires("openssl/3.6.2")
         self.requires("zlib/1.3.2")

@@ -47,7 +47,7 @@ Item {
             Layout.topMargin: 16
             Layout.fillWidth: true
             text: root.descriptionText
-            color: AmneziaStyle.color.mutedGray
+            color: ВадькаVPNStyle.color.mutedGray
             visible: root.descriptionText !== ""
         }
 
@@ -56,7 +56,7 @@ Item {
             Layout.topMargin: 16
             Layout.fillWidth: true
             text: root.descriptionLinkText !== "" && root.descriptionLinkUrl !== ""
-                  ? ("<a href=\"" + root.descriptionLinkUrl + "\" style=\"color: " + AmneziaStyle.color.goldenApricotString + ";\">" + root.descriptionLinkText + "</a>")
+                  ? ("<a href=\"" + root.descriptionLinkUrl + "\" style=\"color: " + ВадькаVPNStyle.color.goldenApricotString + ";\">" + root.descriptionLinkText + "</a>")
                   : ""
             textFormat: Text.RichText
             visible: root.descriptionLinkText !== ""

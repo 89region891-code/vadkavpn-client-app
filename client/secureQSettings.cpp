@@ -18,7 +18,7 @@ namespace {
     constexpr const char *settingsKeyTag = "settingsKeyTag";
     constexpr const char *settingsIvTag = "settingsIvTag";
 #ifndef CLIENT_KEYCHAIN_NAME_STR
-#define CLIENT_KEYCHAIN_NAME_STR "AmneziaVPN-Keychain"
+#define CLIENT_KEYCHAIN_NAME_STR "ВадькаVPNVPN-Keychain"
 #endif
     constexpr const char *keyChainName = CLIENT_KEYCHAIN_NAME_STR;
 }

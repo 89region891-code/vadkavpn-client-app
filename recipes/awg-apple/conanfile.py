@@ -38,7 +38,7 @@ class AwgApple(ConanFile):
             )
 
     def source(self):
-        get(self, f"https://github.com/amnezia-vpn/amneziawg-apple/archive/refs/tags/v{self.version}.zip",
+        get(self, f"https://github.com/ВадькаVPN-vpn/ВадькаVPNwg-apple/archive/refs/tags/v{self.version}.zip",
             sha256="09d7b760d18232fdf121ed2286b2f171b501dc31137e5e7d557c1ee3a99ef772", strip_root=True
         )
 
@@ -62,5 +62,5 @@ class AwgApple(ConanFile):
         copy(self, "*.a", src=os.path.join(self.build_folder, "out"), dst=os.path.join(self.package_folder, "lib"))
 
     def package_info(self):
-        self.cpp_info.set_property("cmake_target_name", "amnezia::awg-apple")
+        self.cpp_info.set_property("cmake_target_name", "ВадькаVPN::awg-apple")
         self.cpp_info.libs = collect_libs(self)

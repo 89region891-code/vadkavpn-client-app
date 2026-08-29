@@ -1,4 +1,4 @@
-package org.amnezia.vpn
+package org.ВадькаVPN.vpn
 
 import android.os.Build
 import android.os.Bundle
@@ -9,8 +9,8 @@ import androidx.biometric.BiometricPrompt
 import androidx.biometric.BiometricPrompt.AuthenticationResult
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
-import org.amnezia.vpn.qt.QtAndroidController
-import org.amnezia.vpn.util.Log
+import org.ВадькаVPN.vpn.qt.QtAndroidController
+import org.ВадькаVPN.vpn.util.Log
 
 private const val TAG = "AuthActivity"
 
@@ -88,7 +88,7 @@ class AuthActivity : FragmentActivity() {
 
         val promptInfo = BiometricPrompt.PromptInfo.Builder()
             .setAllowedAuthenticators(AUTHENTICATORS)
-            .setTitle("AmneziaVPN")
+            .setTitle("ВадькаVPNVPN")
             .setSubtitle(biometricManager.getStrings(AUTHENTICATORS)?.promptMessage)
             .build()
 

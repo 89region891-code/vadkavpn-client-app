@@ -16,7 +16,7 @@
 #include "core/utils/constants/protocolConstants.h"
 #include "core/models/containerConfig.h"
 
-using namespace amnezia;
+using namespace ВадькаVPN;
 
 namespace
 {
@@ -90,7 +90,7 @@ ErrorCode UsersController::wgShow(const DockerContainer container, const ServerC
                        : QStringLiteral("wg");
     const QString command = QString("sudo docker exec -i $CONTAINER_NAME bash -c '%1 show all'").arg(showBin);
 
-    QString script = sshSession->replaceVars(command, amnezia::genBaseVars(credentials, container, QString(), QString()));
+    QString script = sshSession->replaceVars(command, ВадькаVPN::genBaseVars(credentials, container, QString(), QString()));
     error = sshSession->runScript(credentials, script, cbReadStdOut);
     if (error != ErrorCode::NoError) {
         logger.error() << QString("Failed to execute %1 show command").arg(showBin);
@@ -171,8 +171,8 @@ ErrorCode UsersController::getOpenVpnClients(const DockerContainer container, co
         return ErrorCode::NoError;
     };
 
-    const QString getOpenVpnClientsList = "sudo docker exec -i $CONTAINER_NAME bash -c 'ls /opt/amnezia/openvpn/pki/issued'";
-    QString script = sshSession->replaceVars(getOpenVpnClientsList, amnezia::genBaseVars(credentials, container, QString(), QString()));
+    const QString getOpenVpnClientsList = "sudo docker exec -i $CONTAINER_NAME bash -c 'ls /opt/ВадькаVPN/openvpn/pki/issued'";
+    QString script = sshSession->replaceVars(getOpenVpnClientsList, ВадькаVPN::genBaseVars(credentials, container, QString(), QString()));
     error = sshSession->runScript(credentials, script, cbReadStdOut);
     if (error != ErrorCode::NoError) {
         logger.error() << "Failed to retrieve the list of issued certificates on the server";
@@ -181,7 +181,7 @@ ErrorCode UsersController::getOpenVpnClients(const DockerContainer container, co
 
     if (!stdOut.isEmpty()) {
         QStringList certsIds = stdOut.split("\n", Qt::SkipEmptyParts);
-        certsIds.removeAll("AmneziaReq.crt");
+        certsIds.removeAll("ВадькаVPNReq.crt");
 
         for (auto &openvpnCertId : certsIds) {
             openvpnCertId.replace(".crt", "");
@@ -252,7 +252,7 @@ ErrorCode UsersController::getXrayClients(const DockerContainer container, const
 {
     ErrorCode error = ErrorCode::NoError;
 
-    const QString serverConfigPath = amnezia::protocols::xray::serverConfigPath;
+    const QString serverConfigPath = ВадькаVPN::protocols::xray::serverConfigPath;
     const QString configString = sshSession->getTextFileFromContainer(container, credentials, serverConfigPath, error);
     if (error != ErrorCode::NoError) {
         logger.error() << "Failed to get the xray server config file from the server";
@@ -291,7 +291,7 @@ ErrorCode UsersController::getXrayClients(const DockerContainer container, const
         }
         QString clientId = clientObj[protocols::xray::id].toString();
         
-        QString xrayDefaultUuid = sshSession->getTextFileFromContainer(container, credentials, amnezia::protocols::xray::uuidPath, error);
+        QString xrayDefaultUuid = sshSession->getTextFileFromContainer(container, credentials, ВадькаVPN::protocols::xray::uuidPath, error);
         xrayDefaultUuid.replace("\n", "");
 
         if (!isClientExists(clientId, clientsTable) && clientId != xrayDefaultUuid) {
@@ -323,7 +323,7 @@ ErrorCode UsersController::updateClients(const QString &serverId, const DockerCo
         return ErrorCode::InternalError;
     }
 
-    QString clientsTableFile = QString("/opt/amnezia/%1/clientsTable");
+    QString clientsTableFile = QString("/opt/ВадькаVPN/%1/clientsTable");
     if (container == DockerContainer::OpenVpn) {
         clientsTableFile = clientsTableFile.arg(ContainerUtils::containerTypeToString(DockerContainer::OpenVpn));
     } else {
@@ -440,7 +440,7 @@ ErrorCode UsersController::appendClient(const QString &serverId, const QString &
 
     const QByteArray clientsTableString = QJsonDocument(m_clientsTable).toJson();
 
-    QString clientsTableFile = QString("/opt/amnezia/%1/clientsTable");
+    QString clientsTableFile = QString("/opt/ВадькаVPN/%1/clientsTable");
     if (container == DockerContainer::OpenVpn) {
         clientsTableFile = clientsTableFile.arg(ContainerUtils::containerTypeToString(DockerContainer::OpenVpn));
     } else {
@@ -487,7 +487,7 @@ ErrorCode UsersController::renameClient(const QString &serverId, const int row, 
 
     const QByteArray clientsTableString = QJsonDocument(m_clientsTable).toJson();
 
-    QString clientsTableFile = QString("/opt/amnezia/%1/clientsTable");
+    QString clientsTableFile = QString("/opt/ВадькаVPN/%1/clientsTable");
     if (container == DockerContainer::OpenVpn) {
         clientsTableFile = clientsTableFile.arg(ContainerUtils::containerTypeToString(DockerContainer::OpenVpn));
     } else {
@@ -519,14 +519,14 @@ ErrorCode UsersController::revokeOpenVpn(const int row, const DockerContainer co
     QString clientId = client.value(configKey::clientId).toString();
 
     const QString getOpenVpnCertData = QString("sudo docker exec -i $CONTAINER_NAME bash -c '"
-                                               "cd /opt/amnezia/openvpn ;\\"
+                                               "cd /opt/ВадькаVPN/openvpn ;\\"
                                                "easyrsa revoke %1 ;\\"
                                                "easyrsa gen-crl ;\\"
                                                "chmod 666 pki/crl.pem ;\\"
                                                "cp pki/crl.pem .'")
                                                .arg(clientId);
 
-    const QString script = sshSession->replaceVars(getOpenVpnCertData, amnezia::genBaseVars(credentials, container, QString(), QString()));
+    const QString script = sshSession->replaceVars(getOpenVpnCertData, ВадькаVPN::genBaseVars(credentials, container, QString(), QString()));
     ErrorCode error = sshSession->runScript(credentials, script);
     if (error != ErrorCode::NoError) {
         logger.error() << "Failed to revoke the certificate";
@@ -537,7 +537,7 @@ ErrorCode UsersController::revokeOpenVpn(const int row, const DockerContainer co
 
     const QByteArray clientsTableString = QJsonDocument(clientsTable).toJson();
 
-    QString clientsTableFile = QString("/opt/amnezia/%1/clientsTable");
+    QString clientsTableFile = QString("/opt/ВадькаVPN/%1/clientsTable");
     clientsTableFile = clientsTableFile.arg(ContainerUtils::containerTypeToString(DockerContainer::OpenVpn));
     error = sshSession->uploadTextFileToContainer(container, credentials, clientsTableString, clientsTableFile);
     if (error != ErrorCode::NoError) {
@@ -593,7 +593,7 @@ ErrorCode UsersController::revokeWireGuard(const int row, const DockerContainer 
 
     const QByteArray clientsTableString = QJsonDocument(clientsTable).toJson();
 
-    QString clientsTableFile = QString("/opt/amnezia/%1/clientsTable");
+    QString clientsTableFile = QString("/opt/ВадькаVPN/%1/clientsTable");
     if (container == DockerContainer::OpenVpn) {
         clientsTableFile = clientsTableFile.arg(ContainerUtils::containerTypeToString(DockerContainer::OpenVpn));
     } else {
@@ -613,7 +613,7 @@ ErrorCode UsersController::revokeWireGuard(const int row, const DockerContainer 
     ).arg(command, iface, configPath);
     error = sshSession->runScript(
         credentials,
-        sshSession->replaceVars(script, amnezia::genBaseVars(credentials, container, QString(), QString()))
+        sshSession->replaceVars(script, ВадькаVPN::genBaseVars(credentials, container, QString(), QString()))
     );
     if (error != ErrorCode::NoError) {
         logger.error() << QString("Failed to execute command '%1 syncconf %2' on the server").arg(command, iface);
@@ -634,7 +634,7 @@ ErrorCode UsersController::revokeXray(const int row,
 
     ErrorCode error = ErrorCode::NoError;
 
-    const QString serverConfigPath = amnezia::protocols::xray::serverConfigPath;
+    const QString serverConfigPath = ВадькаVPN::protocols::xray::serverConfigPath;
     const QString configString = sshSession->getTextFileFromContainer(container, credentials, serverConfigPath, error);
     if (error != ErrorCode::NoError) {
         logger.error() << "Failed to get the xray server config file";
@@ -707,7 +707,7 @@ ErrorCode UsersController::revokeXray(const int row,
     clientsTable.removeAt(row);
 
     const QByteArray clientsTableString = QJsonDocument(clientsTable).toJson();
-    QString clientsTableFile = QString("/opt/amnezia/%1/clientsTable")
+    QString clientsTableFile = QString("/opt/ВадькаVPN/%1/clientsTable")
         .arg(ContainerUtils::containerTypeToString(container));
 
     error = sshSession->uploadTextFileToContainer(container, credentials, clientsTableString, clientsTableFile);
@@ -718,7 +718,7 @@ ErrorCode UsersController::revokeXray(const int row,
     QString restartScript = QString("sudo docker restart $CONTAINER_NAME");
     error = sshSession->runScript(
         credentials,
-        sshSession->replaceVars(restartScript, amnezia::genBaseVars(credentials, container, QString(), QString()))
+        sshSession->replaceVars(restartScript, ВадькаVPN::genBaseVars(credentials, container, QString(), QString()))
     );
     if (error != ErrorCode::NoError) {
         logger.error() << "Failed to restart xray container";

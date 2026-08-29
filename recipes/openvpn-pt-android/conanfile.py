@@ -31,7 +31,7 @@ class OpenvpnPtAndroid(ConanFile):
     def source(self):
         git = Git(self)
         git.clone(
-            url="https://github.com/amnezia-vpn/openvpn-pt-android.git",
+            url="https://github.com/ВадькаVPN-vpn/openvpn-pt-android.git",
             target=".",
             args=["--recurse-submodules", "--branch", "update-ovpn3"]
         )
@@ -51,7 +51,7 @@ class OpenvpnPtAndroid(ConanFile):
         copy(self, "*.so", src=self.build_folder, dst=os.path.join(self.package_folder, "lib"))
 
     def package_info(self):
-        self.cpp_info.set_property("cmake_target_name", "amnezia::openvpn-pt-android")
+        self.cpp_info.set_property("cmake_target_name", "ВадькаVPN::openvpn-pt-android")
         self.cpp_info.libs = [ "ovpn3", "ovpnutil", "rsapss" ]
         self.cpp_info.set_property("cmake_extra_variables", {
             "OPENVPN_PT_ANDROID_LIBCK_OVPN_PLUGIN_PATH": Path(self.package_folder, "lib", "libck-ovpn-plugin.so").as_posix()

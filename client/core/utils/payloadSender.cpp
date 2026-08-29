@@ -13,7 +13,7 @@
 #include "core/utils/constants/configKeys.h"
 #include "core/utils/networkUtilities.h"
 
-using namespace amnezia;
+using namespace ВадькаVPN;
 
 namespace
 {

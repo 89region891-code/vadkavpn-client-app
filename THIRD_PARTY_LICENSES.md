@@ -54,19 +54,19 @@ Each component is distributed under its own license as linked below.
 
 ---
 
-## AmneziaWG Apple (WireGuard)
+## ВадькаVPNWG Apple (WireGuard)
 
-- Source: https://github.com/amnezia-vpn/amneziawg-apple
+- Source: https://github.com/ВадькаVPN-vpn/ВадькаVPNwg-apple
 - License: MIT License
-- License Text: https://github.com/amnezia-vpn/amneziawg-apple/blob/master/COPYING
+- License Text: https://github.com/ВадькаVPN-vpn/ВадькаVPNwg-apple/blob/master/COPYING
 
 ---
 
-## AmneziaWG Android
+## ВадькаVPNWG Android
 
-- Source: https://github.com/amnezia-vpn/amneziawg-go
+- Source: https://github.com/ВадькаVPN-vpn/ВадькаVPNwg-go
 - License: MIT License
-- License Text: https://github.com/amnezia-vpn/amneziawg-go/blob/master/LICENSE
+- License Text: https://github.com/ВадькаVPN-vpn/ВадькаVPNwg-go/blob/master/LICENSE
 
 ---
 

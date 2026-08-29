@@ -1,3 +1,3 @@
-FROM amneziavpn/torpress:latest
+FROM ВадькаVPNvpn/torpress:latest
 
-LABEL maintainer="AmneziaVPN"
+LABEL maintainer="ВадькаVPNVPN"

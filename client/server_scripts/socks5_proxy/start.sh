@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# This scripts copied from Amnezia client to Docker container to /opt/amnezia and launched every time container starts
+# This scripts copied from ВадькаVPN client to Docker container to /opt/ВадькаVPN and launched every time container starts
 
 echo "Container startup"
 

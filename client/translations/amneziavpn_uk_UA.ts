@@ -465,8 +465,8 @@ Already installed containers were found on the server. All installed containers 
     <message>
         <location filename="../ui/utils/notificationHandler.cpp" line="57"/>
         <location filename="../ui/utils/notificationHandler.cpp" line="64"/>
-        <source>AmneziaVPN</source>
-        <translation>AmneziaVPN</translation>
+        <source>ВадькаVPNVPN</source>
+        <translation>ВадькаVPNVPN</translation>
     </message>
     <message>
         <location filename="../ui/utils/notificationHandler.cpp" line="58"/>
@@ -480,8 +480,8 @@ Already installed containers were found on the server. All installed containers 
     </message>
     <message>
         <location filename="../ui/utils/notificationHandler.cpp" line="88"/>
-        <source>AmneziaVPN notification</source>
-        <translation>Сповіщення AmneziaVPN</translation>
+        <source>ВадькаVPNVPN notification</source>
+        <translation>Сповіщення ВадькаVPNVPN</translation>
     </message>
     <message>
         <location filename="../ui/utils/notificationHandler.cpp" line="89"/>
@@ -549,8 +549,8 @@ Already installed containers were found on the server. All installed containers 
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageHome.qml" line="426"/>
-        <source>AmneziaWG 2.0 is outdated and no longer supported. Continued use requires a fresh installation of the AmneziaWG 3.1 container.</source>
-        <translation>AmneziaWG 2.0 застарів і більше не підтримується. Для подальшого використання потрібне нове встановлення контейнера AmneziaWG 3.1.</translation>
+        <source>ВадькаVPNWG 2.0 is outdated and no longer supported. Continued use requires a fresh installation of the ВадькаVPNWG 3.1 container.</source>
+        <translation>ВадькаVPNWG 2.0 застарів і більше не підтримується. Для подальшого використання потрібне нове встановлення контейнера ВадькаVPNWG 3.1.</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageHome.qml" line="472"/>
@@ -579,8 +579,8 @@ Already installed containers were found on the server. All installed containers 
     <name>PageProtocolAwgClientSettings</name>
     <message>
         <location filename="../ui/qml/Pages2/PageProtocolAwgClientSettings.qml" line="56"/>
-        <source>AmneziaWG settings</source>
-        <translation>налаштування AmneziaWG</translation>
+        <source>ВадькаVPNWG settings</source>
+        <translation>налаштування ВадькаVPNWG</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageProtocolAwgClientSettings.qml" line="80"/>
@@ -702,8 +702,8 @@ Already installed containers were found on the server. All installed containers 
     <name>PageProtocolAwgSettings</name>
     <message>
         <location filename="../ui/qml/Pages2/PageProtocolAwgSettings.qml" line="68"/>
-        <source>AmneziaWG settings</source>
-        <translation>налаштування AmneziaWG</translation>
+        <source>ВадькаVPNWG settings</source>
+        <translation>налаштування ВадькаVPNWG</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageProtocolAwgSettings.qml" line="81"/>
@@ -2068,8 +2068,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageServiceDnsSettings.qml" line="79"/>
-        <source>Cannot remove AmneziaDNS from running server</source>
-        <translation>Не вдається видалити AmneziaDNS з працюючого сервера</translation>
+        <source>Cannot remove ВадькаVPNDNS from running server</source>
+        <translation>Не вдається видалити ВадькаVPNDNS з працюючого сервера</translation>
     </message>
 </context>
 <context>
@@ -3202,8 +3202,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettings.qml" line="177"/>
-        <source>About AmneziaVPN</source>
-        <translation>Про AmneziaVPN</translation>
+        <source>About ВадькаVPNVPN</source>
+        <translation>Про ВадькаVPNVPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettings.qml" line="188"/>
@@ -3215,13 +3215,13 @@ Create one from the current settings.</source>
     <name>PageSettingsAbout</name>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsAbout.qml" line="61"/>
-        <source>Support Amnezia</source>
-        <translation>Підтримайте Amnezia</translation>
+        <source>Support ВадькаVPN</source>
+        <translation>Підтримайте ВадькаVPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsAbout.qml" line="76"/>
-        <source>Amnezia is a free and open-source application. You can support the developers if you like it.</source>
-        <translation>Amnezia — це безкоштовний додаток з відкритим кодом. Якщо вам подобається цей додаток, ви можете підтримати розробників.</translation>
+        <source>ВадькаVPN is a free and open-source application. You can support the developers if you like it.</source>
+        <translation>ВадькаVPN — це безкоштовний додаток з відкритим кодом. Якщо вам подобається цей додаток, ви можете підтримати розробників.</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsAbout.qml" line="86"/>
@@ -3255,13 +3255,13 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsAbout.qml" line="193"/>
-        <source>https://t.me/amnezia_vpn_en</source>
-        <translation>https://t.me/amnezia_vpn</translation>
+        <source>https://t.me/ВадькаVPN_vpn_en</source>
+        <translation>https://t.me/ВадькаVPN_vpn</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsAbout.qml" line="200"/>
-        <source>support@amnezia.org</source>
-        <translation>support@amnezia.org</translation>
+        <source>support@ВадькаVPN.org</source>
+        <translation>support@ВадькаVPN.org</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsAbout.qml" line="201"/>
@@ -3270,8 +3270,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsAbout.qml" line="204"/>
-        <source>mailto:support@amnezia.org</source>
-        <translation>mailto:support@amnezia.org</translation>
+        <source>mailto:support@ВадькаVPN.org</source>
+        <translation>mailto:support@ВадькаVPN.org</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsAbout.qml" line="211"/>
@@ -3285,8 +3285,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsAbout.qml" line="215"/>
-        <source>https://github.com/amnezia-vpn/amnezia-client</source>
-        <translation>https://github.com/amnezia-vpn/amnezia-client</translation>
+        <source>https://github.com/ВадькаVPN-vpn/ВадькаVPN-client</source>
+        <translation>https://github.com/ВадькаVPN-vpn/ВадькаVPN-client</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsAbout.qml" line="222"/>
@@ -3399,8 +3399,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiInstructions.qml" line="23"/>
-        <source>documentation/instructions/connect-amnezia-premium#windows</source>
-        <translation>documentation/instructions/connect-amnezia-premium#windows</translation>
+        <source>documentation/instructions/connect-ВадькаVPN-premium#windows</source>
+        <translation>documentation/instructions/connect-ВадькаVPN-premium#windows</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiInstructions.qml" line="29"/>
@@ -3409,8 +3409,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiInstructions.qml" line="30"/>
-        <source>documentation/instructions/connect-amnezia-premium#macos</source>
-        <translation>documentation/instructions/connect-amnezia-premium#macos</translation>
+        <source>documentation/instructions/connect-ВадькаVPN-premium#macos</source>
+        <translation>documentation/instructions/connect-ВадькаVPN-premium#macos</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiInstructions.qml" line="36"/>
@@ -3419,8 +3419,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiInstructions.qml" line="37"/>
-        <source>documentation/instructions/connect-amnezia-premium#android</source>
-        <translation>documentation/instructions/connect-amnezia-premium#android</translation>
+        <source>documentation/instructions/connect-ВадькаVPN-premium#android</source>
+        <translation>documentation/instructions/connect-ВадькаVPN-premium#android</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiInstructions.qml" line="43"/>
@@ -3439,8 +3439,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiInstructions.qml" line="51"/>
-        <source>documentation/instructions/connect-amnezia-premium#ios</source>
-        <translation>documentation/instructions/connect-amnezia-premium#ios</translation>
+        <source>documentation/instructions/connect-ВадькаVPN-premium#ios</source>
+        <translation>documentation/instructions/connect-ВадькаVPN-premium#ios</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiInstructions.qml" line="57"/>
@@ -3449,8 +3449,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiInstructions.qml" line="58"/>
-        <source>documentation/instructions/connect-amnezia-premium#linux</source>
-        <translation>documentation/instructions/connect-amnezia-premium#linux</translation>
+        <source>documentation/instructions/connect-ВадькаVPN-premium#linux</source>
+        <translation>documentation/instructions/connect-ВадькаVPN-premium#linux</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiInstructions.qml" line="64"/>
@@ -3459,8 +3459,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiInstructions.qml" line="65"/>
-        <source>documentation/instructions/connect-amnezia-premium#routers</source>
-        <translation>documentation/instructions/connect-amnezia-premium#routers</translation>
+        <source>documentation/instructions/connect-ВадькаVPN-premium#routers</source>
+        <translation>documentation/instructions/connect-ВадькаVPN-premium#routers</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiInstructions.qml" line="101"/>
@@ -3469,16 +3469,16 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiInstructions.qml" line="102"/>
-        <source>Setup guides on the Amnezia website</source>
-        <translation>Інструкції з налаштування на сайті Amnezia</translation>
+        <source>Setup guides on the ВадькаVPN website</source>
+        <translation>Інструкції з налаштування на сайті ВадькаVPN</translation>
     </message>
 </context>
 <context>
     <name>PageSettingsApiNativeConfigs</name>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiNativeConfigs.qml" line="23"/>
-        <source>Save AmneziaVPN config</source>
-        <translation>Зберегти config AmneziaVPN</translation>
+        <source>Save ВадькаVPNVPN config</source>
+        <translation>Зберегти config ВадькаVPNVPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiNativeConfigs.qml" line="60"/>
@@ -3487,8 +3487,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiNativeConfigs.qml" line="61"/>
-        <source>For router setup or the AmneziaWG app</source>
-        <translation>Для налаштування роутера або застосунку AmneziaWG</translation>
+        <source>For router setup or the ВадькаVPNWG app</source>
+        <translation>Для налаштування роутера або застосунку ВадькаVPNWG</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiNativeConfigs.qml" line="73"/>
@@ -3713,8 +3713,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiSubscriptionKey.qml" line="121"/>
-        <source>Save AmneziaVPN config</source>
-        <translation>Зберегти config AmneziaVPN</translation>
+        <source>Save ВадькаVPNVPN config</source>
+        <translation>Зберегти config ВадькаVPNVPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiSubscriptionKey.qml" line="122"/>
@@ -3733,8 +3733,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiSubscriptionKey.qml" line="191"/>
-        <source>To read the QR code in the Amnezia app, tap + in the main menu → &apos;QR code&apos;</source>
-        <translation>Щоб зчитати QR-код у застосунку Amnezia, натисніть + у головному меню → «QR-код»</translation>
+        <source>To read the QR code in the ВадькаVPN app, tap + in the main menu → &apos;QR code&apos;</source>
+        <translation>Щоб зчитати QR-код у застосунку ВадькаVPN, натисніть + у головному меню → «QR-код»</translation>
     </message>
 </context>
 <context>
@@ -3937,8 +3937,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApplication.qml" line="243"/>
-        <source>All settings will be reset to default. All installed AmneziaVPN services will still remain on the server.</source>
-        <translation>Всі дані із застосунку будуть видалені, всі встановлені сервіси AmneziaVPN залишаться на сервері.</translation>
+        <source>All settings will be reset to default. All installed ВадькаVPNVPN services will still remain on the server.</source>
+        <translation>Всі дані із застосунку будуть видалені, всі встановлені сервіси ВадькаVPNVPN залишаться на сервері.</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApplication.qml" line="244"/>
@@ -3975,8 +3975,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsBackup.qml" line="88"/>
-        <source>The backup will contain your passwords and private keys for all servers added to AmneziaVPN. Keep this information in a secure place.</source>
-        <translation>Резервна копія міститиме ваші паролі та приватні ключі для всіх серверів, доданих до AmneziaVPN. Зберігайте цю інформацію у безпечному місці.</translation>
+        <source>The backup will contain your passwords and private keys for all servers added to ВадькаVPNVPN. Keep this information in a secure place.</source>
+        <translation>Резервна копія міститиме ваші паролі та приватні ключі для всіх серверів, доданих до ВадькаVPNVPN. Зберігайте цю інформацію у безпечному місці.</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsBackup.qml" line="102"/>
@@ -4044,12 +4044,12 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsConnection.qml" line="65"/>
-        <source>Use AmneziaDNS</source>
-        <translation>Використовувати AmneziaDNS</translation>
+        <source>Use ВадькаVPNDNS</source>
+        <translation>Використовувати ВадькаVPNDNS</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsConnection.qml" line="66"/>
-        <source>If AmneziaDNS is installed on the server</source>
+        <source>If ВадькаVPNDNS is installed on the server</source>
         <translation>Якщо він встановлений на сервері</translation>
     </message>
     <message>
@@ -4059,8 +4059,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsConnection.qml" line="84"/>
-        <source>When AmneziaDNS is not used or installed</source>
-        <translation>Ці адреси будуть використовуватись коли вимкнений AmneziaDNS</translation>
+        <source>When ВадькаVPNDNS is not used or installed</source>
+        <translation>Ці адреси будуть використовуватись коли вимкнений ВадькаVPNDNS</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsConnection.qml" line="99"/>
@@ -4107,8 +4107,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsDns.qml" line="67"/>
-        <source>If AmneziaDNS is not used or installed</source>
-        <translation>Якщо AmneziaDNS вимкнено або не встановлено</translation>
+        <source>If ВадькаVPNDNS is not used or installed</source>
+        <translation>Якщо ВадькаVPNDNS вимкнено або не встановлено</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsDns.qml" line="84"/>
@@ -4369,8 +4369,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsLogging.qml" line="182"/>
-        <source>AmneziaVPN logs</source>
-        <translation>Логи AmneziaVPN</translation>
+        <source>ВадькаVPNVPN logs</source>
+        <translation>Логи ВадькаVPNVPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsLogging.qml" line="192"/>
@@ -4397,8 +4397,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsLogging.qml" line="211"/>
-        <source>AmneziaVPN-service logs</source>
-        <translation>Логи служби AmneziaVPN</translation>
+        <source>ВадькаVPNVPN-service logs</source>
+        <translation>Логи служби ВадькаVPNVPN</translation>
     </message>
 </context>
 <context>
@@ -4436,8 +4436,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsServerData.qml" line="98"/>
-        <source>Check the server for previously installed Amnezia services</source>
-        <translation>Проверить сервер на наличие ранее установленных сервисов Amnezia</translation>
+        <source>Check the server for previously installed ВадькаVPN services</source>
+        <translation>Проверить сервер на наличие ранее установленных сервисов ВадькаVPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsServerData.qml" line="99"/>
@@ -4492,8 +4492,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsServerData.qml" line="147"/>
-        <source>All installed AmneziaVPN services will still remain on the server.</source>
-        <translation>Всі встановлені сервіси та протоколи Amnezia все ще залишаться на сервері.</translation>
+        <source>All installed ВадькаVPNVPN services will still remain on the server.</source>
+        <translation>Всі встановлені сервіси та протоколи ВадькаVPN все ще залишаться на сервері.</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsServerData.qml" line="153"/>
@@ -4502,13 +4502,13 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsServerData.qml" line="172"/>
-        <source>Clear server from Amnezia software</source>
-        <translation>Очистити сервер від програмного забезпечення Amnezia</translation>
+        <source>Clear server from ВадькаVPN software</source>
+        <translation>Очистити сервер від програмного забезпечення ВадькаVPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsServerData.qml" line="176"/>
-        <source>Do you want to clear server from Amnezia software?</source>
-        <translation>Ви дійсно хочете очистити сервер від програмного забезпечення Amnezia?</translation>
+        <source>Do you want to clear server from ВадькаVPN software?</source>
+        <translation>Ви дійсно хочете очистити сервер від програмного забезпечення ВадькаVPN?</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsServerData.qml" line="177"/>
@@ -4517,8 +4517,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsServerData.qml" line="183"/>
-        <source>Cannot clear server from Amnezia software during active connection</source>
-        <translation>Неможливо очистити сервер від програмного забезпечення Amnezia під час активного підключення</translation>
+        <source>Cannot clear server from ВадькаVPN software during active connection</source>
+        <translation>Неможливо очистити сервер від програмного забезпечення ВадькаVPN під час активного підключення</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsServerData.qml" line="201"/>
@@ -4568,8 +4568,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsServerProtocol.qml" line="71"/>
-        <source>AmneziaWG 2.0 is outdated and does not include the latest security improvements, but it will continue to work. Moving to AmneziaWG 3.1 by deploying a new container on the server is recommended for stronger protocol security</source>
-        <translation>AmneziaWG 2.0 застарів і не містить останніх покращень безпеки, але продовжить працювати. Для надійнішого захисту протоколу рекомендується перейти на AmneziaWG 3.1, встановивши новий контейнер на сервері</translation>
+        <source>ВадькаVPNWG 2.0 is outdated and does not include the latest security improvements, but it will continue to work. Moving to ВадькаVPNWG 3.1 by deploying a new container on the server is recommended for stronger protocol security</source>
+        <translation>ВадькаVPNWG 2.0 застарів і не містить останніх покращень безпеки, але продовжить працювати. Для надійнішого захисту протоколу рекомендується перейти на ВадькаVPNWG 3.1, встановивши новий контейнер на сервері</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsServerProtocol.qml" line="90"/>
@@ -4883,8 +4883,8 @@ Create one from the current settings.</source>
     <name>PageSetupWizardApiServicesList</name>
     <message>
         <location filename="../ui/qml/Pages2/PageSetupWizardApiServicesList.qml" line="52"/>
-        <source>VPN by Amnezia</source>
-        <translation>VPN від Amnezia</translation>
+        <source>VPN by ВадькаVPN</source>
+        <translation>VPN від ВадькаVPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSetupWizardApiServicesList.qml" line="53"/>
@@ -5010,13 +5010,13 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSetupWizardConfigSource.qml" line="260"/>
-        <source>Site Amnezia</source>
-        <translation>Сайт Amnezia</translation>
+        <source>Site ВадькаVPN</source>
+        <translation>Сайт ВадькаVPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSetupWizardConfigSource.qml" line="284"/>
-        <source>VPN by Amnezia</source>
-        <translation>VPN від Amnezia</translation>
+        <source>VPN by ВадькаVPN</source>
+        <translation>VPN від ВадькаVPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSetupWizardConfigSource.qml" line="285"/>
@@ -5030,8 +5030,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSetupWizardConfigSource.qml" line="304"/>
-        <source>Configure Amnezia VPN on your own server</source>
-        <translation>Налаштуйте Amnezia VPN на власному сервері</translation>
+        <source>Configure ВадькаVPN VPN on your own server</source>
+        <translation>Налаштуйте ВадькаVPN VPN на власному сервері</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSetupWizardConfigSource.qml" line="316"/>
@@ -5100,8 +5100,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSetupWizardCredentials.qml" line="144"/>
-        <source>All data you enter will remain strictly confidential and will not be shared or disclosed to the Amnezia or any third parties</source>
-        <translation>Усі дані, які ви вводите, залишатимуться суворо конфіденційними та не будуть передані чи розголошені Amnezia або будь-яким третім особам</translation>
+        <source>All data you enter will remain strictly confidential and will not be shared or disclosed to the ВадькаVPN or any third parties</source>
+        <translation>Усі дані, які ви вводите, залишатимуться суворо конфіденційними та не будуть передані чи розголошені ВадькаVPN або будь-яким третім особам</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSetupWizardCredentials.qml" line="155"/>
@@ -5192,13 +5192,13 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSetupWizardInstalling.qml" line="63"/>
-        <source>Amnezia has detected that your server is currently </source>
-        <translation>Amnezia виявила, що сервер </translation>
+        <source>ВадькаVPN has detected that your server is currently </source>
+        <translation>ВадькаVPN виявила, що сервер </translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSetupWizardInstalling.qml" line="64"/>
-        <source>busy installing other software. Amnezia installation </source>
-        <translation>зайнятий встановленням інших протоколів та сервісів. Встановлення Amnezia </translation>
+        <source>busy installing other software. ВадькаVPN installation </source>
+        <translation>зайнятий встановленням інших протоколів та сервісів. Встановлення ВадькаVPN </translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSetupWizardInstalling.qml" line="65"/>
@@ -5353,8 +5353,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShare.qml" line="51"/>
-        <source>Save AmneziaVPN config</source>
-        <translation>Зберегти config AmneziaVPN</translation>
+        <source>Save ВадькаVPNVPN config</source>
+        <translation>Зберегти config ВадькаVPNVPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShare.qml" line="58"/>
@@ -5368,8 +5368,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShare.qml" line="72"/>
-        <source>Save AmneziaWG config</source>
-        <translation>Зберегти AmneziaWG конфігурацію</translation>
+        <source>Save ВадькаVPNWG config</source>
+        <translation>Зберегти ВадькаVPNWG конфігурацію</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShare.qml" line="79"/>
@@ -5388,8 +5388,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShare.qml" line="108"/>
-        <source>For the AmneziaVPN app</source>
-        <translation>Для AmneziaVPN</translation>
+        <source>For the ВадькаVPNVPN app</source>
+        <translation>Для ВадькаVPNVPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShare.qml" line="113"/>
@@ -5403,8 +5403,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShare.qml" line="123"/>
-        <source>AmneziaWG native format</source>
-        <translation>нативний формат AmneziaWG</translation>
+        <source>ВадькаVPNWG native format</source>
+        <translation>нативний формат ВадькаVPNWG</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShare.qml" line="128"/>
@@ -5556,8 +5556,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShareConnection.qml" line="30"/>
-        <source>Save AmneziaVPN config</source>
-        <translation>Зберегти config AmneziaVPN</translation>
+        <source>Save ВадькаVPNVPN config</source>
+        <translation>Зберегти config ВадькаVPNVPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShareConnection.qml" line="150"/>
@@ -5577,8 +5577,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShareConnection.qml" line="326"/>
-        <source>To read the QR code in the Amnezia app, tap + in the main menu → &apos;QR code&apos;</source>
-        <translation>Щоб зчитати QR-код у застосунку Amnezia, натисніть + у головному меню → «QR-код»</translation>
+        <source>To read the QR code in the ВадькаVPN app, tap + in the main menu → &apos;QR code&apos;</source>
+        <translation>Щоб зчитати QR-код у застосунку ВадькаVPN, натисніть + у головному меню → «QR-код»</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShareConnection.qml" line="342"/>
@@ -5927,8 +5927,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../core/utils/errorStrings.cpp" line="62"/>
-        <source>Amnezia helper service error</source>
-        <translation>Amnezia helper service error</translation>
+        <source>ВадькаVPN helper service error</source>
+        <translation>ВадькаVPN helper service error</translation>
     </message>
     <message>
         <location filename="../core/utils/errorStrings.cpp" line="63"/>
@@ -5962,8 +5962,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../core/utils/errorStrings.cpp" line="73"/>
-        <source>This legacy Amnezia subscription format is no longer supported</source>
-        <translation>Цей застарілий формат підписки Amnezia більше не підтримується</translation>
+        <source>This legacy ВадькаVPN subscription format is no longer supported</source>
+        <translation>Цей застарілий формат підписки ВадькаVPN більше не підтримується</translation>
     </message>
     <message>
         <location filename="../core/utils/errorStrings.cpp" line="74"/>
@@ -6029,10 +6029,10 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../core/utils/errorStrings.cpp" line="93"/>
-        <source>Your Amnezia Premium subscription has expired.
+        <source>Your ВадькаVPN Premium subscription has expired.
  Please check your email for renewal instructions.
  If you haven&apos;t received an email, please contact our support.</source>
-        <translation>Термін дії вашої підписки Amnezia Premium закінчився.
+        <translation>Термін дії вашої підписки ВадькаVPN Premium закінчився.
  Будь ласка, перевірте електронну пошту — там інструкції щодо продовження.
  Якщо листа не надійшло, зв&apos;яжіться з нашою підтримкою.</translation>
     </message>
@@ -6144,8 +6144,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../core/utils/containers/containerUtils.cpp" line="77"/>
-        <source>AmneziaDNS</source>
-        <translation>AmneziaDNS</translation>
+        <source>ВадькаVPNDNS</source>
+        <translation>ВадькаVPNDNS</translation>
     </message>
     <message>
         <location filename="../core/utils/containers/containerUtils.cpp" line="80"/>
@@ -6185,14 +6185,14 @@ Create one from the current settings.</source>
         <source>OpenVPN is one of the most popular and reliable VPN protocols. It uses SSL/TLS encryption, supports a wide variety of devices and operating systems, and is continuously improved by the community due to its open-source nature. It provides a good balance between speed and security but is easily recognized by DPI systems, making it susceptible to blocking.
 
 Features:
-* Available on all AmneziaVPN platforms
+* Available on all ВадькаVPNVPN platforms
 * Normal battery consumption on mobile devices
 * Flexible customization for various devices and OS
 * Operates over both TCP and UDP protocols</source>
         <translation>OpenVPN — один із найпопулярніших і найнадійніших VPN-протоколів. Він використовує шифрування SSL/TLS, підтримує широкий спектр пристроїв та операційних систем і завдяки відкритому коду постійно вдосконалюється спільнотою. Він забезпечує добрий баланс між швидкістю та безпекою, але легко розпізнається системами DPI, що робить його уразливим до блокувань.
 
 Особливості:
-* Доступний на всіх платформах AmneziaVPN
+* Доступний на всіх платформах ВадькаVPNVPN
 * Звичайне споживання заряду батареї на мобільних пристроях
 * Гнучке налаштування під різні пристрої та ОС
 * Працює за протоколами TCP і UDP</translation>
@@ -6202,7 +6202,7 @@ Features:
         <source>WireGuard is a modern, streamlined VPN protocol offering stable connectivity and excellent performance across all devices. It uses fixed encryption settings, delivering lower latency and higher data transfer speeds compared to OpenVPN. However, WireGuard is easily identifiable by DPI systems due to its distinctive packet signatures, making it susceptible to blocking.
 
 Features:
-* Available on all AmneziaVPN platforms
+* Available on all ВадькаVPNVPN platforms
 * Low power consumption on mobile devices
 * Minimal configuration required
 * Easily detected by DPI systems (susceptible to blocking)
@@ -6210,7 +6210,7 @@ Features:
         <translation>WireGuard — сучасний і лаконічний VPN-протокол, який забезпечує стабільне з&apos;єднання та відмінну продуктивність на всіх пристроях. Він використовує фіксовані налаштування шифрування, що дає меншу затримку та вищу швидкість передачі даних порівняно з OpenVPN. Однак WireGuard легко розпізнається системами DPI через характерні сигнатури пакетів, що робить його уразливим до блокувань.
 
 Особливості:
-* Доступний на всіх платформах AmneziaVPN
+* Доступний на всіх платформах ВадькаVPNVPN
 * Низьке енергоспоживання на мобільних пристроях
 * Потребує мінімум налаштувань
 * Легко виявляється системами DPI (уразливий до блокувань)
@@ -6218,22 +6218,22 @@ Features:
     </message>
     <message>
         <location filename="../core/utils/containers/containerUtils.cpp" line="148"/>
-        <source>AmneziaWG is a modern VPN protocol based on WireGuard, combining simplified architecture with high performance across all devices. It addresses WireGuard&apos;s main vulnerability (easy detection by DPI systems) through advanced obfuscation techniques, making VPN traffic indistinguishable from regular internet traffic.
+        <source>ВадькаVPNWG is a modern VPN protocol based on WireGuard, combining simplified architecture with high performance across all devices. It addresses WireGuard&apos;s main vulnerability (easy detection by DPI systems) through advanced obfuscation techniques, making VPN traffic indistinguishable from regular internet traffic.
 
-AmneziaWG is an excellent choice for those seeking a fast, stealthy VPN connection.
+ВадькаVPNWG is an excellent choice for those seeking a fast, stealthy VPN connection.
 
 Features:
-* Available on all AmneziaVPN platforms
+* Available on all ВадькаVPNVPN platforms
 * Low battery consumption on mobile devices
 * Minimal settings required
 * Undetectable by traffic analysis systems (DPI)
 * Operates over UDP protocol</source>
-        <translation>AmneziaWG — сучасний VPN-протокол на основі WireGuard, який поєднує спрощену архітектуру з високою продуктивністю на всіх пристроях. Він усуває головну слабкість WireGuard (легке виявлення системами DPI) за допомогою передових технік обфускації, роблячи VPN-трафік невідрізнимим від звичайного інтернет-трафіку.
+        <translation>ВадькаVPNWG — сучасний VPN-протокол на основі WireGuard, який поєднує спрощену архітектуру з високою продуктивністю на всіх пристроях. Він усуває головну слабкість WireGuard (легке виявлення системами DPI) за допомогою передових технік обфускації, роблячи VPN-трафік невідрізнимим від звичайного інтернет-трафіку.
 
-AmneziaWG — відмінний вибір для тих, хто шукає швидке та непомітне VPN-з&apos;єднання.
+ВадькаVPNWG — відмінний вибір для тих, хто шукає швидке та непомітне VPN-з&apos;єднання.
 
 Особливості:
-* Доступний на всіх платформах AmneziaVPN
+* Доступний на всіх платформах ВадькаVPNVPN
 * Низьке споживання заряду батареї на мобільних пристроях
 * Потребує мінімум налаштувань
 * Непомітний для систем аналізу трафіку (DPI)
@@ -6265,7 +6265,7 @@ Features:
         <source>IKEv2, combined with IPSec encryption, is a modern and reliable VPN protocol. It reconnects quickly when switching networks or devices, making it ideal for dynamic network environments. While it provides good security and speed, it&apos;s easily recognized by DPI systems and susceptible to blocking.
 
 Features:
-* Available in AmneziaVPN only on Windows
+* Available in ВадькаVPNVPN only on Windows
 * Low battery consumption on mobile devices
 * Minimal configuration required
 * Detectable by DPI analysis systems(easily blocked)
@@ -6273,7 +6273,7 @@ Features:
         <translation>IKEv2 у поєднанні з шифруванням IPSec — сучасний і надійний VPN-протокол. Він швидко відновлює з&apos;єднання під час перемикання мереж або пристроїв, що робить його ідеальним для динамічних мережевих умов. Хоча він забезпечує добру безпеку та швидкість, його легко розпізнають системи DPI, і він уразливий до блокувань.
 
 Особливості:
-* Доступний в AmneziaVPN лише на Windows
+* Доступний в ВадькаVPNVPN лише на Windows
 * Низьке споживання заряду батареї на мобільних пристроях
 * Потребує мінімум налаштувань
 * Виявляється системами аналізу DPI (легко блокується)
@@ -6296,8 +6296,8 @@ Features:
     </message>
     <message>
         <location filename="../core/utils/containers/containerUtils.cpp" line="337"/>
-        <source>AmneziaWG protocol will be installed. It provides high connection speed and ensures stable operation even in the most challenging network conditions.</source>
-        <translation>Буде встановлено протокол AmneziaWG. Він забезпечує високу швидкість з&apos;єднання та гарантує стабільну роботу навіть у найскладніших умовах мережі.</translation>
+        <source>ВадькаVPNWG protocol will be installed. It provides high connection speed and ensures stable operation even in the most challenging network conditions.</source>
+        <translation>Буде встановлено протокол ВадькаVPNWG. Він забезпечує високу швидкість з&apos;єднання та гарантує стабільну роботу навіть у найскладніших умовах мережі.</translation>
     </message>
     <message>
         <location filename="../core/utils/containers/containerUtils.cpp" line="95"/>
@@ -6308,8 +6308,8 @@ Features:
         <location filename="../core/utils/containers/containerUtils.cpp" line="98"/>
         <location filename="../core/utils/containers/containerUtils.cpp" line="101"/>
         <location filename="../ui/models/containersModel.cpp" line="41"/>
-        <source>AmneziaWG is a special protocol from Amnezia based on WireGuard. It provides high connection speed and ensures stable operation even in the most challenging network conditions.</source>
-        <translation>AmneziaWG — спеціальний протокол від Amnezia, заснований на WireGuard. Він забезпечує високу швидкість з&apos;єднання та гарантує стабільну роботу навіть у найскладніших умовах мережі.</translation>
+        <source>ВадькаVPNWG is a special protocol from ВадькаVPN based on WireGuard. It provides high connection speed and ensures stable operation even in the most challenging network conditions.</source>
+        <translation>ВадькаVPNWG — спеціальний протокол від ВадькаVPN, заснований на WireGuard. Він забезпечує високу швидкість з&apos;єднання та гарантує стабільну роботу навіть у найскладніших умовах мережі.</translation>
     </message>
     <message>
         <location filename="../core/utils/containers/containerUtils.cpp" line="104"/>
@@ -6324,11 +6324,11 @@ Features:
     <message>
         <location filename="../core/utils/containers/containerUtils.cpp" line="112"/>
         <source>Replace the current DNS server with your own. This will increase your privacy level.</source>
-        <translation>Замініть DNS-сервер на AmneziaDNS. Це підвищить вашу рівень захищеності в інтернеті.</translation>
+        <translation>Замініть DNS-сервер на ВадькаVPNDNS. Це підвищить вашу рівень захищеності в інтернеті.</translation>
     </message>
     <message>
         <location filename="../core/utils/containers/containerUtils.cpp" line="186"/>
-        <source>After installation, Amnezia will create a
+        <source>After installation, ВадькаVPN will create a
 
  file storage on your server. You will be able to access it using
  FileZilla or other SFTP clients, as well as mount the disk on your device to access
@@ -6336,7 +6336,7 @@ Features:
 
 For more detailed information, you can
  find it in the support section under &quot;Create SFTP file storage.&quot; </source>
-        <translation>Після встановлення Amnezia створить 
+        <translation>Після встановлення ВадькаVPN створить 
 
  файл-сховище на вашому сервері. Ви зможете отримати
  доступ до нього за допомогою FileZilla та інших SFTP-клієнтів, 
@@ -6851,9 +6851,9 @@ For more detailed information, you can
     </message>
     <message>
         <location filename="../ui/qml/main2.qml" line="395"/>
-        <source>This legacy Amnezia subscription type can no longer be used to connect in this application version.
+        <source>This legacy ВадькаVPN subscription type can no longer be used to connect in this application version.
 Remove the server from the app to continue.</source>
-        <translation>Цей застарілий тип підписки Amnezia більше не можна використовувати для підключення в цій версії застосунку.
+        <translation>Цей застарілий тип підписки ВадькаVPN більше не можна використовувати для підключення в цій версії застосунку.
 Видаліть сервер із застосунку, щоб продовжити.</translation>
     </message>
     <message>

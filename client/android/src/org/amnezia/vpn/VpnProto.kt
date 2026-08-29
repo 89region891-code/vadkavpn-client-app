@@ -1,27 +1,27 @@
-package org.amnezia.vpn
+package org.ВадькаVPN.vpn
 
-import org.amnezia.vpn.protocol.Protocol
-import org.amnezia.vpn.protocol.awg.Awg
-import org.amnezia.vpn.protocol.openvpn.OpenVpn
-import org.amnezia.vpn.protocol.wireguard.Wireguard
-import org.amnezia.vpn.protocol.xray.Xray
+import org.ВадькаVPN.vpn.protocol.Protocol
+import org.ВадькаVPN.vpn.protocol.awg.Awg
+import org.ВадькаVPN.vpn.protocol.openvpn.OpenVpn
+import org.ВадькаVPN.vpn.protocol.wireguard.Wireguard
+import org.ВадькаVPN.vpn.protocol.xray.Xray
 
 enum class VpnProto(
     val label: String,
     val processName: String,
-    val serviceClass: Class<out AmneziaVpnService>
+    val serviceClass: Class<out ВадькаVPNVpnService>
 ) {
     WIREGUARD(
         "WireGuard",
-        "org.amnezia.vpn:amneziaAwgService",
+        "org.ВадькаVPN.vpn:ВадькаVPNAwgService",
         AwgService::class.java
     ) {
         override fun createProtocol(): Protocol = Wireguard()
     },
 
     AWG(
-        "AmneziaWG",
-        "org.amnezia.vpn:amneziaAwgService",
+        "ВадькаVPNWG",
+        "org.ВадькаVPN.vpn:ВадькаVPNAwgService",
         AwgService::class.java
     ) {
         override fun createProtocol(): Protocol = Awg()
@@ -29,7 +29,7 @@ enum class VpnProto(
 
     OPENVPN(
         "OpenVPN",
-        "org.amnezia.vpn:amneziaOpenVpnService",
+        "org.ВадькаVPN.vpn:ВадькаVPNOpenVpnService",
         OpenVpnService::class.java
     ) {
         override fun createProtocol(): Protocol = OpenVpn()
@@ -37,7 +37,7 @@ enum class VpnProto(
 
     XRAY(
         "XRay",
-        "org.amnezia.vpn:amneziaXrayService",
+        "org.ВадькаVPN.vpn:ВадькаVPNXrayService",
         XrayService::class.java
     ) {
         override fun createProtocol(): Protocol = Xray.instance
@@ -45,7 +45,7 @@ enum class VpnProto(
 
     SSXRAY(
         "SSXRay",
-        "org.amnezia.vpn:amneziaXrayService",
+        "org.ВадькаVPN.vpn:ВадькаVPNXrayService",
         XrayService::class.java
     ) {
         override fun createProtocol(): Protocol = Xray.instance

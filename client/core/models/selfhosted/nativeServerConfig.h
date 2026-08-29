@@ -10,7 +10,7 @@
 #include "core/utils/protocolEnum.h"
 #include "core/models/containerConfig.h"
 
-namespace amnezia
+namespace ВадькаVPN
 {
 
 using namespace ContainerEnumNS;
@@ -35,7 +35,7 @@ struct NativeServerConfig {
     static NativeServerConfig fromJson(const QJsonObject& json);
 };
 
-} // namespace amnezia
+} // namespace ВадькаVPN
 
 #endif // NATIVESERVERCONFIG_H
 

@@ -27,13 +27,13 @@ PageType {
     property bool isSelfHostedConfig: true
 
     property string configExtension: ".vpn"
-    property string configCaption: qsTr("Save AmneziaVPN config")
-    property string configFileName: "amnezia_config"
+    property string configCaption: qsTr("Save ВадькаVPNVPN config")
+    property string configFileName: "ВадькаVPN_config"
 
     // onVisibleChanged: {
     //     configExtension = ".vpn"
-    //     configCaption = qsTr("Save AmneziaVPN config")
-    //     configFileName = "amnezia_config"
+    //     configCaption = qsTr("Save ВадькаVPNVPN config")
+    //     configFileName = "ВадькаVPN_config"
 
     //     if (visible) {
     //         var serverName = ServersModel.getProcessedServerData("name") || ServersModel.getProcessedServerData("hostName") || "Server"
@@ -60,7 +60,7 @@ PageType {
         anchors.rightMargin: 16
 
         text: pageShareConnection.headerText
-        color: AmneziaStyle.color.paleGray
+        color: ВадькаVPNStyle.color.paleGray
         font.pixelSize: 32
         font.weight: 700
         font.family: "PT Root UI VF"
@@ -120,11 +120,11 @@ PageType {
                 Layout.leftMargin: 16
                 Layout.rightMargin: 16
 
-                defaultColor: AmneziaStyle.color.transparent
-                hoveredColor: AmneziaStyle.color.translucentWhite
-                pressedColor: AmneziaStyle.color.sheerWhite
-                disabledColor: AmneziaStyle.color.mutedGray
-                textColor: AmneziaStyle.color.paleGray
+                defaultColor: ВадькаVPNStyle.color.transparent
+                hoveredColor: ВадькаVPNStyle.color.translucentWhite
+                pressedColor: ВадькаVPNStyle.color.sheerWhite
+                disabledColor: ВадькаVPNStyle.color.mutedGray
+                textColor: ВадькаVPNStyle.color.paleGray
                 borderWidth: 1
 
                 text: pageShareConnection.copyButtonText
@@ -141,11 +141,11 @@ PageType {
                 Layout.leftMargin: 16
                 Layout.rightMargin: 16
                 visible: false
-                defaultColor: AmneziaStyle.color.transparent
-                hoveredColor: AmneziaStyle.color.translucentWhite
-                pressedColor: AmneziaStyle.color.sheerWhite
-                disabledColor: AmneziaStyle.color.mutedGray
-                textColor: AmneziaStyle.color.paleGray
+                defaultColor: ВадькаVPNStyle.color.transparent
+                hoveredColor: ВадькаVPNStyle.color.translucentWhite
+                pressedColor: ВадькаVPNStyle.color.sheerWhite
+                disabledColor: ВадькаVPNStyle.color.mutedGray
+                textColor: ВадькаVPNStyle.color.paleGray
                 borderWidth: 1
                 text: qsTr("Copy config string")
                 leftImageSource: "qrc:/images/controls/copy.svg"
@@ -159,11 +159,11 @@ PageType {
                 Layout.leftMargin: 16
                 Layout.rightMargin: 16
                 visible: pageShareConnection.isSelfHostedConfig
-                defaultColor: AmneziaStyle.color.transparent
-                hoveredColor: AmneziaStyle.color.translucentWhite
-                pressedColor: AmneziaStyle.color.sheerWhite
-                disabledColor: AmneziaStyle.color.mutedGray
-                textColor: AmneziaStyle.color.paleGray
+                defaultColor: ВадькаVPNStyle.color.transparent
+                hoveredColor: ВадькаVPNStyle.color.translucentWhite
+                pressedColor: ВадькаVPNStyle.color.sheerWhite
+                disabledColor: ВадькаVPNStyle.color.mutedGray
+                textColor: ВадькаVPNStyle.color.paleGray
                 borderWidth: 1
                 text: qsTr("Show connection settings")
                 clickedFunc: function() {
@@ -247,15 +247,15 @@ PageType {
                                 height: 24
                                 readOnly: true
                                 activeFocusOnTab: false
-                                color: AmneziaStyle.color.paleGray
-                                selectionColor:  AmneziaStyle.color.richBrown
-                                selectedTextColor: AmneziaStyle.color.paleGray
+                                color: ВадькаVPNStyle.color.paleGray
+                                selectionColor:  ВадькаVPNStyle.color.richBrown
+                                selectedTextColor: ВадькаVPNStyle.color.paleGray
                                 font.pixelSize: 16
                                 font.weight: Font.Medium
                                 font.family: "PT Root UI VF"
                                 text: ExportController.config
                                 wrapMode: Text.Wrap
-                                background: Rectangle { color: AmneziaStyle.color.transparent }
+                                background: Rectangle { color: ВадькаVPNStyle.color.transparent }
                             }
                         }
                     }
@@ -323,7 +323,7 @@ PageType {
                               && (ExportController.config.startsWith("tg://")
                                   || ExportController.config.startsWith("https://t.me")))
                 horizontalAlignment: Text.AlignHCenter
-                text: qsTr("To read the QR code in the Amnezia app, tap + in the main menu → 'QR code'")
+                text: qsTr("To read the QR code in the ВадькаVPN app, tap + in the main menu → 'QR code'")
             }
 
             WarningType {

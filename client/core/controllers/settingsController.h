@@ -12,7 +12,7 @@
 #include "core/repositories/secureServersRepository.h"
 #include "core/repositories/secureAppSettingsRepository.h"
 
-using namespace amnezia;
+using namespace ВадькаVPN;
 
 class SettingsController : public QObject
 {
@@ -23,8 +23,8 @@ public:
                                QObject* parent = nullptr);
     ~SettingsController() = default;
 
-    void toggleAmneziaDns(bool enable);
-    bool isAmneziaDnsEnabled() const;
+    void toggleВадькаVPNDns(bool enable);
+    bool isВадькаVPNDnsEnabled() const;
 
     QString getPrimaryDns() const;
     void setPrimaryDns(const QString &dns);

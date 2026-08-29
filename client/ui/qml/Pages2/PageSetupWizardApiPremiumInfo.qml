@@ -49,7 +49,7 @@ PageType {
 
         var rawHeaderName = escapeHtml(String(ApiServicesModel.getSelectedServiceData("name")))
         root.premiumHeaderName = rawHeaderName.replace("Premium",
-                "<font color=\"" + AmneziaStyle.color.deepMagenta + "\">Premium</font>")
+                "<font color=\"" + ВадькаVPNStyle.color.deepMagenta + "\">Premium</font>")
         root.premiumHeaderDescription = String(ApiServicesModel.getSelectedServiceData("serviceDescription"))
     }
 
@@ -92,7 +92,7 @@ PageType {
                 Layout.bottomMargin: 12
                 visible: !!root.currentPlan && !!root.currentPlan.hasFreeTrial
                 radius: 10
-                color: AmneziaStyle.color.vibrantGreen
+                color: ВадькаVPNStyle.color.vibrantGreen
                 implicitHeight: trialBadgeLabel.implicitHeight + 8
                 implicitWidth: trialBadgeLabel.implicitWidth + 16
 
@@ -100,7 +100,7 @@ PageType {
                     id: trialBadgeLabel
                     anchors.centerIn: parent
                     text: root.currentPlan ? qsTr("Try free for %n day(s)", "", Number(root.currentPlan.trialDays)) : ""
-                    color: AmneziaStyle.color.midnightBlack
+                    color: ВадькаVPNStyle.color.midnightBlack
                     font.pixelSize: 11
                     font.weight: Font.Medium
                 }
@@ -157,11 +157,11 @@ PageType {
                 Layout.bottomMargin: 24
                 visible: root.anyPlanHasFreeTrial && !root.plansExpanded && ApiSubscriptionPlansModel.rowCount() > 1
 
-                defaultColor: AmneziaStyle.color.transparent
-                hoveredColor: AmneziaStyle.color.translucentWhite
-                pressedColor: AmneziaStyle.color.sheerWhite
-                disabledColor: AmneziaStyle.color.mutedGray
-                textColor: AmneziaStyle.color.goldenApricot
+                defaultColor: ВадькаVPNStyle.color.transparent
+                hoveredColor: ВадькаVPNStyle.color.translucentWhite
+                pressedColor: ВадькаVPNStyle.color.sheerWhite
+                disabledColor: ВадькаVPNStyle.color.mutedGray
+                textColor: ВадькаVPNStyle.color.goldenApricot
                 borderFocusedWidth: 0
 
                 text: qsTr("Change plan")
@@ -178,7 +178,7 @@ PageType {
                 Layout.bottomMargin: 12
 
                 text: qsTr("Premium features")
-                color: AmneziaStyle.color.mutedGray
+                color: ВадькаVPNStyle.color.mutedGray
                 font.pixelSize: 13
             }
 
@@ -203,7 +203,7 @@ PageType {
                     Layout.fillWidth: true
                     horizontalAlignment: Text.AlignHCenter
                     textFormat: Text.PlainText
-                    color: AmneziaStyle.color.mutedGray
+                    color: ВадькаVPNStyle.color.mutedGray
                     font.pixelSize: 12
 
                     text: qsTr("Charged to your Apple ID at confirmation. Renews automatically unless auto-renew is turned off at least 24 hours before period end. Manage in Apple ID settings.")
@@ -238,7 +238,7 @@ PageType {
         anchors.bottom: parent.bottom
 
         radius: 16
-        color: AmneziaStyle.color.onyxBlack
+        color: ВадькаVPNStyle.color.onyxBlack
         implicitHeight: bottomBarColumn.implicitHeight + 24
 
         Rectangle {
@@ -321,7 +321,7 @@ PageType {
                 Layout.fillWidth: true
                 horizontalAlignment: Text.AlignHCenter
                 textFormat: Text.PlainText
-                color: AmneziaStyle.color.mutedGray
+                color: ВадькаVPNStyle.color.mutedGray
                 font.pixelSize: 12
 
                 visible: !!root.currentPlan && root.storePurchaseAvailable

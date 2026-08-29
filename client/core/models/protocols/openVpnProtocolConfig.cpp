@@ -7,9 +7,9 @@
 #include "../../../core/utils/constants/configKeys.h"
 #include "../../../core/utils/constants/protocolConstants.h"
 
-using namespace amnezia;
+using namespace ВадькаVPN;
 using namespace ProtocolUtils;
-namespace amnezia
+namespace ВадькаVPN
 {
 
 QJsonObject OpenVpnServerConfig::toJson() const
@@ -160,5 +160,5 @@ void OpenVpnProtocolConfig::clearClientConfig()
     clientConfig.reset();
 }
 
-} // namespace amnezia
+} // namespace ВадькаVPN
 

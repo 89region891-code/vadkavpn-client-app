@@ -14,11 +14,11 @@ Popup {
     visible: false
 
     Overlay.modal: Rectangle {
-        color: AmneziaStyle.color.translucentMidnightBlack
+        color: ВадькаVPNStyle.color.translucentMidnightBlack
     }
 
     background: Rectangle {
-        color: AmneziaStyle.color.transparent
+        color: ВадькаVPNStyle.color.transparent
     }
 
     BusyIndicator {
@@ -42,8 +42,8 @@ Popup {
                 layer.samples: 4
 
                 ShapePath {
-                    fillColor: AmneziaStyle.color.transparent
-                    strokeColor: AmneziaStyle.color.charcoalGray
+                    fillColor: ВадькаVPNStyle.color.transparent
+                    strokeColor: ВадькаVPNStyle.color.charcoalGray
                     strokeWidth: 3
                     capStyle: ShapePath.RoundCap
 

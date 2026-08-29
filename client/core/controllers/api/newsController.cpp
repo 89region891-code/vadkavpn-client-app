@@ -13,7 +13,7 @@
 #include <QSet>
 #include <QSharedPointer>
 
-using namespace amnezia;
+using namespace ВадькаVPN;
 
 NewsController::NewsController(SecureAppSettingsRepository *appSettingsRepository,
                                SecureServersRepository *serversRepository)

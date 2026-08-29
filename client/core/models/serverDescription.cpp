@@ -11,7 +11,7 @@
 #include "core/protocols/protocolUtils.h"
 #include "core/models/protocols/awgProtocolConfig.h"
 
-using namespace amnezia;
+using namespace ВадькаVPN;
 
 namespace
 {
@@ -33,24 +33,24 @@ ServerDescription buildBaseDescription(const T &server)
     ServerDescription row;
     row.hostName = server.hostName;
     row.defaultContainer = server.defaultContainer;
-    row.primaryDnsIsAmnezia = (server.dns1 == protocols::dns::amneziaDnsIp);
+    row.primaryDnsIsВадькаVPN = (server.dns1 == protocols::dns::ВадькаVPNDnsIp);
     row.hasInstalledVpnContainers = computeHasInstalledVpnContainers(server.containers);
     return row;
 }
 
 QString getBaseDescription(const QMap<DockerContainer, ContainerConfig> &containers,
-                         bool isAmneziaDnsEnabled,
+                         bool isВадькаVPNDnsEnabled,
                          bool hasWriteAccess,
-                         bool primaryDnsIsAmnezia)
+                         bool primaryDnsIsВадькаVPN)
 {
     QString description;
     if (hasWriteAccess) {
         const bool isDnsInstalled = containers.contains(DockerContainer::Dns);
-        if (isAmneziaDnsEnabled && isDnsInstalled) {
-            description += QStringLiteral("Amnezia DNS | ");
+        if (isВадькаVPNDnsEnabled && isDnsInstalled) {
+            description += QStringLiteral("ВадькаVPN DNS | ");
         }
-    } else if (primaryDnsIsAmnezia) {
-        description += QStringLiteral("Amnezia DNS | ");
+    } else if (primaryDnsIsВадькаVPN) {
+        description += QStringLiteral("ВадькаVPN DNS | ");
     }
     return description;
 }
@@ -70,7 +70,7 @@ QString getProtocolName(DockerContainer defaultContainer, const QMap<DockerConta
                 }
                 protocolVersion = AwgProtocolConfig::protocolVersionString(version);
                 if (defaultContainer == DockerContainer::Awg && !awg->serverConfig.isThirdPartyConfig) {
-                    containerName = QStringLiteral("AmneziaWG Legacy");
+                    containerName = QStringLiteral("ВадькаVPNWG Legacy");
                 }
             }
         }
@@ -81,10 +81,10 @@ QString getProtocolName(DockerContainer defaultContainer, const QMap<DockerConta
 
 } // namespace
 
-namespace amnezia
+namespace ВадькаVPN
 {
 
-ServerDescription buildServerDescription(const SelfHostedAdminServerConfig &server, bool isAmneziaDnsEnabled)
+ServerDescription buildServerDescription(const SelfHostedAdminServerConfig &server, bool isВадькаVPNDnsEnabled)
 {
     ServerDescription row = buildBaseDescription(server);
     row.selfHostedSshCredentials.hostName = server.hostName;
@@ -96,7 +96,7 @@ ServerDescription buildServerDescription(const SelfHostedAdminServerConfig &serv
                          && !row.selfHostedSshCredentials.secretData.isEmpty();
 
     row.serverName = server.displayName;
-    row.baseDescription = getBaseDescription(server.containers, isAmneziaDnsEnabled, row.hasWriteAccess, row.primaryDnsIsAmnezia);
+    row.baseDescription = getBaseDescription(server.containers, isВадькаVPNDnsEnabled, row.hasWriteAccess, row.primaryDnsIsВадькаVPN);
 
     const QString protocolName = getProtocolName(server.defaultContainer, server.containers);
     row.expandedServerDescription = row.baseDescription + row.hostName;
@@ -104,7 +104,7 @@ ServerDescription buildServerDescription(const SelfHostedAdminServerConfig &serv
     return row;
 }
 
-ServerDescription buildServerDescription(const SelfHostedUserServerConfig &server, bool isAmneziaDnsEnabled)
+ServerDescription buildServerDescription(const SelfHostedUserServerConfig &server, bool isВадькаVPNDnsEnabled)
 {
     ServerDescription row = buildBaseDescription(server);
     row.selfHostedSshCredentials.hostName = server.hostName;
@@ -112,7 +112,7 @@ ServerDescription buildServerDescription(const SelfHostedUserServerConfig &serve
     row.hasWriteAccess = false;
 
     row.serverName = server.displayName;
-    row.baseDescription = getBaseDescription(server.containers, isAmneziaDnsEnabled, row.hasWriteAccess, row.primaryDnsIsAmnezia);
+    row.baseDescription = getBaseDescription(server.containers, isВадькаVPNDnsEnabled, row.hasWriteAccess, row.primaryDnsIsВадькаVPN);
 
     const QString protocolName = getProtocolName(server.defaultContainer, server.containers);
     row.expandedServerDescription = row.baseDescription + row.hostName;
@@ -120,13 +120,13 @@ ServerDescription buildServerDescription(const SelfHostedUserServerConfig &serve
     return row;
 }
 
-ServerDescription buildServerDescription(const NativeServerConfig &server, bool isAmneziaDnsEnabled)
+ServerDescription buildServerDescription(const NativeServerConfig &server, bool isВадькаVPNDnsEnabled)
 {
     ServerDescription row = buildBaseDescription(server);
     row.hasWriteAccess = false;
 
     row.serverName = server.displayName;
-    row.baseDescription = getBaseDescription(server.containers, isAmneziaDnsEnabled, row.hasWriteAccess, row.primaryDnsIsAmnezia);
+    row.baseDescription = getBaseDescription(server.containers, isВадькаVPNDnsEnabled, row.hasWriteAccess, row.primaryDnsIsВадькаVPN);
 
     const QString protocolName = getProtocolName(server.defaultContainer, server.containers);
     row.expandedServerDescription = row.baseDescription + row.hostName;
@@ -134,7 +134,7 @@ ServerDescription buildServerDescription(const NativeServerConfig &server, bool 
     return row;
 }
 
-ServerDescription buildServerDescription(const LegacyApiServerConfig &server, bool /*isAmneziaDnsEnabled*/)
+ServerDescription buildServerDescription(const LegacyApiServerConfig &server, bool /*isВадькаVPNDnsEnabled*/)
 {
     ServerDescription row = buildBaseDescription(server);
     row.configVersion = serverConfigUtils::ConfigSource::Telegram;
@@ -151,10 +151,10 @@ ServerDescription buildServerDescription(const LegacyApiServerConfig &server, bo
     return row;
 }
 
-ServerDescription buildServerDescription(const ApiV2ServerConfig &server, bool /*isAmneziaDnsEnabled*/)
+ServerDescription buildServerDescription(const ApiV2ServerConfig &server, bool /*isВадькаVPNDnsEnabled*/)
 {
     ServerDescription row = buildBaseDescription(server);
-    row.configVersion = serverConfigUtils::ConfigSource::AmneziaGateway;
+    row.configVersion = serverConfigUtils::ConfigSource::ВадькаVPNGateway;
     row.isApiV2 = true;
     row.isServerFromGatewayApi = true;
     row.isPremium = server.isPremium() || server.isExternalPremium();
@@ -189,4 +189,4 @@ ServerDescription buildServerDescription(const ApiV2ServerConfig &server, bool /
     return row;
 }
 
-} // namespace amnezia
+} // namespace ВадькаVPN

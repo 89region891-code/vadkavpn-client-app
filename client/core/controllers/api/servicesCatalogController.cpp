@@ -41,7 +41,7 @@ namespace
 
     namespace serviceType
     {
-        constexpr char amneziaPremium[] = "amnezia-premium";
+        constexpr char ВадькаVPNPremium[] = "ВадькаVPN-premium";
     }
 
 #if defined(Q_OS_IOS) || defined(MACOS_NE) || defined(Q_OS_ANDROID)
@@ -64,7 +64,7 @@ namespace
         QSet<QString> seenProductIds;
         for (const QJsonValue &serviceValue : services) {
             const QJsonObject serviceObject = serviceValue.toObject();
-            if (serviceObject.value(apiDefs::key::serviceType).toString() != serviceType::amneziaPremium) {
+            if (serviceObject.value(apiDefs::key::serviceType).toString() != serviceType::ВадькаVPNPremium) {
                 continue;
             }
             const QJsonArray subscriptionPlans =
@@ -217,7 +217,7 @@ namespace
 
         for (int serviceIndex = 0; serviceIndex < services.size(); ++serviceIndex) {
             QJsonObject serviceObject = services.at(serviceIndex).toObject();
-            if (serviceObject.value(apiDefs::key::serviceType).toString() != serviceType::amneziaPremium) {
+            if (serviceObject.value(apiDefs::key::serviceType).toString() != serviceType::ВадькаVPNPremium) {
                 continue;
             }
 

@@ -155,7 +155,7 @@ extension PacketTunnelProvider {
 #if os(macOS)
         let dumpBaseURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first
             ?? FileManager.default.temporaryDirectory
-        let dumpURL = dumpBaseURL.appendingPathComponent("amnezia_ovpn_adapter_config.conf")
+        let dumpURL = dumpBaseURL.appendingPathComponent("ВадькаVPN_ovpn_adapter_config.conf")
         do {
             try normalizedConfig.write(to: dumpURL, atomically: true, encoding: .utf8)
             ovpnLog(.info, title: "ConfigDump", message: "path=\(dumpURL.path) bytes=\(normalizedConfig.utf8.count)")
@@ -238,7 +238,7 @@ extension PacketTunnelProvider {
     }
 
     func stopOpenVPN(with reason: NEProviderStopReason, completionHandler: @escaping () -> Void) {
-        ovpnLog(.info, message: "Stopping tunnel: reason: \(reason.amneziaDescription)")
+        ovpnLog(.info, message: "Stopping tunnel: reason: \(reason.ВадькаVPNDescription)")
 
         stopHandler = completionHandler
         openVpnGatewayAddress = nil

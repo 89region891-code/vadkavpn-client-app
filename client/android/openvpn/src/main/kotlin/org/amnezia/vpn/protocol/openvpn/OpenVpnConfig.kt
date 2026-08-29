@@ -1,6 +1,6 @@
-package org.amnezia.vpn.protocol.openvpn
+package org.ВадькаVPN.vpn.protocol.openvpn
 
-import org.amnezia.vpn.protocol.ProtocolConfig
+import org.ВадькаVPN.vpn.protocol.ProtocolConfig
 
 private const val OPENVPN_DEFAULT_MTU = 1500
 

@@ -8,10 +8,10 @@
 #include "core/utils/constants/configKeys.h"
 #include "core/utils/constants/protocolConstants.h"
 
-using namespace amnezia;
+using namespace ВадькаVPN;
 using namespace ProtocolUtils;
 
-namespace amnezia
+namespace ВадькаVPN
 {
 QJsonObject XrayXPaddingConfig::toJson() const
 {
@@ -644,4 +644,4 @@ void XrayProtocolConfig::clearClientConfig()
     clientConfig.reset();
 }
 
-} // namespace amnezia
+} // namespace ВадькаVPN

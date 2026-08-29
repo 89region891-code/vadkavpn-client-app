@@ -12,7 +12,7 @@
 #include "core/utils/utilities.h"
 #include "version.h"
 
-#ifdef AMNEZIA_DESKTOP
+#ifdef ВадькаVPN_DESKTOP
     #include <core/utils/ipcClient.h>
 #endif
 
@@ -90,7 +90,7 @@ void Logger::deInit()
 
 bool Logger::setServiceLogsEnabled(bool enabled)
 {
-#ifdef AMNEZIA_DESKTOP
+#ifdef ВадькаVPN_DESKTOP
     return IpcClient::withInterface([enabled](QSharedPointer<IpcInterfaceReplica> iface) {
         iface->setLogsEnabled(enabled);
         qDebug() << "Logger::setServiceLogsEnabled(): Logs transitioned to be " << (enabled ? "enabled" : "disabled");
@@ -204,7 +204,7 @@ void Logger::clearLogs(bool isServiceLogger)
 
 void Logger::clearServiceLogs()
 {
-#ifdef AMNEZIA_DESKTOP
+#ifdef ВадькаVPN_DESKTOP
     IpcClient::withInterface([](QSharedPointer<IpcInterfaceReplica> iface) {
         iface->clearLogs();
         qDebug() << "Logger::clearServiceLogs(): Logs cleared";

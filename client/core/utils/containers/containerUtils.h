@@ -12,7 +12,7 @@
 #include "core/protocols/protocolUtils.h"
 #include "core/utils/constants/configKeys.h"
 
-namespace amnezia
+namespace ВадькаVPN
 {
     namespace ContainerUtils
     {

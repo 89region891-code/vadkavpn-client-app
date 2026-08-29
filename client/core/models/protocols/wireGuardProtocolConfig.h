@@ -7,7 +7,7 @@
 #include <QStringList>
 #include <optional>
 
-namespace amnezia
+namespace ВадькаVPN
 {
 
 struct WireGuardServerConfig {
@@ -57,7 +57,7 @@ struct WireGuardProtocolConfig {
     void clearClientConfig();
 };
 
-} // namespace amnezia
+} // namespace ВадькаVPN
 
 #endif // WIREGUARDPROTOCOLCONFIG_H
 

@@ -22,10 +22,10 @@
 #include "core/models/protocols/mtProxyProtocolConfig.h"
 #include "core/models/protocols/telemtProtocolConfig.h"
 
-using namespace amnezia;
+using namespace ВадькаVPN;
 using namespace ProtocolUtils;
 
-QString amnezia::scriptFolder(amnezia::DockerContainer container)
+QString ВадькаVPN::scriptFolder(ВадькаVPN::DockerContainer container)
 {
     switch (container) {
     case DockerContainer::OpenVpn: return QLatin1String("openvpn");
@@ -45,7 +45,7 @@ QString amnezia::scriptFolder(amnezia::DockerContainer container)
     }
 }
 
-QString amnezia::scriptName(SharedScriptType type)
+QString ВадькаVPN::scriptName(SharedScriptType type)
 {
     switch (type) {
     case SharedScriptType::prepare_host: return QLatin1String("prepare_host.sh");
@@ -62,7 +62,7 @@ QString amnezia::scriptName(SharedScriptType type)
     }
 }
 
-QString amnezia::scriptName(ProtocolScriptType type)
+QString ВадькаVPN::scriptName(ProtocolScriptType type)
 {
     switch (type) {
     case ProtocolScriptType::dockerfile: return QLatin1String("Dockerfile");
@@ -77,7 +77,7 @@ QString amnezia::scriptName(ProtocolScriptType type)
     }
 }
 
-QString amnezia::scriptName(ClientScriptType type)
+QString ВадькаVPN::scriptName(ClientScriptType type)
 {
     switch (type) {
     case ClientScriptType::mac_installer: return QLatin1String("mac_installer.sh");
@@ -85,9 +85,9 @@ QString amnezia::scriptName(ClientScriptType type)
     }
 }
 
-QString amnezia::scriptData(amnezia::SharedScriptType type)
+QString ВадькаVPN::scriptData(ВадькаVPN::SharedScriptType type)
 {
-    QString fileName = QString(":/server_scripts/%1").arg(amnezia::scriptName(type));
+    QString fileName = QString(":/server_scripts/%1").arg(ВадькаVPN::scriptName(type));
     QFile file(fileName);
     if (!file.open(QIODevice::ReadOnly)) {
         qDebug() << "Warning: script missing" << fileName;
@@ -100,9 +100,9 @@ QString amnezia::scriptData(amnezia::SharedScriptType type)
     return ba;
 }
 
-QString amnezia::scriptData(amnezia::ProtocolScriptType type, DockerContainer container)
+QString ВадькаVPN::scriptData(ВадькаVPN::ProtocolScriptType type, DockerContainer container)
 {
-    QString fileName = QString(":/server_scripts/%1/%2").arg(amnezia::scriptFolder(container), amnezia::scriptName(type));
+    QString fileName = QString(":/server_scripts/%1/%2").arg(ВадькаVPN::scriptFolder(container), ВадькаVPN::scriptName(type));
     QFile file(fileName);
     if (!file.open(QIODevice::ReadOnly)) {
         qDebug() << "Warning: script missing" << fileName;
@@ -113,9 +113,9 @@ QString amnezia::scriptData(amnezia::ProtocolScriptType type, DockerContainer co
     return data;
 }
 
-QString amnezia::scriptData(ClientScriptType type)
+QString ВадькаVPN::scriptData(ClientScriptType type)
 {
-    QString fileName = QString(":/client_scripts/%1").arg(amnezia::scriptName(type));
+    QString fileName = QString(":/client_scripts/%1").arg(ВадькаVPN::scriptName(type));
     QFile file(fileName);
     if (!file.open(QIODevice::ReadOnly)) {
         qDebug() << "Warning: script missing" << fileName;
@@ -129,7 +129,7 @@ QString amnezia::scriptData(ClientScriptType type)
     return data;
 }
 
-amnezia::ScriptVars amnezia::genBaseVars(const ServerCredentials &credentials, 
+ВадькаVPN::ScriptVars ВадькаVPN::genBaseVars(const ServerCredentials &credentials, 
                                           DockerContainer container,
                                           const QString &primaryDns,
                                           const QString &secondaryDns)
@@ -138,7 +138,7 @@ amnezia::ScriptVars amnezia::genBaseVars(const ServerCredentials &credentials,
 
     vars.append({ { "$REMOTE_HOST", credentials.hostName } });
     vars.append({ { "$CONTAINER_NAME", ContainerUtils::containerToString(container) } });
-    vars.append({ { "$DOCKERFILE_FOLDER", "/opt/amnezia/" + ContainerUtils::containerToString(container) } });
+    vars.append({ { "$DOCKERFILE_FOLDER", "/opt/ВадькаVPN/" + ContainerUtils::containerToString(container) } });
 
     QString serverIp = (!ContainerUtils::isAwgContainer(container) && container != DockerContainer::WireGuard && container != DockerContainer::Xray)
             ? NetworkUtilities::getIPAddress(credentials.hostName)
@@ -146,7 +146,7 @@ amnezia::ScriptVars amnezia::genBaseVars(const ServerCredentials &credentials,
     if (!serverIp.isEmpty()) {
         vars.append({ { "$SERVER_IP_ADDRESS", serverIp } });
     } else {
-        qWarning() << "amnezia::genBaseVars unable to resolve address for credentials.hostName";
+        qWarning() << "ВадькаVPN::genBaseVars unable to resolve address for credentials.hostName";
     }
 
     QString dns1 = primaryDns.isEmpty() ? QString("8.8.8.8") : primaryDns;
@@ -170,7 +170,7 @@ amnezia::ScriptVars amnezia::genBaseVars(const ServerCredentials &credentials,
     return vars;
 }
 
-amnezia::ScriptVars amnezia::genOpenVpnVars(const ContainerConfig &containerConfig)
+ВадькаVPN::ScriptVars ВадькаVPN::genOpenVpnVars(const ContainerConfig &containerConfig)
 {
     ScriptVars vars;
     
@@ -199,7 +199,7 @@ amnezia::ScriptVars amnezia::genOpenVpnVars(const ContainerConfig &containerConf
     return vars;
 }
 
-amnezia::ScriptVars amnezia::genXrayVars(const ContainerConfig &containerConfig)
+ВадькаVPN::ScriptVars ВадькаVPN::genXrayVars(const ContainerConfig &containerConfig)
 {
     ScriptVars vars;
     
@@ -213,7 +213,7 @@ amnezia::ScriptVars amnezia::genXrayVars(const ContainerConfig &containerConfig)
     return vars;
 }
 
-amnezia::ScriptVars amnezia::genWireGuardVars(const ContainerConfig &containerConfig)
+ВадькаVPN::ScriptVars ВадькаVPN::genWireGuardVars(const ContainerConfig &containerConfig)
 {
     ScriptVars vars;
     
@@ -228,7 +228,7 @@ amnezia::ScriptVars amnezia::genWireGuardVars(const ContainerConfig &containerCo
     return vars;
 }
 
-amnezia::ScriptVars amnezia::genAwgVars(const ContainerConfig &containerConfig)
+ВадькаVPN::ScriptVars ВадькаVPN::genAwgVars(const ContainerConfig &containerConfig)
 {
     ScriptVars vars;
     
@@ -274,7 +274,7 @@ amnezia::ScriptVars amnezia::genAwgVars(const ContainerConfig &containerConfig)
     return vars;
 }
 
-amnezia::ScriptVars amnezia::genSftpVars(const ContainerConfig &containerConfig)
+ВадькаVPN::ScriptVars ВадькаVPN::genSftpVars(const ContainerConfig &containerConfig)
 {
     ScriptVars vars;
     
@@ -287,7 +287,7 @@ amnezia::ScriptVars amnezia::genSftpVars(const ContainerConfig &containerConfig)
     return vars;
 }
 
-amnezia::ScriptVars amnezia::genSocks5ProxyVars(const ContainerConfig &containerConfig)
+ВадькаVPN::ScriptVars ВадькаVPN::genSocks5ProxyVars(const ContainerConfig &containerConfig)
 {
     ScriptVars vars;
     
@@ -303,7 +303,7 @@ amnezia::ScriptVars amnezia::genSocks5ProxyVars(const ContainerConfig &container
     return vars;
 }
 
-amnezia::ScriptVars amnezia::genMtProxyVars(const ContainerConfig &containerConfig) {
+ВадькаVPN::ScriptVars ВадькаVPN::genMtProxyVars(const ContainerConfig &containerConfig) {
     ScriptVars vars;
 
     if (auto *mtProxyProtocolConfig = containerConfig.getMtProxyProtocolConfig()) {
@@ -355,7 +355,7 @@ amnezia::ScriptVars amnezia::genMtProxyVars(const ContainerConfig &containerConf
     return vars;
 }
 
-amnezia::ScriptVars amnezia::genTelemtVars(const ContainerConfig &containerConfig)
+ВадькаVPN::ScriptVars ВадькаVPN::genTelemtVars(const ContainerConfig &containerConfig)
 {
     ScriptVars vars;
 
@@ -402,7 +402,7 @@ amnezia::ScriptVars amnezia::genTelemtVars(const ContainerConfig &containerConfi
     return vars;
 }
 
-amnezia::ScriptVars amnezia::genProtocolVarsForContainer(DockerContainer container, const ContainerConfig &containerConfig)
+ВадькаVPN::ScriptVars ВадькаVPN::genProtocolVarsForContainer(DockerContainer container, const ContainerConfig &containerConfig)
 {
     ScriptVars vars;
     Proto protocol = ContainerUtils::defaultProtocol(container);

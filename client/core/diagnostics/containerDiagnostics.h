@@ -1,7 +1,7 @@
 #ifndef CONTAINERDIAGNOSTICS_H
 #define CONTAINERDIAGNOSTICS_H
 
-namespace amnezia
+namespace ВадькаVPN
 {
     struct ContainerDiagnostics
     {
@@ -11,6 +11,6 @@ namespace amnezia
         virtual ~ContainerDiagnostics() = default;
     };
 
-} // namespace amnezia
+} // namespace ВадькаVPN
 
 #endif // CONTAINERDIAGNOSTICS_H

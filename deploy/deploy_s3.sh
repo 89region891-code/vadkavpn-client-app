@@ -13,9 +13,9 @@ mkdir -p dist
 cd dist
 
 echo $VERSION > VERSION
-curl -s https://api.github.com/repos/amnezia-vpn/amnezia-client/releases/tags/$VERSION | jq -r .published_at > RELEASE_DATE
-curl -s https://api.github.com/repos/amnezia-vpn/amnezia-client/releases/tags/$VERSION | jq -r .body | tr -d '\r' > CHANGELOG
-curl -s https://api.github.com/repos/amnezia-vpn/amnezia-client/releases/tags/$VERSION | jq -r .published_at > RELEASE_DATE
+curl -s https://api.github.com/repos/ВадькаVPN-vpn/ВадькаVPN-client/releases/tags/$VERSION | jq -r .published_at > RELEASE_DATE
+curl -s https://api.github.com/repos/ВадькаVPN-vpn/ВадькаVPN-client/releases/tags/$VERSION | jq -r .body | tr -d '\r' > CHANGELOG
+curl -s https://api.github.com/repos/ВадькаVPN-vpn/ВадькаVPN-client/releases/tags/$VERSION | jq -r .published_at > RELEASE_DATE
 
 if [[ $(cat CHANGELOG) = null ]]; then
 	echo '::error::Release does not exists. Exiting with error...'
@@ -34,9 +34,9 @@ download_file() {
     echo "Successfully downloaded $filename"
 }
 
-download_file https://github.com/amnezia-vpn/amnezia-client/releases/download/${VERSION}/AmneziaVPN_${VERSION}_linux_x64.run
-download_file https://github.com/amnezia-vpn/amnezia-client/releases/download/${VERSION}/AmneziaVPN_${VERSION}_macos_x64.pkg
-download_file https://github.com/amnezia-vpn/amnezia-client/releases/download/${VERSION}/AmneziaVPN_${VERSION}_windows_x64.exe 
+download_file https://github.com/ВадькаVPN-vpn/ВадькаVPN-client/releases/download/${VERSION}/ВадькаVPNVPN_${VERSION}_linux_x64.run
+download_file https://github.com/ВадькаVPN-vpn/ВадькаVPN-client/releases/download/${VERSION}/ВадькаVPNVPN_${VERSION}_macos_x64.pkg
+download_file https://github.com/ВадькаVPN-vpn/ВадькаVPN-client/releases/download/${VERSION}/ВадькаVPNVPN_${VERSION}_windows_x64.exe 
 
 cd ../
 

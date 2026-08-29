@@ -1,6 +1,6 @@
-package org.amnezia.vpn.util
+package org.ВадькаVPN.vpn.util
 
-// keep synchronized with client/core/utils/errorCodes.h amnezia::ErrorCode
+// keep synchronized with client/core/utils/errorCodes.h ВадькаVPN::ErrorCode
 object ErrorCode {
     const val NoError = 0
 

@@ -9,18 +9,18 @@ Button {
 
     property string image
 
-    property string hoveredColor: AmneziaStyle.color.translucentWhite
-    property string defaultColor: AmneziaStyle.color.transparent
-    property string pressedColor: AmneziaStyle.color.sheerWhite
-    property string disableColor: AmneziaStyle.color.slateGray
+    property string hoveredColor: ВадькаVPNStyle.color.translucentWhite
+    property string defaultColor: ВадькаVPNStyle.color.transparent
+    property string pressedColor: ВадькаVPNStyle.color.sheerWhite
+    property string disableColor: ВадькаVPNStyle.color.slateGray
 
-    property string imageColor: AmneziaStyle.color.mutedGray
-    property string disableImageColor: AmneziaStyle.color.slateGray
+    property string imageColor: ВадькаVPNStyle.color.mutedGray
+    property string disableImageColor: ВадькаVPNStyle.color.slateGray
 
     property alias backgroundColor: background.color
     property alias backgroundRadius: background.radius
 
-    property string borderFocusedColor: AmneziaStyle.color.paleGray
+    property string borderFocusedColor: ВадькаVPNStyle.color.paleGray
     property int borderFocusedWidth: 1
 
     hoverEnabled: true
@@ -65,7 +65,7 @@ Button {
         id: background
 
         anchors.fill: parent
-        border.color: root.activeFocus ? root.borderFocusedColor : AmneziaStyle.color.transparent
+        border.color: root.activeFocus ? root.borderFocusedColor : ВадькаVPNStyle.color.transparent
         border.width: root.activeFocus ? root.borderFocusedWidth : 0
 
         color: {

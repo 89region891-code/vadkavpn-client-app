@@ -136,12 +136,12 @@ public:
     Q_INVOKABLE QStringList validationErrors() const;
 
 public slots:
-    void updateModel(amnezia::DockerContainer container, const amnezia::XrayProtocolConfig& protocolConfig);
-    amnezia::XrayProtocolConfig getProtocolConfig();
+    void updateModel(ВадькаVPN::DockerContainer container, const ВадькаVPN::XrayProtocolConfig& protocolConfig);
+    ВадькаVPN::XrayProtocolConfig getProtocolConfig();
     bool isServerSettingsEqual() const;
     bool hasUnsavedChanges() const;
     void resetToDefaults();
-    void applyServerConfig(const amnezia::XrayServerConfig &serverConfig);
+    void applyServerConfig(const ВадькаVPN::XrayServerConfig &serverConfig);
 
 signals:
     void hasUnsavedChangesChanged();
@@ -150,11 +150,11 @@ protected:
     QHash<int, QByteArray> roleNames() const override;
 
 private:
-    amnezia::DockerContainer m_container;
-    amnezia::XrayProtocolConfig m_protocolConfig;
-    amnezia::XrayProtocolConfig m_originalProtocolConfig;
+    ВадькаVPN::DockerContainer m_container;
+    ВадькаVPN::XrayProtocolConfig m_protocolConfig;
+    ВадькаVPN::XrayProtocolConfig m_originalProtocolConfig;
 
-    void applyDefaultsToServerConfig(amnezia::XrayServerConfig& config, bool fillFlowDefault = true);
+    void applyDefaultsToServerConfig(ВадькаVPN::XrayServerConfig& config, bool fillFlowDefault = true);
 };
 
 #endif // XRAYCONFIGMODEL_H

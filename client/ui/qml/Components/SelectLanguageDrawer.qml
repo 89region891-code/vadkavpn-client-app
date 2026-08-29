@@ -111,8 +111,8 @@ DrawerType2 {
                         indicator: Rectangle {
                             width: parent.width - 1
                             height: parent.height
-                            color: radioButton.hovered ? AmneziaStyle.color.slateGray : AmneziaStyle.color.onyxBlack
-                            border.color: radioButton.focus ? AmneziaStyle.color.paleGray : AmneziaStyle.color.transparent
+                            color: radioButton.hovered ? ВадькаVPNStyle.color.slateGray : ВадькаVPNStyle.color.onyxBlack
+                            border.color: radioButton.focus ? ВадькаVPNStyle.color.paleGray : ВадькаVPNStyle.color.transparent
                             border.width: radioButton.focus ? 1 : 0
 
                             Behavior on color {

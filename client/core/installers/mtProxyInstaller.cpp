@@ -15,14 +15,14 @@
 
 #include <QtGlobal>
 
-using namespace amnezia;
+using namespace ВадькаVPN;
 
 namespace {
-    constexpr QLatin1String kMtProxyClientJsonPath("/data/amnezia-mtproxy-client.json");
-    constexpr QLatin1String kMtProxyClientJsonUploadPath("data/amnezia-mtproxy-client.json");
+    constexpr QLatin1String kMtProxyClientJsonPath("/data/ВадькаVPN-mtproxy-client.json");
+    constexpr QLatin1String kMtProxyClientJsonUploadPath("data/ВадькаVPN-mtproxy-client.json");
     constexpr QLatin1String kMtProxySecretPath("/data/secret");
     constexpr QLatin1String kMtProxyMetaPath("/data/mtproxy-meta");
-    constexpr QLatin1String kMtProxyStartScriptPath("/opt/amnezia/start.sh");
+    constexpr QLatin1String kMtProxyStartScriptPath("/opt/ВадькаVPN/start.sh");
 }
 
 MtProxyInstaller::MtProxyInstaller(QObject *parent)

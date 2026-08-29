@@ -9,12 +9,12 @@ class AwgInstaller : public InstallerBase
 public:
     explicit AwgInstaller(QObject *parent = nullptr);
 
-    amnezia::ContainerConfig generateConfig(amnezia::DockerContainer container, int port, amnezia::TransportProto transportProto) override;
-    amnezia::ErrorCode extractConfigFromContainer(amnezia::DockerContainer container, const amnezia::ServerCredentials &credentials,
-                                         SshSession* serverController, amnezia::ContainerConfig &config) override;
+    ВадькаVPN::ContainerConfig generateConfig(ВадькаVPN::DockerContainer container, int port, ВадькаVPN::TransportProto transportProto) override;
+    ВадькаVPN::ErrorCode extractConfigFromContainer(ВадькаVPN::DockerContainer container, const ВадькаVPN::ServerCredentials &credentials,
+                                         SshSession* serverController, ВадькаVPN::ContainerConfig &config) override;
 
 private:
-    void generateAwgParameters(amnezia::AwgServerConfig &serverConfig);
+    void generateAwgParameters(ВадькаVPN::AwgServerConfig &serverConfig);
 };
 
 #endif // AWGINSTALLER_H

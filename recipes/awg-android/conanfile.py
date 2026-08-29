@@ -36,7 +36,7 @@ class AwgAndroid(ConanFile):
     def source(self):
         git = Git(self)
         git.clone(
-            url="https://github.com/amnezia-vpn/amneziawg-android.git",
+            url="https://github.com/ВадькаVPN-vpn/ВадькаVPNwg-android.git",
             target=".",
             args=["--recurse-submodules", "--branch", f"v{self.version}"]
         )
@@ -112,9 +112,9 @@ class AwgAndroid(ConanFile):
         copy(self, "libwg-quick.so", src=os.path.join(self.build_folder, "out"), dst=os.path.join(self.package_folder, "bin"))
 
     def package_info(self):
-        self.cpp_info.set_property("cmake_target_name", "amnezia::awg-android")
+        self.cpp_info.set_property("cmake_target_name", "ВадькаVPN::awg-android")
         self.cpp_info.libs = [ "wg-go" ]
         self.cpp_info.set_property("cmake_extra_variables", {
-            "AMNEZIA_ANDROID_LIBWG_PATH": Path(os.path.join(self.package_folder, "bin", "libwg.so")).as_posix(),
-            "AMNEZIA_ANDROID_LIBWG_QUICK_PATH": Path(os.path.join(self.package_folder, "bin", "libwg-quick.so")).as_posix(),
+            "ВадькаVPN_ANDROID_LIBWG_PATH": Path(os.path.join(self.package_folder, "bin", "libwg.so")).as_posix(),
+            "ВадькаVPN_ANDROID_LIBWG_QUICK_PATH": Path(os.path.join(self.package_folder, "bin", "libwg-quick.so")).as_posix(),
         })

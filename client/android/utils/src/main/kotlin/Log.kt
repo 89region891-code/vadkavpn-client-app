@@ -1,4 +1,4 @@
-package org.amnezia.vpn.util
+package org.ВадькаVPN.vpn.util
 
 import android.content.Context
 import android.os.Build
@@ -13,17 +13,17 @@ import java.time.format.DateTimeFormatter
 import java.time.ZonedDateTime
 import java.time.ZoneOffset
 import java.util.concurrent.locks.ReentrantLock
-import org.amnezia.vpn.util.Log.Priority.D
-import org.amnezia.vpn.util.Log.Priority.E
-import org.amnezia.vpn.util.Log.Priority.F
-import org.amnezia.vpn.util.Log.Priority.I
-import org.amnezia.vpn.util.Log.Priority.V
-import org.amnezia.vpn.util.Log.Priority.W
+import org.ВадькаVPN.vpn.util.Log.Priority.D
+import org.ВадькаVPN.vpn.util.Log.Priority.E
+import org.ВадькаVPN.vpn.util.Log.Priority.F
+import org.ВадькаVPN.vpn.util.Log.Priority.I
+import org.ВадькаVPN.vpn.util.Log.Priority.V
+import org.ВадькаVPN.vpn.util.Log.Priority.W
 import android.util.Log as NativeLog
 
 private const val TAG = "Log"
-private const val LOG_FILE_NAME = "amneziaVPN.log"
-private const val ROTATE_LOG_FILE_NAME = "amneziaVPN.rotate.log"
+private const val LOG_FILE_NAME = "ВадькаVPNVPN.log"
+private const val ROTATE_LOG_FILE_NAME = "ВадькаVPNVPN.rotate.log"
 private const val LOCK_FILE_NAME = ".lock"
 private const val DATE_TIME_PATTERN = "MM-dd HH:mm:ss.SSS"
 private const val PREFS_SAVE_LOGS_KEY = "SAVE_LOGS"

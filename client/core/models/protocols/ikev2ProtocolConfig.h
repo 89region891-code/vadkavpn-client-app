@@ -6,7 +6,7 @@
 #include <QByteArray>
 #include <optional>
 
-namespace amnezia
+namespace ВадькаVPN
 {
 
 struct Ikev2ServerConfig {
@@ -41,7 +41,7 @@ struct Ikev2ProtocolConfig {
     void clearClientConfig();
 };
 
-} // namespace amnezia
+} // namespace ВадькаVPN
 
 #endif // IKEV2PROTOCOLCONFIG_H
 

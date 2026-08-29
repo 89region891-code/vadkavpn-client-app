@@ -16,7 +16,7 @@
 #include "core/utils/constants/apiKeys.h"
 #include "core/utils/constants/apiConstants.h"
 
-namespace amnezia
+namespace ВадькаVPN
 {
 
 using namespace ContainerEnumNS;
@@ -53,7 +53,7 @@ struct ApiV2ServerConfig {
     static ApiV2ServerConfig fromJson(const QJsonObject& json);
 };
 
-} // namespace amnezia
+} // namespace ВадькаVPN
 
 #endif // APIV2SERVERCONFIG_H
 

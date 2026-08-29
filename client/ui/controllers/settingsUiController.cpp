@@ -10,7 +10,7 @@
 #include "core/utils/commonStructs.h"
 #include "logger.h"
 #include "systemController.h"
-#include "amneziaApplication.h"
+#include "ВадькаVPNApplication.h"
 #include "version.h"
 #ifdef Q_OS_ANDROID
     #include "platforms/android/android_controller.h"
@@ -39,15 +39,15 @@ SettingsUiController::SettingsUiController(SettingsController* settingsControlle
     }
 }
 
-void SettingsUiController::toggleAmneziaDns(bool enable)
+void SettingsUiController::toggleВадькаVPNDns(bool enable)
 {
-    m_settingsController->toggleAmneziaDns(enable);
-    emit amneziaDnsToggled(enable);
+    m_settingsController->toggleВадькаVPNDns(enable);
+    emit ВадькаVPNDnsToggled(enable);
 }
 
-bool SettingsUiController::isAmneziaDnsEnabled()
+bool SettingsUiController::isВадькаVPNDnsEnabled()
 {
-    return m_settingsController->isAmneziaDnsEnabled();
+    return m_settingsController->isВадькаVPNDnsEnabled();
 }
 
 QString SettingsUiController::getPrimaryDns()
@@ -157,8 +157,8 @@ void SettingsUiController::restoreAppConfigFromData(const QByteArray &data)
     if (errorCode == ErrorCode::NoError) {
         emit appLanguageChanged();
 
-        bool amneziaDnsEnabled = m_settingsController->isAmneziaDnsEnabled();
-        emit amneziaDnsToggled(amneziaDnsEnabled);
+        bool ВадькаVPNDnsEnabled = m_settingsController->isВадькаVPNDnsEnabled();
+        emit ВадькаVPNDnsToggled(ВадькаVPNDnsEnabled);
 
         emit restoreBackupFinished();
         emit autoStartChanged();

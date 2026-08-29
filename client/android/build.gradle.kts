@@ -17,7 +17,7 @@ val qtTargetAbiList: String by gradleProperties
 val outputBaseName: String by gradleProperties
 
 android {
-    namespace = "org.amnezia.vpn"
+    namespace = "org.ВадькаVPN.vpn"
 
     buildFeatures {
         buildConfig = true
@@ -37,7 +37,7 @@ android {
     val abiList = qtTargetAbiList.split(",")
 
     defaultConfig {
-        applicationId = "org.amnezia.vpn"
+        applicationId = "org.ВадькаVPN.vpn"
         targetSdk = qtTargetSdkVersion.toInt()
 
         // keeps language resources for only the locales specified below

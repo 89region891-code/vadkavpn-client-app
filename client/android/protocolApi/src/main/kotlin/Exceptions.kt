@@ -1,4 +1,4 @@
-package org.amnezia.vpn.protocol
+package org.ВадькаVPN.vpn.protocol
 
 sealed class ProtocolException(message: String? = null, cause: Throwable? = null) : Exception(message, cause)
 

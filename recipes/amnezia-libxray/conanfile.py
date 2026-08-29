@@ -9,8 +9,8 @@ import stat
 
 from pathlib import Path
 
-class AmneziaLibxray(ConanFile):
-    name = "amnezia-libxray"
+class ВадькаVPNLibxray(ConanFile):
+    name = "ВадькаVPN-libxray"
     version = "1.0.3"
     settings = "os", "arch", "compiler"
 
@@ -32,7 +32,7 @@ class AmneziaLibxray(ConanFile):
             raise ConanInvalidConfiguration(f"{self.name} v{self.version} does not support {self.settings.os}")
 
     def source(self):
-        get(self, f"https://github.com/amnezia-vpn/amnezia-libxray/archive/refs/tags/v{self.version}.zip",
+        get(self, f"https://github.com/ВадькаVPN-vpn/ВадькаVPN-libxray/archive/refs/tags/v{self.version}.zip",
             sha256="3b1194c2a76e73913fdae49983c40a219c45a164ebdae72ef1297469348de730", strip_root=True
         )
 
@@ -64,5 +64,5 @@ class AmneziaLibxray(ConanFile):
 
     def package_info(self):
         self.cpp_info.set_property("cmake_extra_variables", {
-            "AMNEZIA_LIBXRAY_PATH": Path(self.package_folder, "aar", "libxray.aar").as_posix(),
+            "ВадькаVPN_LIBXRAY_PATH": Path(self.package_folder, "aar", "libxray.aar").as_posix(),
         })
